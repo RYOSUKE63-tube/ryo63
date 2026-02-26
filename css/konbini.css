@@ -1,3 +1,6 @@
+/* =========================
+   Base
+========================= */
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -6,11 +9,28 @@ body {
   line-height: 1.8;
 }
 
+/* =========================
+   Hero
+========================= */
 .manual-hero {
-  padding: 56px 16px 36px;
   text-align: center;
-  background: linear-gradient(135deg, #2f8f8a, #38b2ac);
+  padding: 140px 20px;
   color: #fff;
+  background-image: url("../image/konbini.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.manual-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.manual-hero * {
+  position: relative;
 }
 
 .back-link {
@@ -21,6 +41,26 @@ body {
   font-weight: bold;
 }
 
+.manual-hero h1 {
+  font-size: 42px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.hero-catch {
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.hero-target {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 10px;
+}
+
+/* =========================
+   Container / Card
+========================= */
 .manual-container {
   max-width: 900px;
   margin: 24px auto;
@@ -35,6 +75,74 @@ body {
   box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
 
+/* 背景交互（ズレにくい） */
+.manual-container .manual-card:nth-of-type(even) {
+  background: #f4f6f8;
+}
+
+/* =========================
+   Problem / Solution（売れる導線）
+========================= */
+.manual-problem {
+  border-left: 4px solid #e85d5d;
+  background: #fff6f6;
+}
+
+.manual-problem h2 {
+  color: #e85d5d;
+}
+
+.manual-problem ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  line-height: 1.9;
+}
+
+.manual-problem li {
+  margin-bottom: 6px;
+}
+
+.bridge {
+  max-width: 900px;
+  margin: -6px auto 14px;
+  padding: 0 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.manual-solution {
+  border-left: 4px solid #2f8f8a;
+  background: #f4fbf8;
+}
+
+/* =========================
+   Impact
+========================= */
+.manual-impact {
+  text-align: center;
+  padding: 40px 20px;
+  background: transparent;
+}
+
+.impact-number {
+  font-size: 56px;
+  font-weight: 700;
+  color: #2f8f8a;
+  display: block;
+  line-height: 1.1;
+}
+
+.impact-sub {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   TOC / Sample / Note
+========================= */
 .toc {
   padding-left: 18px;
 }
@@ -51,13 +159,89 @@ body {
 }
 
 .note {
-  font-size: 13px;
-  color: #555;
+  font-size: 12px;
+  color: #777;
 }
 
+.manual-cta {
+  border: 1px solid rgba(47,143,138,0.25);
+  background: #f7fbfb;
+}
+
+.closing-strong {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* =========================
+   Footer
+========================= */
 .manual-footer {
   text-align: center;
   padding: 24px 16px;
   color: #666;
   font-size: 14px;
+}
+/* ===== CTA Buttons ===== */
+.cta-buttons{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.cta-btn{
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+.cta-btn--primary{
+  background: linear-gradient(135deg, #2f8f8a, #38b2ac);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+  font-size: 16px;
+}
+
+.cta-btn--ghost{
+  border: 1px solid rgba(47,143,138,0.35);
+  color: #2f8f8a;
+  background: #fff;
+}
+
+.cta-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+  opacity: .98;
+}
+/* ===== Mobile ===== */
+@media (max-width: 768px){
+  .manual-hero{
+    padding: 96px 16px;
+  }
+
+  .manual-hero h1{
+    font-size: 30px;
+  }
+
+  .hero-catch{
+    font-size: 14px;
+  }
+
+  .manual-card{
+    padding: 18px;
+  }
+
+  .impact-number{
+    font-size: 48px;
+  }
+
+  .cta-btn{
+    width: 100%;
+    text-align: center;
+  }
 }
