@@ -209,3 +209,38 @@ footer {
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }  
 }
+/* ===== Manual Card ===== */
+.work-card--manual {
+  border: 1px solid rgba(47,143,138,0.35);
+}
+
+.work-card--manual .work-btn {
+  background: linear-gradient(135deg, #2f8f8a, #38b2ac);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+/* ===== Pipeline Card ===== */
+
+.work-card--pipeline {
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* 企業サイトなので少し落ち着いた雰囲気 */
+.work-card--pipeline .work-skill {
+  background: #eef2f7;
+  color: #444;
+}
+
+/* PIPELINEボタン */
+.work-card--pipeline .work-btn {
+  background: linear-gradient(135deg,#222,#555);
+  color:#fff;
+}
+
+/* ホバー */
+.work-card--pipeline:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.14);
+}
