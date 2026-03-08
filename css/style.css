@@ -235,3 +235,7 @@ footer {
   transition: all 0.3s ease;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
+.work-card--pipeline .work-btn {
+  background: linear-gradient(135deg, #2f8f8a, #3bb7b1) !important;
+  color: #fff !important;
+}
