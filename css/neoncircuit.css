@@ -1,0 +1,387 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hero {
+  padding: 120px 20px;
+}
+
+.logo {
+  position: relative;
+  font-family: "マルモニカ";
+  font-size: 48px;
+  letter-spacing: 6px;
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+}
+
+.logo::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  color: #ff00ff;
+  opacity: 0.6;
+}
+
+.catch {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.debut {
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+.hero-sub {
+  margin-top: 12px;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #ff4df0;
+  text-shadow:
+    0 0 6px rgba(255, 77, 240, 0.6),
+    0 0 12px rgba(255, 77, 240, 0.3);
+}
+
+.main-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 26px;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  text-decoration: none;
+  font-family: "瀞ノグリッチ黒体";
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  background: #00ffff;
+  color: black;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+}
+
+.member-section,
+.concept,
+.news,
+.faq-section,
+.sns-section {
+  position: relative;
+  padding: 80px 20px;
+}
+
+.member-section::before,
+.concept::before,
+.news::before,
+.faq-section::before,
+.sns-section::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  margin: 0 auto 28px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.neon-title {
+  color: #00ffff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+  letter-spacing: 3px;
+}
+
+.system-title {
+  color: #00ffff;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+}
+
+/* 旧 idol-card */
+.idol-card {
+  max-width: 340px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid red;
+  background: #050505;
+  transition: 0.3s;
+}
+
+.idol-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 10px red,
+    0 0 20px red,
+    0 0 40px red;
+}
+
+.idol-card img {
+  width: 100%;
+  border-radius: 10px;
+  filter: contrast(110%) saturate(120%);
+}
+
+.idol-buttons {
+  margin-top: 20px;
+}
+
+.idol-buttons button {
+  padding: 10px 16px;
+  background: black;
+  color: white;
+  border: 1px solid cyan;
+  cursor: pointer;
+}
+
+/* 新しいメンバーカード一覧 */
+.member-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto 50px;
+}
+
+.member-card {
+  background: #111;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.35);
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+.member-card img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.member-card h3 {
+  margin: 10px 0 5px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.member-card p {
+  margin: 0;
+  color: #00ffff;
+  font-size: 14px;
+}
+
+/* メンバープロフィール表示 */
+.member-profile {
+  width: 900px;
+  max-width: 90%;
+  margin: 60px auto;
+  padding: 40px;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  gap: 40px;
+  align-items: center;
+}
+
+.member-image-area {
+  padding: 10px;
+  border: 2px solid #00ffff;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+  display: inline-block;
+}
+
+.member-image-area img {
+  width: 280px;
+  height: auto;
+  display: block;
+}
+
+.member-info {
+  max-width: 400px;
+}
+
+.member-buttons {
+  margin-top: 20px;
+}
+
+.member-buttons button {
+  padding: 10px 16px;
+  background: black;
+  color: white;
+  border: 1px solid cyan;
+  cursor: pointer;
+}
+
+/* NEWS */
+.news-card,
+.news-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-card {
+  border: 1px solid cyan;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.news-card::after,
+.news-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), transparent);
+  border-top-right-radius: 12px;
+}
+
+/* Return button */
+.return-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 26px;
+  color: #ff8fc7;
+  border: 1px solid #ff8fc7;
+  text-decoration: none;
+  background: black;
+  letter-spacing: 3px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.return-btn:hover {
+  background: #ff8fc7;
+  color: black;
+  box-shadow:
+    0 0 10px #ff8fc7,
+    0 0 20px #ff8fc7,
+    0 0 40px #ff8fc7;
+}
+
+.return-btn.is-jumping {
+  color: #ffffff;
+  border-color: #00e5ff;
+  background: #0a0a0a;
+  box-shadow:
+    0 0 12px #ff8fc7,
+    0 0 24px #00e5ff,
+    0 0 48px #ff8fc7;
+  transform: scale(1.04);
+}
+
+.return-flash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 143, 199, 0) 0%,
+      rgba(255, 143, 199, 0.10) 35%,
+      rgba(0, 229, 255, 0.16) 50%,
+      rgba(255, 143, 199, 0.10) 65%,
+      rgba(255, 143, 199, 0) 100%
+    );
+  mix-blend-mode: screen;
+}
+
+.return-flash.is-active {
+  animation: returnFlash 0.45s ease;
+}
+
+@keyframes returnFlash {
+  0% {
+    opacity: 0;
+    transform: translateX(-8%);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(8%);
+  }
+}
+
+/* TOP button */
+#top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 14px;
+  background: black;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  display: none;
+  cursor: pointer;
+}
+
+#top-btn:hover {
+  background: #00ffff;
+  color: black;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .member-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .member-profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .member-image-area img {
+    width: 220px;
+  }
+}
+
+@media (max-width: 500px) {
+  .member-list {
+    grid-template-columns: 1fr;
+  }
+}
