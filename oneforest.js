@@ -118,3 +118,44 @@ questions.forEach(function(question) {
     }
   });
 });
+const cyberLink = document.getElementById("cyber-link");
+
+if (cyberLink) {
+  const flash = document.createElement("div");
+  flash.className = "cyber-flash";
+  document.body.appendChild(flash);
+
+  cyberLink.addEventListener("click", function () {
+    const target = cyberLink.dataset.link;
+
+    cyberLink.classList.add("is-jumping");
+    flash.classList.remove("is-active");
+    void flash.offsetWidth;
+    flash.classList.add("is-active");
+
+    setTimeout(function () {
+      window.location.href = target;
+    }, 380);
+  });
+}
+const dots = document.querySelectorAll(".dot");
+
+function showIdol(index) {
+  idolName.textContent = idols[index].name;
+  idolProfile.textContent = idols[index].profile;
+  idolPhoto.src = idols[index].image;
+  idolPhoto.alt = idols[index].name;
+
+  dots.forEach(function(dot){
+    dot.classList.remove("active");
+  });
+
+  dots[index].classList.add("active");
+}
+
+dots.forEach(function(dot){
+  dot.addEventListener("click", function(){
+    currentIdol = Number(dot.dataset.index);
+    showIdol(currentIdol);
+  });
+});

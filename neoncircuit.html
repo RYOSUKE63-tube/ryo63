@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEON CIRCUIT</title>
+
+<link rel="stylesheet" href="css/neoncircuit.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<h1 class="logo" data-text="NEON CIRCUIT">
+NEON CIRCUTI
+</h1>
+
+<p class="catch">
+NEOTOKYO CYBER TRANCE IDOL
+</p>
+<p class="hero-sub">
+  SIGNAL THE FUTURE.
+</p>
+
+
+<p class="debut">
+2026.09.03 DUAL DEBUT
+</p>
+
+<a href="#member" class="main-btn">
+MEMBER
+</a>
+
+</header>
+
+
+<section id="member" class="member-section">
+  <h2 class="neon-title">MEMBER</h2>
+
+  <div class="member-list">
+  <div class="member-card" onclick="selectMember(1)">
+    <img src="image/neon2.jpg" alt="HARU">
+    <h3>HARU</h3>
+    <p>BLUE</p>
+  </div>
+
+  <div class="member-card" onclick="selectMember(2)">
+    <img src="image/neon3.jpg" alt="NOZOMI">
+    <h3>NOZOMI</h3>
+    <p>YELLOW</p>
+  </div>
+
+  <div class="member-card" onclick="selectMember(0)">
+    <img src="image/neon1.jpg" alt="RIO">
+    <h3>RIO</h3>
+    <p>RED</p>
+  </div>
+
+  <div class="member-card" onclick="selectMember(3)">
+    <img src="image/neon4.jpg" alt="RINO">
+    <h3>RINO</h3>
+    <p>GREEN</p>
+  </div>
+
+  <div class="member-card" onclick="selectMember(4)">
+    <img src="image/neon5.jpg" alt="AYAKA">
+    <h3>AYAKA</h3>
+    <p>PURPLE</p>
+  </div>
+</div>  <div id="loadingScreen">
+    <p id="loadingText">SYSTEM BOOTING...</p>
+  </div>
+
+  <div class="member-profile" id="memberProfile">
+    <div class="member-image-area">
+      <img id="memberImage" src="image/neon1.jpg" alt="RIO">
+    </div>
+
+    <div class="member-info">
+      <h1 class="system-title">SYSTEM PROFILE</h1>
+      <p id="memberId">NEON ID : 01</p>
+      <h2 id="memberName">RIO</h2>
+      <p id="memberColor">COLOR : RED</p>
+      <p id="memberRole">ROLE : CENTER</p>
+      <p id="memberAge">AGE : 22</p>
+      <p id="memberHeight">HEIGHT : 165cm</p>
+
+      <div class="member-buttons">
+        <button onclick="prevMember()">◀ PREV</button>
+        <button onclick="nextMember()">NEXT ▶</button>
+      </div>
+    </div>
+  </div>
+</section><section class="concept">
+
+<h2>CONCEPT</h2>
+
+<p>
+
+NEOTOKYOの夜に響く  
+サイバートランスサウンド
+
+</p>
+
+</section>
+
+<section class="news">
+
+<h2>NEWS</h2>
+
+<div class="news-card">
+
+<p>2026.09.03</p>
+<h3>NEON CIRCUIT DEBUT</h3>
+
+</div>
+<section class="sister-group">
+  <h2>SISTER GROUP</h2>
+  <p class="section-text">
+    Forest Entertainment 同時デビュープロジェクト
+  </p>
+
+  <a class="return-btn" id="return-link" data-link="oneforest.html">
+    BACK TO ONE FOREST MELODY
+  </a>
+</section>
+</section>
+
+<button id="top-btn">
+TOP
+</button>
+
+<script src="neoncircuit.js"></script>
+
+</body>
+</html>
