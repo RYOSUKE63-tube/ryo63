@@ -9,13 +9,29 @@ body {
     linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+.cyber-grid{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+
+  background-image:
+    linear-gradient(rgba(0,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.08) 1px, transparent 1px);
+
+  background-size:40px 40px;
+  z-index:-1;
+}
+
 
 .hero {
   padding: 120px 20px;
 }
-
 .logo {
   position: relative;
+  display: inline-block;
   font-family: "マルモニカ";
   font-size: 48px;
   letter-spacing: 6px;
@@ -30,12 +46,32 @@ body {
 .logo::after {
   content: attr(data-text);
   position: absolute;
-  left: 2px;
-  top: 2px;
+  top: 0;
+  left: 0;
   color: #ff00ff;
-  opacity: 0.6;
+  opacity: 0.65;
+  transform: translate(3px, 0);
+  pointer-events: none;
+  text-shadow:
+    0 0 5px #ff00ff,
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff;
 }
 
+.system-text{
+  font-size:14px;
+  letter-spacing:3px;
+  color:#00ffff;
+  margin-top:10px;
+
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink{
+  0%{opacity:1;}
+  50%{opacity:0.3;}
+  100%{opacity:1;}
+}
 .catch {
   margin-top: 20px;
   font-size: 18px;
@@ -74,6 +110,93 @@ body {
     0 0 10px #00ffff,
     0 0 20px #00ffff,
     0 0 40px #00ffff;
+}
+
+.news{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.news-list{
+  max-width:600px;
+  margin:auto;
+}
+
+.news-item{
+  border-bottom:1px solid #00ffff;
+  padding:15px 0;
+}
+
+.news-date{
+  color:#ff00ff;
+  font-size:14px;
+  margin-right:10px;
+}
+
+.music{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.music-card{
+  width:400px;
+  margin:auto;
+  padding:40px;
+
+  border:1px solid #00ffff;
+
+  box-shadow:
+  0 0 10px #00ffff,
+  0 0 30px #00ffff;
+}
+
+.music-btn{
+  margin-top:20px;
+  padding:12px 24px;
+
+  background:black;
+  color:#00ffff;
+
+  border:1px solid #00ffff;
+  cursor:pointer;
+}
+.music-title{
+  font-size:20px;
+  font-weight:bold;
+  margin:6px 0 12px;
+  color:#00ffff;
+  letter-spacing:1px;
+}
+.music-jacket{
+  width:100%;
+  max-width:300px;
+  height:auto;
+  display:block;
+  margin:0 auto 20px;
+}
+.world{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.world-card{
+  max-width:700px;
+  margin:0 auto;
+  padding:40px;
+
+  border:1px solid #00ffff;
+
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+
+  background:rgba(0,0,0,0.8);
+}
+
+.world-text{
+  line-height:1.8;
+  margin:16px 0;
+  color:#ccc;
 }
 
 .member-section,
@@ -124,7 +247,6 @@ body {
   margin: auto;
   padding: 30px;
   border-radius: 12px;
-  border: 2px solid red;
   background: #050505;
   transition: 0.3s;
 }
@@ -213,22 +335,24 @@ body {
   gap: 40px;
   align-items: center;
 }
+.member-image-area img{
+  width:280px;
+  height:auto;
+  display:block;
+  transition: transform 0.3s;
+}
 
-.member-image-area {
+.member-image-area img:hover{
+  transform: scale(1.05);
+}.member-image-area {
   padding: 10px;
-  border: 2px solid #00ffff;
+  border: none;
   box-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff;
+    0 0 20px rgba(0,255,255,0.6),
+    0 0 40px rgba(0,255,255,0.3);
   display: inline-block;
 }
 
-.member-image-area img {
-  width: 280px;
-  height: auto;
-  display: block;
-}
 
 .member-info {
   max-width: 400px;
@@ -361,7 +485,51 @@ body {
     0 0 10px #00ffff,
     0 0 20px #00ffff;
 }
+#photo{
+  width:300px;
+  border:none;
+  border-radius:10px;
+  box-shadow:0 0 20px rgba(255,0,80,0.6);
+}
+#photo:hover{
+  transform:scale(1.05);
+  transition:0.3s;
+}
+body{
+  animation: neonBg 6s ease-in-out infinite alternate;
+}
 
+@keyframes neonBg{
+  0%{
+    background-color:#05070d;
+  }
+  50%{
+    background-color:#0a0f1a;
+  }
+  100%{
+    background-color:#080611;
+  }
+}
+.music-btn{
+  margin-top:20px;
+  padding:12px 24px;
+  background:black;
+  color:#00ffff;
+  border:1px solid #00ffff;
+  cursor:pointer;
+
+  box-shadow:
+  0 0 10px #00ffff;
+}
+
+.music-btn:hover{
+  box-shadow:
+  0 0 10px #00ffff,
+  0 0 30px #00ffff;
+}
+audio{
+  display:none;
+}
 /* Responsive */
 @media (max-width: 900px) {
   .member-list {
