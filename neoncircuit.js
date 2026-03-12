@@ -100,10 +100,12 @@ function prevMember() {
   }
   showMember();
 }
+
 function selectMember(index) {
   current = index;
   showMember();
 }
+
 window.addEventListener("load", function () {
   const loadingText = document.getElementById("loadingText");
   const loadingScreen = document.getElementById("loadingScreen");
@@ -165,7 +167,23 @@ if (returnLink) {
     }, 380);
   });
 }
-const imageArea = document.querySelector(".member-image-area")
+setInterval(function () {
+  current++;
+  if (current >= members.length) {
+    current = 0;
+  }
+  showMember();
+}, 3000);
+function playMusic(){
+  const music = document.getElementById("neonMusic");
+  music.play();
+}
+function playMusic(){
+  const music = document.getElementById("neonMusic");
 
-imageArea.style.borderColor = members[current].color
-imageArea.style.boxShadow = `0 0 15px ${members[current].color}`
+  if(music.paused){
+    music.play();
+  }else{
+    music.pause();
+  }
+}
