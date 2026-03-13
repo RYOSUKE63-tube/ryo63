@@ -1,37 +1,60 @@
+/* ===== MEMBER DATA ===== */
+
 const idols = [
   {
     name: "リラ",
+    gummy: "ストロベリーグミ",
+    age: "22歳",
+    height: "160cm",
     profile: "世界をトリコにする絶対不動のセンター。",
     image: "image/image1.jpg"
   },
   {
     name: "ナミ",
-    profile: "メンバー最年長でリーダー。メンバーいわく、ど天然。",
+    gummy: "ラムネグミ",
+    age: "25歳",
+    height: "158cm",
+    profile: "グループ最年長でリーダー。メンバーいわく、ど天然。",
     image: "image/image2.jpg"
   },
   {
     name: "カレン",
-    profile: "ステージ上では大人っぽい表情を見せるが、楽屋ではいたずら好き。",
+    gummy: "オレンジグミ",
+    age: "21歳",
+    height: "159cm",
+    profile: "ステージ上では大人っぽい表情をみせるが楽屋ではイタズラ好き。",
     image: "image/image3.jpg"
   },
   {
     name: "ミフル",
-    profile: "メンバー1の歌唱力を持ち、カラオケでは100点を出したこともある。",
+    gummy: "メロングミ",
+    age: "24歳",
+    height: "162cm",
+    profile: "メンバー1の歌唱力をもつ、グループでは歌の女王。",
     image: "image/image4.jpg"
   },
   {
     name: "リン",
-    profile: "メンバー1の集中力を持ち、集中すると周りの音がまったく聞こえなくなる。",
+    gummy: "レモングミ",
+    age: "22歳",
+    height: "158cm",
+    profile: "グループ1の集中力を持つが集中しすぎて周りの音が聞こえなくなる。",
     image: "image/image5.jpg"
   },
   {
     name: "メグ",
-    profile: "メンバー1のダンススキルを持ち、楽曲の振り付けも担当する。",
+    gummy: "グレープグミ",
+    age: "21歳",
+    height: "158cm",
+    profile: "グループ1、ダンススキルがあり、楽曲の振付けも担当する。",
     image: "image/image6.jpg"
   },
   {
     name: "ミク",
-    profile: "メンバー最年少で甘えん坊。大好物はもも。",
+    gummy: "ピーチグミ",
+    age: "19歳",
+    height: "160cm",
+    profile: "グループ最年少で楽屋ではいつもメンバーに甘えている。",
     image: "image/image7.jpg"
   }
 ];
@@ -39,6 +62,7 @@ const idols = [
 let currentIdol = 0;
 
 const idolName = document.getElementById("idol-name");
+const idolData = document.getElementById("idol-data");
 const idolProfile = document.getElementById("idol-profile");
 const idolPhoto = document.getElementById("photo");
 
@@ -48,20 +72,31 @@ const prevIdolBtn = document.getElementById("prev-idol");
 const dots = document.querySelectorAll(".dot");
 
 /* ===== MEMBER表示 ===== */
+
 function showIdol(index) {
+
   idolName.textContent = idols[index].name;
+
+  idolData.textContent =
+    "GUMMY：" + idols[index].gummy +
+    " / AGE：" + idols[index].age +
+    " / HEIGHT：" + idols[index].height;
+
   idolProfile.textContent = idols[index].profile;
+
   idolPhoto.src = idols[index].image;
   idolPhoto.alt = idols[index].name;
 
   idolPhoto.classList.remove("fade-change");
   idolName.classList.remove("fade-change");
+  idolData.classList.remove("fade-change");
   idolProfile.classList.remove("fade-change");
 
   void idolPhoto.offsetWidth;
 
   idolPhoto.classList.add("fade-change");
   idolName.classList.add("fade-change");
+  idolData.classList.add("fade-change");
   idolProfile.classList.add("fade-change");
 
   dots.forEach(function(dot){
@@ -69,14 +104,16 @@ function showIdol(index) {
   });
 
   dots[index].classList.add("active");
+
 }
+
 /* ===== ボタン切替 ===== */
 
-nextIdolBtn.addEventListener("click", function() {
+nextIdolBtn.addEventListener("click", function(){
 
   currentIdol++;
 
-  if (currentIdol >= idols.length) {
+  if(currentIdol >= idols.length){
     currentIdol = 0;
   }
 
@@ -84,11 +121,11 @@ nextIdolBtn.addEventListener("click", function() {
 
 });
 
-prevIdolBtn.addEventListener("click", function() {
+prevIdolBtn.addEventListener("click", function(){
 
   currentIdol--;
 
-  if (currentIdol < 0) {
+  if(currentIdol < 0){
     currentIdol = idols.length - 1;
   }
 
@@ -112,17 +149,17 @@ dots.forEach(function(dot){
 
 /* ===== 自動切替 ===== */
 
-setInterval(function () {
+setInterval(function(){
 
   currentIdol++;
 
-  if (currentIdol >= idols.length) {
+  if(currentIdol >= idols.length){
     currentIdol = 0;
   }
 
   showIdol(currentIdol);
 
-}, 4000);
+},4000);
 
 
 /* ===== GALLERY ===== */
@@ -193,13 +230,13 @@ questions.forEach(function(question){
 
 const cyberLink = document.getElementById("cyber-link");
 
-if (cyberLink) {
+if(cyberLink){
 
   const flash = document.createElement("div");
   flash.className = "cyber-flash";
   document.body.appendChild(flash);
 
-  cyberLink.addEventListener("click", function () {
+  cyberLink.addEventListener("click", function(){
 
     const target = cyberLink.dataset.link;
 
@@ -209,11 +246,11 @@ if (cyberLink) {
     void flash.offsetWidth;
     flash.classList.add("is-active");
 
-    setTimeout(function () {
+    setTimeout(function(){
 
       window.location.href = target;
 
-    }, 380);
+    },380);
 
   });
 
