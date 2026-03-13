@@ -108,6 +108,11 @@ body{
   height: 500px;
   object-fit: cover;
   border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#photo:hover{
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
 #idol-name{
@@ -134,7 +139,12 @@ body{
   color: #fff;
   cursor: pointer;
 }
-
+#idol-data{
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
 /* ===== IDOL DOTS ===== */
 
 .idol-dots{
