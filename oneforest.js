@@ -41,17 +41,39 @@ let currentIdol = 0;
 const idolName = document.getElementById("idol-name");
 const idolProfile = document.getElementById("idol-profile");
 const idolPhoto = document.getElementById("photo");
+
 const nextIdolBtn = document.getElementById("next-idol");
 const prevIdolBtn = document.getElementById("prev-idol");
 
+const dots = document.querySelectorAll(".dot");
+
+/* ===== MEMBER表示 ===== */
 function showIdol(index) {
   idolName.textContent = idols[index].name;
   idolProfile.textContent = idols[index].profile;
   idolPhoto.src = idols[index].image;
   idolPhoto.alt = idols[index].name;
+
+  idolPhoto.classList.remove("fade-change");
+  idolName.classList.remove("fade-change");
+  idolProfile.classList.remove("fade-change");
+
+  void idolPhoto.offsetWidth;
+
+  idolPhoto.classList.add("fade-change");
+  idolName.classList.add("fade-change");
+  idolProfile.classList.add("fade-change");
+
+  dots.forEach(function(dot){
+    dot.classList.remove("active");
+  });
+
+  dots[index].classList.add("active");
 }
+/* ===== ボタン切替 ===== */
 
 nextIdolBtn.addEventListener("click", function() {
+
   currentIdol++;
 
   if (currentIdol >= idols.length) {
@@ -59,9 +81,11 @@ nextIdolBtn.addEventListener("click", function() {
   }
 
   showIdol(currentIdol);
+
 });
 
 prevIdolBtn.addEventListener("click", function() {
+
   currentIdol--;
 
   if (currentIdol < 0) {
@@ -69,7 +93,40 @@ prevIdolBtn.addEventListener("click", function() {
   }
 
   showIdol(currentIdol);
+
 });
+
+/* ===== ドット切替 ===== */
+
+dots.forEach(function(dot){
+
+  dot.addEventListener("click", function(){
+
+    currentIdol = Number(dot.dataset.index);
+
+    showIdol(currentIdol);
+
+  });
+
+});
+
+/* ===== 自動切替 ===== */
+
+setInterval(function () {
+
+  currentIdol++;
+
+  if (currentIdol >= idols.length) {
+    currentIdol = 0;
+  }
+
+  showIdol(currentIdol);
+
+}, 4000);
+
+
+/* ===== GALLERY ===== */
+
 const galleryImages = [
   "image/image1.jpg",
   "image/image2.jpg",
@@ -86,76 +143,93 @@ const galleryPhoto = document.getElementById("gallery-photo");
 const nextGalleryBtn = document.getElementById("next-gallery");
 const prevGalleryBtn = document.getElementById("prev-gallery");
 
-nextGalleryBtn.addEventListener("click", function() {
+nextGalleryBtn.addEventListener("click", function(){
+
   currentGallery++;
 
-  if (currentGallery >= galleryImages.length) {
+  if(currentGallery >= galleryImages.length){
     currentGallery = 0;
   }
 
   galleryPhoto.src = galleryImages[currentGallery];
+
 });
 
-prevGalleryBtn.addEventListener("click", function() {
+prevGalleryBtn.addEventListener("click", function(){
+
   currentGallery--;
 
-  if (currentGallery < 0) {
+  if(currentGallery < 0){
     currentGallery = galleryImages.length - 1;
   }
 
   galleryPhoto.src = galleryImages[currentGallery];
+
 });
+
+
+/* ===== FAQ ===== */
+
 const questions = document.querySelectorAll(".question");
 
-questions.forEach(function(question) {
-  question.addEventListener("click", function() {
+questions.forEach(function(question){
+
+  question.addEventListener("click", function(){
+
     const answer = question.nextElementSibling;
 
-    if (answer.style.display === "block") {
+    if(answer.style.display === "block"){
       answer.style.display = "none";
-    } else {
+    }else{
       answer.style.display = "block";
     }
+
   });
+
 });
+
+
+/* ===== NEONリンク演出 ===== */
+
 const cyberLink = document.getElementById("cyber-link");
 
 if (cyberLink) {
+
   const flash = document.createElement("div");
   flash.className = "cyber-flash";
   document.body.appendChild(flash);
 
   cyberLink.addEventListener("click", function () {
+
     const target = cyberLink.dataset.link;
 
     cyberLink.classList.add("is-jumping");
+
     flash.classList.remove("is-active");
     void flash.offsetWidth;
     flash.classList.add("is-active");
 
     setTimeout(function () {
+
       window.location.href = target;
+
     }, 380);
-  });
-}
-const dots = document.querySelectorAll(".dot");
 
-function showIdol(index) {
-  idolName.textContent = idols[index].name;
-  idolProfile.textContent = idols[index].profile;
-  idolPhoto.src = idols[index].image;
-  idolPhoto.alt = idols[index].name;
-
-  dots.forEach(function(dot){
-    dot.classList.remove("active");
   });
 
-  dots[index].classList.add("active");
 }
 
-dots.forEach(function(dot){
-  dot.addEventListener("click", function(){
-    currentIdol = Number(dot.dataset.index);
-    showIdol(currentIdol);
-  });
-});
+
+/* ===== MUSIC ===== */
+
+function playMusic(){
+
+  const music = document.getElementById("onefoMusic");
+
+  if(music.paused){
+    music.play();
+  }else{
+    music.pause();
+  }
+
+}

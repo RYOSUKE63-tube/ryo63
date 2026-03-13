@@ -7,23 +7,35 @@
   <link rel="stylesheet" href="css/oneforest.css">
 </head>
 <body>
+<header class="hero">
 
-  <header class="hero">
-    <img src="image/onefo2.jpg" alt="One Forest Melody ロゴ" class="hero-logo">
+  <img src="image/onefo2.jpg" alt="One Forest Melody ロゴ" class="hero-logo">
 
-    <h1>One Forest Melody</h1>
+  <!-- メンバー並び画像 -->
+ <img src="image/onefo1.jpg" alt="One Forest Melody メンバー集合ビジュアル" class="hero-members">
 
-    <p class="hero-copy">
-      7人で奏でる、ひとつのメロディー。
-    </p>
+  <h1>One Forest Melody</h1>
 
-    <p class="hero-date">
-      2026.09.03 Debut
-    </p>
+  <p class="hero-copy">
+    7人で奏でる、ひとつのメロディー。
+  </p>
 
+  <p class="hero-date">
+    2026.09.03 Debut
+  </p>
+
+  <p class="hero-catch">
+    Sweet Pop Idol Project
+  </p>
+
+  <div class="hero-buttons">
     <a href="#member" class="hero-btn">MEMBER</a>
-  </header>
-<section id="member" class="member-section">
+    <a href="#news" class="hero-btn">NEWS</a>
+    <a href="#music" class="hero-btn">MUSIC</a>
+  </div>
+
+</header>
+ <section id="member" class="member-section">
   <h2>MEMBER</h2>
   <p class="section-text">
     7人それぞれの個性が重なり、ひとつのメロディーになる。
@@ -66,33 +78,66 @@
     </div>
   </div>
 </section>
-<section class="news-section">
-  <h2>NEWS</h2>
-  <p class="section-text">
-    One Forest Melody の最新情報をお届けします。
-  </p>
+<section id="news" class="news-section">
+
+  <h2 class="section-title">NEWS</h2>
 
   <div class="news-list">
-    <article class="news-item">
-      <p class="news-date">2026.09.03</p>
-      <h3>One Forest Melody Debut</h3>
-      <p>1st Single「Forest Melody」配信スタート。</p>
-    </article>
 
-    <article class="news-item">
-      <p class="news-date">2026.08.20</p>
-      <h3>デビュービジュアル公開</h3>
-      <p>One Forest Melody の新ビジュアルを公開しました。</p>
-    </article>
+    <div class="news-item">
+      <span class="news-date">2026.09.03</span>
+      <p class="news-text">One Forest Melody デビュー決定</p>
+    </div>
 
-    <article class="news-item">
-      <p class="news-date">2026.08.10</p>
-      <h3>公式サイトオープン</h3>
-      <p>One Forest Melody の公式サイトがオープンしました。</p>
-    </article>
+    <div class="news-item">
+      <span class="news-date">2026.09.03</span>
+      <p class="news-text">NEON CIRCUIT と同時デビュー</p>
+    </div>
+
+    <div class="news-item">
+      <span class="news-date">2026.08.20</span>
+      <p class="news-text">デビュー曲「グミ恋物語」公開予定</p>
+    </div>
+
   </div>
+
+</section> <!-- NEWS終わり -->
+
+<section id="music" class="music-section">
+
+  <h2 class="section-title">MUSIC</h2>
+
+  <div class="music-card">
+
+    <img src="image/onefo3.jpg" alt="グミ恋物語 ジャケット" class="music-jacket">
+
+    <h3>1st SINGLE</h3>
+
+    <p class="music-title">
+      グミの恋物語
+    </p>
+
+    <p class="music-desc">
+      SWEET POP EDM PROJECT
+    </p>
+
+    <p class="music-release">
+      2026.09.03 RELEASE
+    </p>
+
+    <button class="music-btn" onclick="playMusic()">
+      ▶ PLAY DEMO
+    </button>
+
+    <audio id="onefoMusic">
+      <source src="music/gumikoi.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
 </section>
-<section class="faq-section">
+
+<section class="faq-section"><section class="faq-section">
   <h2>FAQ</h2>
   <p class="section-text">
     One Forest Melody に関するよくある質問をまとめました。
