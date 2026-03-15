@@ -1,0 +1,366 @@
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(5, 8, 20, 0.82), rgba(5, 8, 20, 0.92)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,255,255,0.04),
+      rgba(0,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,0,200,0.035),
+      rgba(255,0,200,0.035) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  color: #f4f7ff;
+  line-height: 1.7;
+}
+
+/* =========================
+   LOGIN SCREEN
+========================= */
+
+#gate-login-screen{
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+#gate-login-screen.hide{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.gate-login-box{
+  text-align: center;
+}
+
+.gate-login-text{
+  font-size: 30px;
+  color: #00eaff;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 6px #00eaff,
+    0 0 16px #00eaff,
+    0 0 30px #00eaff;
+  animation: blink 1.2s infinite;
+}
+
+.gate-login-sub{
+  margin-top: 12px;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.gate-loading-bar{
+  width: 240px;
+  height: 4px;
+  background: #111;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.gate-loading-progress{
+  height: 100%;
+  width: 0%;
+  background: #00eaff;
+  animation: loading 3s linear forwards;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.gate-hero{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.gate-hero-image{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.gate-hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.7));
+}
+
+.gate-hero-overlay{
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 40px 20px;
+}
+
+.gate-sub{
+  margin: 0 0 12px;
+  color: #8fe9ff;
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+
+.gate-hero h1{
+  margin: 0 0 16px;
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-shadow:
+    0 0 6px #00eaff,
+    0 0 14px #00eaff,
+    0 0 28px #ff4fd8;
+  animation: gateFlicker 2.8s infinite;
+}
+
+.gate-copy{
+  margin: 0 0 16px;
+  font-size: 22px;
+  color: #ff87da;
+  letter-spacing: 2px;
+}
+
+.gate-text{
+  max-width: 700px;
+  margin: 0 auto 28px;
+  color: #d9e7ff;
+}
+
+.gate-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.gate-btn,
+.gate-next-btn{
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #00eaff;
+  color: #00eaff;
+  text-decoration: none;
+  background: rgba(0,0,0,0.35);
+  border-radius: 999px;
+  transition: 0.3s;
+  box-shadow: 0 0 12px rgba(0,234,255,0.18);
+}
+
+.gate-btn:hover,
+.gate-next-btn:hover{
+  background: #00eaff;
+  color: #0d1020;
+  box-shadow:
+    0 0 10px #00eaff,
+    0 0 24px #00eaff;
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.section-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title{
+  font-size: 34px;
+  margin: 0 0 22px;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   GATE SYSTEM
+========================= */
+
+.gate-system-section,
+.gate-flow-section,
+.gate-access-section{
+  padding: 90px 20px;
+}
+
+.gate-system-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.gate-system-card{
+  background: rgba(10,14,26,0.9);
+  border: 1px solid rgba(0,255,255,0.28);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow:
+    0 0 10px rgba(0,255,255,0.08),
+    inset 0 0 10px rgba(255,0,200,0.04);
+}
+
+.gate-system-card h3{
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.gate-system-card p{
+  margin: 0;
+  color: #c9d4f0;
+}
+
+/* =========================
+   ACCESS FLOW
+========================= */
+
+.gate-flow-list{
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.gate-flow-item{
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.gate-flow-item h3{
+  margin: 0 0 8px;
+}
+
+.gate-flow-item p{
+  margin: 0;
+  color: #d1daf2;
+}
+
+.gate-step{
+  min-width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4fd8, #00eaff);
+  color: #10131f;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   NEXT ACCESS
+========================= */
+
+.gate-access-box{
+  max-width: 700px;
+  margin: 28px auto 0;
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.gate-access-copy{
+  margin: 0 0 20px;
+  color: #dce5ff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+  padding: 30px 20px 50px;
+  text-align: center;
+  color: #90a0c8;
+  font-size: 14px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes loading{
+  0%{width: 0%;}
+  100%{width: 100%;}
+}
+
+@keyframes blink{
+  0%,100%{opacity: 1;}
+  50%{opacity: 0.5;}
+}
+
+@keyframes gateFlicker{
+  0%, 18%, 22%, 25%, 53%, 57%, 100%{
+    opacity: 1;
+    text-shadow:
+      0 0 6px #00eaff,
+      0 0 12px #00eaff,
+      0 0 24px #00eaff,
+      0 0 36px #ff4fd8;
+  }
+
+  20%, 24%, 55%{
+    opacity: 0.75;
+    text-shadow:
+      0 0 2px #00eaff,
+      0 0 6px #00eaff,
+      0 0 10px #ff4fd8;
+  }
+
+  21%, 56%{
+    opacity: 0.35;
+    text-shadow:
+      0 0 1px #00eaff;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+  .gate-hero h1{
+    font-size: 38px;
+  }
+
+  .gate-copy{
+    font-size: 18px;
+  }
+
+  .gate-flow-item{
+    flex-direction: column;
+  }
+
+  .gate-login-text{
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER LIVE ARENA</title>
+  <link rel="stylesheet" href="css/cyber-live.css">
+</head>
+<body>
+
+  <div id="login-screen">
+    <div class="login-box">
+      <p class="login-text" id="live-status">CONNECTING...</p>
+
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+
+      <p class="login-sub">ACCESSING CYBER LIVE ARENA</p>
+    </div>
+  </div>
+
+  <header class="live-hero">
+
+    <img src="image/cyber-live.jpg" alt="CYBER LIVE ARENA" class="hero-logo">
+    <div class="laser laser-left"></div>
+<div class="laser laser-right"></div>
+<div class="crowd-lights">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+<div class="sound-bars">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+
+
+    <div class="live-hero-overlay">
+      <p class="live-sub">DIGITAL PERFORMANCE ZONE</p>
+      <p class="live-now">LIVE NOW</p>
+      <h1>CYBER LIVE ARENA</h1>
+      <p class="live-copy">THE SOUND OF NEOTOKYO</p>
+      <p class="live-text">
+        電脳都市の中心に存在する CYBER LIVE ARENA。<br>
+        夜になると、NEON CIRCUIT のライブがここで起動する。
+      </p>
+      <a href="cyber.html" class="live-nav-btn">BACK TO PARK</a>
+    </div>
+  </header>
+
+  <section class="live-info-section">
+    <div class="section-inner">
+      <h2 class="section-title">STAGE SYSTEM</h2>
+
+      <div class="live-info-grid">
+        <div class="live-info-card">
+          <h3>HOLOGRAM SCREEN</h3>
+          <p>360°ホログラムスクリーンがステージ全体を包み込む。</p>
+        </div>
+
+        <div class="live-info-card">
+          <h3>LASER SYSTEM</h3>
+          <p>レーザーとネオンラインが電脳ライブ空間を形成する。</p>
+        </div>
+
+        <div class="live-info-card">
+          <h3>DRONE CAMERA</h3>
+          <p>空中を飛ぶドローンがライブパフォーマンスを記録。</p>
+        </div>
+
+        <div class="live-info-card">
+          <h3>AVATAR CROWD</h3>
+          <p>観客はアバターとして接続し、電脳空間でライブを体感する。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="live-schedule-section">
+    <div class="section-inner">
+      <h2 class="section-title">LIVE SCHEDULE</h2>
+
+      <div class="schedule-box">
+        <div class="schedule-item">
+          <span class="schedule-time">19:00</span>
+          <p>CYBER GATE OPEN</p>
+        </div>
+
+        <div class="schedule-item">
+          <span class="schedule-time">20:00</span>
+          <p>NEON CIRCUIT LIVE START</p>
+        </div>
+
+        <div class="schedule-item">
+          <span class="schedule-time">21:30</span>
+          <p>DIGITAL AFTER SESSION</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="live-artist-section">
+    <div class="section-inner">
+      <h2 class="section-title">ARTIST</h2>
+
+      <div class="artist-card">
+        <h3>NEON CIRCUIT</h3>
+        <p class="artist-copy">NEOTOKYO CYBER IDOL PROJECT</p>
+        <p class="artist-text">
+          電脳都市の夜を照らす、5人組サイバートランスアイドル。<br>
+          CYBER LIVE ARENA にて、毎夜ライブを行う。
+        </p>
+
+        <a href="neoncircuit.html" class="live-btn">ENTER NEON CIRCUIT</a>
+      </div>
+    </div>
+  </section>
+ <footer class="site-footer">
+    <p>© 2026 CYBER LIVE ARENA</p>
+  </footer>
+<audio id="liveMusic" loop>
+  <source src="music/neon-live.mp3" type="audio/mpeg">
+</audio>
+
+<button id="livePlayBtn" class="live-music-btn">▶ PLAY SOUND</button>
+
+  <script src="cyber-live.js"></script>
+</body>
+</html>
