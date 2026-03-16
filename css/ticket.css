@@ -136,30 +136,16 @@ header{
   text-shadow:0 0 15px #00f7ff;
 }
 
-.ticket-carousel{
-  overflow:hidden;
-  width:100%;
-  margin-top:20px;
-  position:relative;
-}
-
-.ticket-track{
-  display:flex;
-  gap:40px;
+.ticket-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(220px, 1fr));
+  gap:32px;
   align-items:stretch;
-  width:max-content;
-  animation:ticket-scroll 24s linear infinite;
-}
-
-.ticket-track:hover{
-  animation-play-state:paused;
 }
 
 .ticket-card{
   position:relative;
   overflow:hidden;
-  min-width:240px;
-  flex:0 0 240px;
   padding:18px;
   border-radius:16px;
   background:linear-gradient(
@@ -178,7 +164,7 @@ header{
     translateY(-14px)
     rotateX(6deg)
     rotateY(-4deg)
-    scale(1.05);
+    scale(1.03);
   box-shadow:
     0 10px 40px rgba(0,255,255,0.25),
     0 0 60px rgba(255,0,255,0.15);
@@ -272,12 +258,19 @@ header{
   color:#08101d;
   font-weight:bold;
   cursor:pointer;
-  pointer-events:auto;
   transition:0.25s;
 }
 
 .ticket-card button:hover{
   transform:scale(1.03);
+}
+
+.year-pass-card{
+  grid-column:2 / 4;
+  border-color:rgba(255,79,216,0.35);
+  box-shadow:
+    0 0 30px rgba(255,79,216,0.12),
+    0 0 50px rgba(0,255,255,0.08);
 }
 
 .ticket-selected-section{
@@ -316,6 +309,66 @@ header{
 #selected-price{
   font-size:1.4rem;
   font-weight:bold;
+}
+
+.ticket-generate{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:rgba(5,8,20,0.96);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:998;
+}
+
+.ticket-generate.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.generate-box{
+  text-align:center;
+  padding:40px 60px;
+  background:#08101d;
+  border-radius:12px;
+  border:1px solid rgba(0,255,255,.3);
+  box-shadow:0 0 40px rgba(0,255,255,.4);
+}
+
+.generated-ticket{
+  margin:20px 0;
+  padding:20px;
+  border:1px solid rgba(0,255,255,.2);
+  border-radius:10px;
+  background:rgba(255,255,255,0.02);
+}
+
+.generated-ticket p{
+  margin:6px 0;
+}
+
+.qr-code img{
+  display:block;
+  width:120px;
+  height:auto;
+  margin:10px auto 0;
+}
+
+#enterGateBtn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:linear-gradient(90deg,#00f7ff,#ff4fd8);
+  border:none;
+  border-radius:6px;
+  color:#08101d;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .scan-screen{
@@ -418,21 +471,22 @@ footer{
   border-top:1px solid rgba(0,255,255,0.2);
 }
 
-@keyframes ticket-scroll{
-  0%{
-    transform:translateX(0);
-  }
-  100%{
-    transform:translateX(calc(-50% - 20px));
-  }
-}
-
 @keyframes holo{
   0%{
     transform:rotate(25deg) translateX(-30%);
   }
   100%{
     transform:rotate(25deg) translateX(30%);
+  }
+}
+
+@media (max-width:900px){
+  .ticket-grid{
+    grid-template-columns:repeat(2, minmax(220px, 1fr));
+  }
+
+  .year-pass-card{
+    grid-column:auto;
   }
 }
 
@@ -449,9 +503,12 @@ footer{
     grid-column:1;
   }
 
-  .ticket-card{
-    min-width:200px;
-    flex:0 0 200px;
+  .ticket-grid{
+    grid-template-columns:1fr;
+  }
+
+  .year-pass-card{
+    grid-column:auto;
   }
 
   .gate-box{
@@ -459,103 +516,12 @@ footer{
     width:90%;
   }
 
+  .generate-box{
+    padding:30px 24px;
+    width:90%;
+  }
+
   .scan-bar{
     width:100%;
   }
-}
-/* ======================
-   TICKET GENERATE
-====================== */
-
-.ticket-generate{
-
-position:fixed;
-top:0;
-left:0;
-
-width:100%;
-height:100vh;
-
-background:rgba(5,8,20,0.96);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-opacity:0;
-pointer-events:none;
-
-transition:.3s;
-
-z-index:998;
-}
-
-.ticket-generate.active{
-
-opacity:1;
-pointer-events:auto;
-
-}
-
-.generate-box{
-
-text-align:center;
-
-padding:40px 60px;
-
-background:#08101d;
-
-border-radius:12px;
-
-border:1px solid rgba(0,255,255,.3);
-
-box-shadow:0 0 40px rgba(0,255,255,.4);
-
-}
-
-.generated-ticket{
-
-margin:20px 0;
-
-padding:20px;
-
-border:1px solid rgba(0,255,255,.2);
-
-border-radius:10px;
-
-background:rgba(255,255,255,0.02);
-
-}
-
-.generated-ticket p{
-
-margin:6px 0;
-
-}
-
-.qr-code img{
-
-width:120px;
-margin-top:10px;
-
-}
-
-#enterGateBtn{
-
-margin-top:20px;
-
-padding:10px 20px;
-
-background:linear-gradient(90deg,#00f7ff,#ff4fd8);
-
-border:none;
-
-border-radius:6px;
-
-color:#08101d;
-
-font-weight:bold;
-
-cursor:pointer;
-
 }
