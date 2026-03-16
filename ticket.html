@@ -63,75 +63,48 @@
     <div class="container">
       <h2 class="ticket-title">DIGITAL ACCESS TICKETS</h2>
 
-      <div class="ticket-carousel">
-        <div class="ticket-track">
+      <div class="ticket-grid">
 
-          <div class="ticket-card">
-            <img src="image/ticket-s.jpg" alt="RANK S チケット">
-            <p class="price">¥12,000</p>
-            <button type="button" class="select-btn" data-rank="RANK S" data-name="NEO ELITE" data-price="¥12,000">
-              ELITE PASS
-            </button>
-          </div>
-
-          <div class="ticket-card">
-            <img src="image/ticket-a.jpg" alt="RANK A チケット">
-            <p class="price">¥7,800</p>
-            <button type="button" class="select-btn" data-rank="RANK A" data-name="LIVE ACCESS" data-price="¥7,800">
-              BUY ACCESS
-            </button>
-          </div>
-
-          <div class="ticket-card">
-            <img src="image/ticket-b.jpg" alt="RANK B チケット">
-            <p class="price">¥5,800</p>
-            <button type="button" class="select-btn" data-rank="RANK B" data-name="EXPERIENCE" data-price="¥5,800">
-              BUY ACCESS
-            </button>
-          </div>
-
-          <div class="ticket-card">
-            <img src="image/ticket-c.jpg" alt="RANK C チケット">
-            <p class="price">¥3,800</p>
-            <button type="button" class="select-btn" data-rank="RANK C" data-name="CITY ENTRY" data-price="¥3,800">
-              BUY ACCESS
-            </button>
-          </div>
-
-          <!-- ループ用コピー -->
-          <div class="ticket-card">
-            <img src="image/ticket-s.jpg" alt="RANK S チケット">
-            <p class="price">¥12,000</p>
-            <button type="button" class="select-btn" data-rank="RANK S" data-name="NEO ELITE" data-price="¥12,000">
-              ELITE PASS
-            </button>
-          </div>
-
-          <div class="ticket-card">
-            <img src="image/ticket-a.jpg" alt="RANK A チケット">
-            <p class="price">¥7,800</p>
-            <button type="button" class="select-btn" data-rank="RANK A" data-name="LIVE ACCESS" data-price="¥7,800">
-              BUY ACCESS
-            </button>
-          </div>
-
-          <div class="ticket-card">
-            <img src="image/ticket-b.jpg" alt="RANK B チケット">
-            <p class="price">¥5,800</p>
-            <button type="button" class="select-btn" data-rank="RANK B" data-name="EXPERIENCE" data-price="¥5,800">
-              BUY ACCESS
-            </button>
-          </div>
-
-          <div class="ticket-card">
-            <img src="image/ticket-c.jpg" alt="RANK C チケット">
-            <p class="price">¥3,800</p>
-            <button type="button" class="select-btn" data-rank="RANK C" data-name="CITY ENTRY" data-price="¥3,800">
-              BUY ACCESS
-            </button>
-          </div>
-
+        <div class="ticket-card">
+          <img src="image/ticket-s.jpg" alt="RANK S チケット">
+          <p class="price">¥12,000</p>
+          <button type="button" class="select-btn" data-rank="RANK S" data-name="NEO ELITE" data-price="¥12,000">
+            ELITE PASS
+          </button>
         </div>
+
+        <div class="ticket-card">
+          <img src="image/ticket-a.jpg" alt="RANK A チケット">
+          <p class="price">¥7,800</p>
+          <button type="button" class="select-btn" data-rank="RANK A" data-name="LIVE ACCESS" data-price="¥7,800">
+            BUY ACCESS
+          </button>
+        </div>
+
+        <div class="ticket-card">
+          <img src="image/ticket-b.jpg" alt="RANK B チケット">
+          <p class="price">¥5,800</p>
+          <button type="button" class="select-btn" data-rank="RANK B" data-name="EXPERIENCE" data-price="¥5,800">
+            BUY ACCESS
+          </button>
+        </div>
+
+        <div class="ticket-card">
+          <img src="image/ticket-c.jpg" alt="RANK C チケット">
+          <p class="price">¥3,800</p>
+          <button type="button" class="select-btn" data-rank="RANK C" data-name="CITY ENTRY" data-price="¥3,800">
+            BUY ACCESS
+          </button>
+        </div>
+
+        <div class="ticket-card year-pass-card">
+          <img src="image/ticket-s.jpg" alt="YEAR PASS チケット">
+          <p class="price">¥59,800</p>
+          <button type="button" class="select-btn" data-rank="YEAR PASS" data-name="VR ACCESS MEMBER" data-price="¥59,800">
+            YEAR PASS
+          </button>
+        </div>
+
       </div>
     </div>
   </section>
@@ -139,6 +112,7 @@
   <section class="ticket-selected-section">
     <div class="container">
       <h2 class="selected-title">SELECTED TICKET</h2>
+
       <div class="selected-box">
         <p id="selected-rank">RANK -</p>
         <p id="selected-name">TICKET NAME</p>
@@ -152,29 +126,25 @@
       <p>© NEO CYBER TOKYO PARK</p>
     </div>
   </footer>
-<div class="ticket-generate" id="ticketGenerate">
 
-  <div class="generate-box">
+  <div class="ticket-generate" id="ticketGenerate">
+    <div class="generate-box">
+      <h2>DIGITAL TICKET GENERATED</h2>
 
-    <h2>DIGITAL TICKET GENERATED</h2>
+      <div class="generated-ticket">
+        <p id="gen-rank">RANK</p>
+        <p id="gen-name">TICKET</p>
+        <p id="gen-price">PRICE</p>
 
-    <div class="generated-ticket">
-
-      <p id="gen-rank">RANK</p>
-      <p id="gen-name">TICKET</p>
-      <p id="gen-price">PRICE</p>
-
-      <div class="qr-code">
-        <img src="image/ticket-qr.jpg" alt="QR CODE">
+        <div class="qr-code">
+          <img src="image/ticket-qr.jpg" alt="QR CODE">
+        </div>
       </div>
 
+      <button type="button" id="enterGateBtn">ENTER GATE</button>
     </div>
-
-    <button id="enterGateBtn">ENTER GATE</button>
-
   </div>
 
-</div>
   <div class="scan-screen" id="scanScreen">
     <div class="gate-box">
       <h2>AI GATE AUTHENTICATION</h2>

@@ -3,7 +3,6 @@ window.addEventListener("load", function () {
   const selectedRank = document.getElementById("selected-rank");
   const selectedName = document.getElementById("selected-name");
   const selectedPrice = document.getElementById("selected-price");
-  const selectedSection = document.querySelector(".ticket-selected-section");
 
   const cards = document.querySelectorAll(".ticket-card");
 
@@ -13,9 +12,9 @@ window.addEventListener("load", function () {
   const genPrice = document.getElementById("gen-price");
   const enterGateBtn = document.getElementById("enterGateBtn");
 
-  const screen = document.getElementById("scanScreen");
-  const progress = document.getElementById("scanProgress");
-  const result = document.getElementById("scanResult");
+  const scanScreen = document.getElementById("scanScreen");
+  const scanProgress = document.getElementById("scanProgress");
+  const scanResult = document.getElementById("scanResult");
   const gate = document.querySelector(".gate");
 
   cards.forEach(function (card) {
@@ -45,25 +44,33 @@ window.addEventListener("load", function () {
         card.classList.add("active");
       }
 
-      if (selectedRank) selectedRank.textContent = rank;
-      if (selectedName) selectedName.textContent = name;
-      if (selectedPrice) selectedPrice.textContent = price;
-
-      if (genRank) genRank.textContent = rank;
-      if (genName) genName.textContent = name;
-      if (genPrice) genPrice.textContent = price;
-
-      if (selectedSection) {
-        selectedSection.scrollIntoView({
-          behavior: "smooth"
-        });
+      if (selectedRank) {
+        selectedRank.textContent = rank;
       }
 
-      setTimeout(function () {
-        if (generateScreen) {
-          generateScreen.classList.add("active");
-        }
-      }, 500);
+      if (selectedName) {
+        selectedName.textContent = name;
+      }
+
+      if (selectedPrice) {
+        selectedPrice.textContent = price;
+      }
+
+      if (genRank) {
+        genRank.textContent = rank;
+      }
+
+      if (genName) {
+        genName.textContent = name;
+      }
+
+      if (genPrice) {
+        genPrice.textContent = price;
+      }
+
+      if (generateScreen) {
+        generateScreen.classList.add("active");
+      }
     });
   });
 
@@ -73,32 +80,38 @@ window.addEventListener("load", function () {
         generateScreen.classList.remove("active");
       }
 
-      if (!screen || !progress || !result) return;
+      if (!scanScreen || !scanProgress || !scanResult) {
+        return;
+      }
 
-      screen.classList.add("active");
-      result.textContent = "";
-      progress.style.width = "0%";
+      scanScreen.classList.add("active");
+      scanResult.textContent = "";
+      scanProgress.style.width = "0%";
 
       if (gate) {
         gate.classList.remove("open");
       }
 
       setTimeout(function () {
-        progress.style.width = "100%";
+        scanProgress.style.width = "100%";
       }, 100);
 
       setTimeout(function () {
-        result.textContent = "ACCESS GRANTED";
+        scanResult.textContent = "ACCESS GRANTED";
+
         if (gate) {
           gate.classList.add("open");
         }
       }, 2000);
 
       setTimeout(function () {
-        screen.classList.remove("active");
+        scanScreen.classList.remove("active");
+
         if (gate) {
           gate.classList.remove("open");
         }
+
+        scanProgress.style.width = "0%";
       }, 4000);
     });
   }
