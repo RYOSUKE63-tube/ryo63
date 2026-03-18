@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEO TOKYO CITY</title>
+  <link rel="stylesheet" href="css/neotokyo.css">
+</head>
+<body class="theme-default">
+
+  <audio id="clickSound" src="audio/click.mp3"></audio>
+  <audio id="bootSound" src="audio/boot.mp3"></audio>
+  <audio id="alertSound" src="audio/alert.mp3"></audio>
+  <audio id="heartbeat" src="audio/heartbeat.mp3" loop></audio>
+
+  <!-- 認証画面 -->
+  <section id="authScreen" class="screen active auth-screen">
+    <div class="auth-card">
+      <p class="mini-label">NEO AI ACCESS PORTAL</p>
+      <h1>NEO TOKYO CITY</h1>
+      <p class="auth-copy">
+        都市接続には認証が必要です。<br>
+        未認証ユーザーの行動は記録されます。
+      </p>
+
+      <div class="form-group">
+        <label for="userId">IDENTITY ID</label>
+        <input type="text" id="userId" placeholder="例：CITIZEN-205 / GUEST-01">
+      </div>
+
+      <div class="form-group">
+        <label for="authCode">AUTH CODE</label>
+        <input type="password" id="authCode" placeholder="NEO AI">
+      </div>
+
+      <button id="authBtn" class="neo-btn">認証開始</button>
+      <p id="authMessage" class="auth-message">待機中...</p>
+    </div>
+  </section>
+
+  <!-- MAP画面 -->
+  <section id="mapScreen" class="screen map-screen">
+    <div class="noise"></div>
+    <div class="scanlines"></div>
+
+    <div class="map-header">
+      <h1>NEO TOKYO MAP</h1>
+      <div class="hud">
+        <span id="rankDisplay">RANK : GUEST</span>
+        <span id="stressDisplay">STRESS : 0%</span>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <img src="image/neotokyo-map.jpg" class="map-image" alt="NEO TOKYO MAP">
+
+      <!-- ホログラムリング -->
+      <div class="ring-overlay ring-outer"></div>
+      <div class="ring-overlay ring-inner"></div>
+      <div class="ring-scan"></div>
+
+      <!-- ルート -->
+      <div class="map-line line-core-upper" id="lineCoreUpper"></div>
+      <div class="map-line line-upper-gate" id="lineUpperGate"></div>
+      <div class="map-line line-upper-d4" id="lineUpperD4"></div>
+      <div class="map-line line-upper-d5" id="lineUpperD5"></div>
+      <div class="map-line line-upper-d6" id="lineUpperD6"></div>
+      <div class="map-line line-outside" id="lineOutside"></div>
+
+      <!-- ノード -->
+      <button class="map-node node-core" data-district="1">第1管区</button>
+      <button class="map-node node-upper" data-district="2">第2管区</button>
+      <button class="map-node node-gate" data-district="3">第3管区</button>
+      <button class="map-node node-d4" data-district="4">第4管区</button>
+      <button class="map-node node-d5" data-district="5">第5管区</button>
+      <button class="map-node node-d6" data-district="6">第6管区</button>
+      <button class="map-node node-slum" id="slumBtn">SLUM</button>
+    </div>
+
+    <div class="ai-console">
+      <p id="aiText">NEO AI 起動中...</p>
+    </div>
+  </section>
+
+  <!-- 管区表示画面 -->
+  <section id="districtScreen" class="screen district-screen">
+    <div class="noise"></div>
+    <div class="scanlines"></div>
+
+    <div class="district-header">
+      <button id="backToMapBtn" class="neo-btn small">MAPへ戻る</button>
+      <div class="hud">
+        <span id="rankDisplay2">RANK : GUEST</span>
+        <span id="stressDisplay2">STRESS : 0%</span>
+      </div>
+    </div>
+
+    <img id="districtImage" src="image/neotokyo-1.jpg" class="district-image" alt="district image">
+
+    <div class="district-overlay">
+      <h2 id="districtTitle">第1管区</h2>
+      <p id="districtDesc">制限区域です。</p>
+    </div>
+
+    <div class="ai-console">
+      <p id="aiText2">区域情報を投影します。</p>
+    </div>
+  </section>
+
+  <!-- スラム用グリッチ -->
+  <div id="slumGlitch" class="slum-glitch hidden">
+    <div class="slum-glitch-inner">
+      <p class="mini-label">UNAUTHORIZED SIGNAL</p>
+      <h2>NO DISTRICT LINK</h2>
+      <p id="slumGlitchText">下層スラムは管理対象外です。接続は維持できません。</p>
+    </div>
+  </div>
+
+  <script src="neotokyo.js"></script>
+</body>
+</html>
