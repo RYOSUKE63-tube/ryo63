@@ -41,30 +41,54 @@ const lineOutside = document.getElementById("lineOutside");
 let currentRank = DEV_MODE ? DEV_RANK : (localStorage.getItem("rank") || null);
 let stress = DEV_MODE ? 0 : (Number(localStorage.getItem("stress")) || 0);
 let voiceEnabled = true;
+let speechUnlocked = false;
 
 /* =========================
-   音声読み上げ
+   音声読み上げ（スマホ安定版）
 ========================= */
+function unlockSpeech() {
+  if (speechUnlocked) return;
+  if (!("speechSynthesis" in window)) return;
+
+  const synth = window.speechSynthesis;
+  synth.cancel();
+
+  try {
+    const utter = new SpeechSynthesisUtterance("");
+    utter.volume = 0;
+    utter.lang = "ja-JP";
+    synth.speak(utter);
+    speechUnlocked = true;
+  } catch (e) {
+    console.log("speech unlock failed", e);
+  }
+}
+
 function speak(text) {
   if (!voiceEnabled) return;
   if (!("speechSynthesis" in window)) return;
 
-  window.speechSynthesis.cancel();
+  const synth = window.speechSynthesis;
+  synth.cancel();
 
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = "ja-JP";
   utter.rate = 0.88;
-  utter.pitch = 1.15;
+  utter.pitch = 1.05;
   utter.volume = 1;
 
-  const voices = window.speechSynthesis.getVoices();
+  const voices = synth.getVoices();
   const jpVoice =
-    voices.find(v => v.lang === "ja-JP" && /kyoko|haruka|sakura|female|woman/i.test(v.name)) ||
-    voices.find(v => v.lang === "ja-JP");
+    voices.find(v => v.lang && v.lang.toLowerCase().startsWith("ja")) || null;
 
-  if (jpVoice) utter.voice = jpVoice;
+  if (jpVoice) {
+    utter.voice = jpVoice;
+  }
 
-  window.speechSynthesis.speak(utter);
+  // Safari / iPhone対策
+  setTimeout(() => {
+    synth.speak(utter);
+  }, 180);
 }
 
 window.speechSynthesis?.addEventListener?.("voiceschanged", () => {});
@@ -93,7 +117,7 @@ function showScreen(screen) {
   screen.classList.add("active");
 }
 
-function typeMessage(target, text, speed = 20, withVoice = false) {
+function typeMessage(target, text, speed = 20) {
   if (!target) return;
 
   target.textContent = "";
@@ -104,7 +128,6 @@ function typeMessage(target, text, speed = 20, withVoice = false) {
     i++;
     if (i >= text.length) {
       clearInterval(timer);
-      if (withVoice) speak(text);
     }
   }, speed);
 }
@@ -215,12 +238,12 @@ function triggerSlumGlitch() {
     slumGlitch.classList.remove("hidden");
   }
 
-  typeMessage(
-    aiText,
-    "警告。下層スラムは管理対象外区域です。接続を遮断します。",
-    18,
-    true
-  );
+  const slumMessage = "警告。下層スラムは管理対象外区域です。接続を遮断します。";
+  typeMessage(aiText, slumMessage, 18);
+
+  setTimeout(() => {
+    speak(slumMessage);
+  }, 280);
 
   setTimeout(() => {
     if (slumGlitch) {
@@ -294,7 +317,13 @@ const districtData = {
 function accessDistrict(num) {
   if (!DEV_MODE && !accessControl[num].includes(currentRank)) {
     playSound(alertSound);
-    typeMessage(aiText, "現在のランクでは接続できません", 20, true);
+    const denyMessage = "現在のランクでは接続できません";
+    typeMessage(aiText, denyMessage, 20);
+
+    setTimeout(() => {
+      speak(denyMessage);
+    }, 260);
+
     increaseStress(10);
     return;
   }
@@ -314,7 +343,12 @@ function accessDistrict(num) {
   if (districtTitle) districtTitle.textContent = data.title;
   if (districtDesc) districtDesc.textContent = data.desc;
 
-  typeMessage(aiText2, data.msg, 20, true);
+  typeMessage(aiText2, data.msg, 20);
+
+  setTimeout(() => {
+    speak(data.msg);
+  }, 260);
+
   changeTheme(data.theme);
   activateRoute(num);
   increaseStress(3);
@@ -325,6 +359,8 @@ function accessDistrict(num) {
    認証
 ========================= */
 authBtn?.addEventListener("click", () => {
+  unlockSpeech();
+
   const id = userId.value.trim();
   const code = authCode.value.trim().toUpperCase();
 
@@ -355,8 +391,14 @@ authBtn?.addEventListener("click", () => {
   authMessage.textContent = `認証成功 / RANK ${currentRank}`;
 
   setTimeout(() => {
-    typeMessage(aiText, "マップを展開します", 20, true);
     showScreen(mapScreen);
+
+    const authSuccessMessage = "認証完了。マップを展開します。";
+    typeMessage(aiText, authSuccessMessage, 20);
+
+    setTimeout(() => {
+      speak(authSuccessMessage);
+    }, 400);
   }, 900);
 });
 
@@ -365,15 +407,27 @@ authBtn?.addEventListener("click", () => {
 ========================= */
 document.querySelectorAll(".map-node[data-district]").forEach(btn => {
   btn.addEventListener("click", () => {
+    unlockSpeech();
     const num = Number(btn.dataset.district);
     accessDistrict(num);
   });
 });
 
-document.getElementById("slumBtn")?.addEventListener("click", triggerSlumGlitch);
+document.getElementById("slumBtn")?.addEventListener("click", () => {
+  unlockSpeech();
+  triggerSlumGlitch();
+});
 
 backToMapBtn?.addEventListener("click", () => {
-  typeMessage(aiText, "マップへ復帰しました", 20, true);
+  unlockSpeech();
+
+  const backMessage = "マップへ復帰しました";
+  typeMessage(aiText, backMessage, 20);
+
+  setTimeout(() => {
+    speak(backMessage);
+  }, 260);
+
   showScreen(mapScreen);
 });
 
