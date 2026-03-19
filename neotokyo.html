@@ -13,8 +13,34 @@
   <audio id="alertSound" src="audio/alert.mp3"></audio>
   <audio id="heartbeat" src="audio/heartbeat.mp3" loop></audio>
 
+  <div class="global-vignette"></div>
+  <div class="stress-overlay"></div>
+  <div id="cyberScanbar" class="cyber-scanbar scanbar-on"></div>
+  <div id="watchReticle" class="watch-reticle"></div>
+  <!-- 寝音亜衣 -->
+  <aside id="aiMascot" class="ai-mascot normal">
+    <div class="ai-aura"></div>
+
+    <div class="ai-character">
+      <img
+        src="image/neonai-normal.png"
+        alt="寝音亜衣"
+        class="ai-body"
+        id="aiBody"
+      >
+    </div>
+
+    <div class="ai-status">
+      <span class="ai-status-label">NEON AI / WATCHING</span>
+      <p id="aiSideText">接続待機中。ちゃんと見てるから。</p>
+    </div>
+  </aside>
+
   <!-- 認証画面 -->
   <section id="authScreen" class="screen active auth-screen">
+    <div class="noise"></div>
+    <div class="scanlines"></div>
+
     <div class="auth-card">
       <p class="mini-label">NEO AI ACCESS PORTAL</p>
       <h1>NEO TOKYO CITY</h1>
@@ -22,11 +48,37 @@
         都市接続には認証が必要です。<br>
         未認証ユーザーの行動は記録されます。
       </p>
+<div class="form-group">
+  <label>IDENTITY ID</label>
 
-      <div class="form-group">
-        <label for="userId">IDENTITY ID</label>
-        <input type="text" id="userId" placeholder="例：CITIZEN-205 / GUEST-01">
-      </div>
+  <div class="id-select-grid" id="idSelectGrid">
+    <button type="button" class="id-card selected" data-id="GUEST-01" data-rank="GUEST">
+      <span class="id-card-label">TEMP USER</span>
+      <strong>GUEST-01</strong>
+      <small>一般アクセス</small>
+    </button>
+
+    <button type="button" class="id-card" data-id="CITIZEN-205" data-rank="C">
+      <span class="id-card-label">CITY USER</span>
+      <strong>CITIZEN-205</strong>
+      <small>低階層アクセス</small>
+    </button>
+
+    <button type="button" class="id-card" data-id="UPPER-771" data-rank="B">
+      <span class="id-card-label">UPPER USER</span>
+      <strong>UPPER-771</strong>
+      <small>上層アクセス</small>
+    </button>
+
+    <button type="button" class="id-card" data-id="ADMIN-S9" data-rank="S">
+      <span class="id-card-label">SYSTEM PASS</span>
+      <strong>ADMIN-S9</strong>
+      <small>中枢級アクセス</small>
+    </button>
+  </div>
+
+  <input type="hidden" id="userId" value="GUEST-01">
+</div>     
 
       <div class="form-group">
         <label for="authCode">AUTH CODE</label>
@@ -48,18 +100,17 @@
       <div class="hud">
         <span id="rankDisplay">RANK : GUEST</span>
         <span id="stressDisplay">STRESS : 0%</span>
+        <span id="moneyDisplay">¥ 0</span>
       </div>
     </div>
 
     <div class="map-wrap">
       <img src="image/neotokyo-map.jpg" class="map-image" alt="NEO TOKYO MAP">
 
-      <!-- ホログラムリング -->
       <div class="ring-overlay ring-outer"></div>
       <div class="ring-overlay ring-inner"></div>
       <div class="ring-scan"></div>
 
-      <!-- ルート -->
       <div class="map-line line-core-upper" id="lineCoreUpper"></div>
       <div class="map-line line-upper-gate" id="lineUpperGate"></div>
       <div class="map-line line-upper-d4" id="lineUpperD4"></div>
@@ -67,7 +118,6 @@
       <div class="map-line line-upper-d6" id="lineUpperD6"></div>
       <div class="map-line line-outside" id="lineOutside"></div>
 
-      <!-- ノード -->
       <button class="map-node node-core" data-district="1">第1管区</button>
       <button class="map-node node-upper" data-district="2">第2管区</button>
       <button class="map-node node-gate" data-district="3">第3管区</button>
@@ -82,7 +132,7 @@
     </div>
   </section>
 
-  <!-- 管区表示画面 -->
+  <!-- 管区画面 -->
   <section id="districtScreen" class="screen district-screen">
     <div class="noise"></div>
     <div class="scanlines"></div>
@@ -92,14 +142,25 @@
       <div class="hud">
         <span id="rankDisplay2">RANK : GUEST</span>
         <span id="stressDisplay2">STRESS : 0%</span>
+        <span id="moneyDisplay2">¥ 0</span>
       </div>
     </div>
 
     <img id="districtImage" src="image/neotokyo-1.jpg" class="district-image" alt="district image">
 
     <div class="district-overlay">
+      <p class="mini-label" id="districtSubLabel">DISTRICT DATA</p>
       <h2 id="districtTitle">第1管区</h2>
       <p id="districtDesc">制限区域です。</p>
+    </div>
+
+    <div id="paymentUI" class="payment-ui hidden">
+      <div class="payment-scan"></div>
+      <p id="paymentText">IDスキャン決済を実行しますか？</p>
+      <div class="payment-actions">
+        <button id="payYes">YES</button>
+        <button id="payNo">NO</button>
+      </div>
     </div>
 
     <div class="ai-console">
@@ -107,7 +168,7 @@
     </div>
   </section>
 
-  <!-- スラム用グリッチ -->
+  <!-- スラム -->
   <div id="slumGlitch" class="slum-glitch hidden">
     <div class="slum-glitch-inner">
       <p class="mini-label">UNAUTHORIZED SIGNAL</p>
