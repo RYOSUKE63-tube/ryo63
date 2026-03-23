@@ -697,23 +697,35 @@ body{
   left:24px;
   bottom:90px;
   z-index:10;
-  padding:18px 20px;
-  border-radius:16px;
+  width:min(520px, 62vw);
+  max-width:520px;
+  padding:26px 30px 30px;
+  border-radius:20px;
   background:rgba(0,0,0,0.68);
-  border:1px solid rgba(118,239,255,0.18);
-  max-width:480px;
-  box-shadow:0 0 24px rgba(0,225,255,0.08);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(0,255,255,0.15);
+  box-shadow:0 0 25px rgba(0,255,255,0.1);
+}
+
+.district-overlay .mini-label{
+  font-size:12px;
+  letter-spacing:0.2em;
+  color:#7beaff;
+  margin-bottom:10px;
 }
 
 .district-overlay h2{
-  margin:0 0 10px;
-  color:#8df3ff;
+  margin:0 0 14px;
+  font-size:46px;
+  font-weight:700;
+  color:#9beeff;
 }
 
 .district-overlay p{
   margin:0;
-  color:#d7f7ff;
+  font-size:16px;
   line-height:1.8;
+  color:#cfefff;
 }
 
 /* 決済 */
@@ -1315,8 +1327,8 @@ body{
 
   .district-overlay{
     left:12px;
-    right:12px;
-    bottom:118px;
+    bottom:120px;
+    width:58%;
     max-width:none;
     padding:14px 14px 16px;
     border-radius:14px;
@@ -1332,14 +1344,14 @@ body{
   }
 
   .district-overlay h2{
-    font-size:32px;
+    font-size:30px;
     line-height:1.15;
     margin:0 0 10px;
   }
 
   .district-overlay p{
     font-size:14px;
-    line-height:1.8;
+    line-height:1.7;
   }
 
   .payment-ui{
@@ -1362,13 +1374,13 @@ body{
   }
 
   .ai-mascot{
-    width:112px;
-    right:6px;
+    width:110px;
+    right:4px;
     bottom:70px;
   }
 
   .ai-character{
-    width:88px;
+    width:100%;
     margin-left:auto;
   }
 
@@ -1378,8 +1390,8 @@ body{
   }
 
   .ai-status{
-    width:138px;
-    padding:7px 8px;
+    width:140px;
+    padding:7px 9px;
     border-radius:12px;
     margin-top:6px;
   }
