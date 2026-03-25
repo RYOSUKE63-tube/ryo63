@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -102,65 +103,89 @@
   </div>
 
 </section> <!-- NEWS終わり -->
-
 <section id="music" class="music-section">
-
   <h2 class="section-title">MUSIC</h2>
 
-  <div class="music-card">
+  <div class="music-grid">
 
-    <img src="image/toppin.jpg" alt="トッピンぎゅ〜！/亡くした記憶 ジャケット" class="music-jacket">
+    <!-- 曲① -->
+    <article class="music-card" onclick="location.href='discography.html'">
+      <img src="image/toppin.jpg" class="music-jacket">
+      <h3>LIMITED SINGLE</h3>
+      <p class="music-title">トッピンぎゅ〜！</p>
+      <p class="music-desc">SWEET POP EDM PROJECT</p>
+      <p class="music-release">2026.09.03 RELEASE</p>
 
-    <h3>LIMITED SINGLE</h3>
+      <button class="music-btn" onclick="event.stopPropagation(); playMusic('music1')">
+        ▶ PLAY DEMO
+      </button>
 
-    <p class="music-title">
-      トッピンぎゅ〜！/亡くした記憶
-    </p>
+      <audio id="music1">
+        <source src="music/topin.mp3" type="audio/mpeg">
+      </audio>
+    </article>
 
-    <p class="music-desc">
-      SWEET POP EDM PROJECT
-    </p>
+    <!-- 曲② -->
+    <article class="music-card" onclick="location.href='discography.html'">
+      <img src="image/nakusita.jpg" class="music-jacket">
+      <h3>LIMITED SINGLE</h3>
+      <p class="music-title">亡くした記憶</p>
+      <p class="music-desc">SWEET POP EDM PROJECT</p>
+      <p class="music-release">2026.09.03 RELEASE</p>
 
-    <p class="music-release">
-      2026.09.03 RELEASE
-    </p>
+      <button class="music-btn" onclick="event.stopPropagation(); playMusic('music2')">
+        ▶ PLAY DEMO
+      </button>
 
-    <button class="music-btn" onclick="playMusic()">
-      ▶ PLAY DEMO
-    </button>
+      <audio id="music2">
+        <source src="music/nakushita.mp3" type="audio/mpeg">
+      </audio>
+    </article>
 
-    <audio id="onefoMusic">
-      <source src="music/toppin.mp3" type="audio/mpeg">
-    </audio>
-  
-<img src="image/nakusita.jpg" alt="トッピンぎゅ〜！/亡くした記憶 ジャケット" class="music-jacket">
+    <!-- 曲③ -->
+    <article class="music-card" onclick="location.href='discography.html'">
+      <img src="image/toppin.jpg" class="music-jacket">
+      <h3>LIMITED SINGLE</h3>
+      <p class="music-title">トッピンぎゅ〜！-Fruits Mix-</p>
+      <p class="music-desc">POP IDOL PROJECT</p>
+      <p class="music-release">2026.09.03 RELEASE</p>
 
-    <h3>LIMITED SINGLE</h3>
+      <button class="music-btn" onclick="event.stopPropagation(); playMusic('music3')">
+        ▶ PLAY DEMO
+      </button>
 
-    <p class="music-title">
-      トッピンぎゅ〜！/亡くした記憶
-    </p>
+      <audio id="music3">
+        <source src="music/toppin.mp3" type="audio/mpeg">
+      </audio>
+    </article>
 
-    <p class="music-desc">
-      SWEET POP EDM PROJECT
-    </p>
+    <!-- 曲④ -->
+    <article class="music-card" onclick="location.href='discography.html'">
+      <img src="image/nakusita.jpg" class="music-jacket">
+      <h3>LIMITED SINGLE</h3>
+      <p class="music-title">亡くした記憶 -URA TOKYO Mix-</p>
+      <p class="music-desc">POP IDOL PROJECT</p>
+      <p class="music-release">2026.09.03 RELEASE</p>
 
-    <p class="music-release">
-      2026.09.03 RELEASE
-    </p>
+      <button class="music-btn" onclick="event.stopPropagation(); playMusic('music4')">
+        ▶ PLAY DEMO
+      </button>
 
-    <button class="music-btn" onclick="playMusic()">
-      ▶ PLAY DEMO
-    </button>
-
-    <audio id="onefoMusic">
-      <source src="music/nakusita.mp3" type="audio/mpeg">
-    </audio>
+      <audio id="music4">
+        <source src="music/nakusita.mp3" type="audio/mpeg">
+      </audio>
+    </article>
 
   </div>
 
-</section>
+  <!-- ディスコ導線 -->
+  <div class="music-more">
+    <a href="discography.html" class="music-more-btn">
+      VIEW DISCOGRAPHY →
+    </a>
+  </div>
 
+</section>
 <section class="faq-section"><section class="faq-section">
   <h2>FAQ</h2>
   <p class="section-text">

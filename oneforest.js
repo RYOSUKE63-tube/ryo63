@@ -259,14 +259,22 @@ if(cyberLink){
 
 /* ===== MUSIC ===== */
 
-function playMusic(){
+function playMusic(id){
 
-  const music = document.getElementById("onefoMusic");
+  const audios = document.querySelectorAll("audio");
 
-  if(music.paused){
-    music.play();
+  audios.forEach(audio => {
+    if(audio.id !== id){
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+
+  const target = document.getElementById(id);
+
+  if(target.paused){
+    target.play();
   }else{
-    music.pause();
+    target.pause();
   }
-
 }
