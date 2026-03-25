@@ -466,3 +466,20 @@ body{
   color: #666;
   font-size: 14px;
 }
+
+.disc-link{
+  display:block;
+  margin-top:12px;
+  font-size:13px;
+  color:#ff8d45;
+  text-decoration:none;
+}
+
+.disc-link:hover{
+  text-decoration:underline;
+}
+.music-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}
