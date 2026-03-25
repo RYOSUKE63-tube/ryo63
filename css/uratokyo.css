@@ -887,6 +887,14 @@ body {
   }
 
   .ai-visual {
-    height: 160px;
-  }
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.ai-visual img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 }
