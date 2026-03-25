@@ -507,7 +507,6 @@ body {
   margin-left: 8px;
   color: #fff;
 }
-
 .ai-visual {
   width: 100%;
   overflow: visible;
@@ -521,7 +520,8 @@ body {
 }
 
 .ai-visual img {
-  width: 100%;
+  width: 70%;          /* ←ここが重要 */
+  max-width: 240px;   /* ←これも重要 */
   height: auto;
   display: block;
   object-fit: contain;
