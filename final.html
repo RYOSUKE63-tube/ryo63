@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FINAL / URA TOKYO</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      color: #ff6b6b;
+      font-family: "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at center, rgba(120,0,0,0.16), transparent 35%),
+        #000;
+    }
+
+    .noise,
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .noise {
+      opacity: 0.08;
+      background-image:
+        linear-gradient(0deg, rgba(255,255,255,0.04) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 50%, transparent 50%);
+      background-size: 3px 3px, 4px 4px;
+      animation: flicker 0.16s infinite;
+    }
+
+    .scanlines {
+      opacity: 0.08;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.05) 0px,
+        rgba(255,255,255,0.02) 1px,
+        transparent 2px,
+        transparent 4px
+      );
+    }
+
+    .final-wrap {
+      position: relative;
+      z-index: 2;
+      width: min(760px, calc(100% - 32px));
+      padding: 28px;
+      border: 1px solid rgba(255, 70, 70, 0.35);
+      background: rgba(20, 0, 0, 0.55);
+      box-shadow: 0 0 24px rgba(255, 0, 0, 0.12);
+      text-align: center;
+    }
+
+    .final-title {
+      margin: 0 0 24px;
+      font-size: clamp(22px, 5vw, 44px);
+      letter-spacing: 0.2em;
+      color: #ff8c8c;
+      animation: glitchText 1.8s infinite;
+    }
+
+    .final-text {
+      line-height: 2;
+      font-size: 15px;
+      color: #f1d6d6;
+      white-space: pre-line;
+      margin-bottom: 28px;
+    }
+
+    .final-last {
+      font-family: monospace;
+      font-size: clamp(18px, 4vw, 30px);
+      color: #ff4d4d;
+      letter-spacing: 0.16em;
+      margin-top: 16px;
+      animation: glitchText 1.2s infinite;
+    }
+
+    .restart {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 18px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255, 70, 70, 0.4);
+      background: rgba(30, 0, 0, 0.7);
+    }
+
+    .restart:hover {
+      background: rgba(120, 0, 0, 0.4);
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.06; }
+      50% { opacity: 0.09; }
+      100% { opacity: 0.06; }
+    }
+
+    @keyframes glitchText {
+      0% { transform: translateX(0); opacity: 0.95; }
+      20% { transform: translateX(-2px); opacity: 1; }
+      40% { transform: translateX(2px); opacity: 0.88; }
+      60% { transform: translateX(-1px); opacity: 1; }
+      80% { transform: translateX(1px); opacity: 0.92; }
+      100% { transform: translateX(0); opacity: 0.95; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <div class="final-wrap">
+    <h1 class="final-title">FINAL RECORD</h1>
+
+    <div class="final-text">
+復元された東京の中に、
+復元されなかった東京が存在する。
+
+そしてその境界は、
+すでに失われた。
+
+あなたは観測者ではない。
+あなたは記録された側だ。
+    </div>
+
+    <div class="final-last">YOU ARE YOSHINOBU.</div>
+
+    <a href="index.html" class="restart" id="restartButton">RESTART</a>
+  </div>
+
+  <script>
+    const restartButton = document.getElementById("restartButton");
+
+    restartButton.addEventListener("click", () => {
+      localStorage.removeItem("visitedShimokitazawa");
+      localStorage.removeItem("visitedEdo");
+      localStorage.removeItem("returnedFromMucho");
+      localStorage.removeItem("fromMucho");
+    });
+    setTimeout(() => {
+  document.body.style.filter = "contrast(1.4) brightness(0.6)";
+}, 1200);
+
+setTimeout(() => {
+  document.body.style.filter = "none";
+}, 1800);
+  </script>
+</body>
+</html>

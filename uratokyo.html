@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>東京市 / URA TOKYO</title>
+  <link rel="stylesheet" href="css/uratokyo.css" />
+</head>
+<body>
+  <div class="yoshinobu-gate" id="yoshinobuGate">
+    <div class="yoshinobu-text" id="yoshinobuText">
+      YOU ARE YOSHINOBU.
+    </div>
+  </div>
+
+  <div class="sky"></div>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="system-tag">TOKYO-CITY RESTORE</span>
+      <span class="divider"></span>
+      <span id="systemTime">--:--:--</span>
+    </div>
+    <div class="topbar-right">
+      <span>RESTORE RATE : <strong id="restoreRate">71%</strong></span>
+      <span>STATUS : <strong class="danger">UNSTABLE</strong></span>
+    </div>
+  </header>
+<section class="log-drawer" id="logDrawer">
+  <div class="log-trigger">SYSTEM LOG</div>
+  <aside class="log-panel">
+    <div class="panel-title">SYSTEM LOG</div>
+
+    <div class="log-list" id="logList">
+      <p>&gt; 東京市データベース接続中...</p>
+      <p>&gt; 大気レンダリング異常を検出</p>
+      <p>&gt; 旧行政区画を町単位へ再構成</p>
+      <p>&gt; 監視対象を確認</p>
+      <p>&gt; 深層アクセス記録を開始</p>
+    </div>
+
+    <div class="town-tabs">
+      <a href="chiyodacho.html">千代田町</a>
+      <a href="chuocho.html">中央町</a>
+      <a href="minatocho.html">港町</a>
+      <a href="shinjukucho.html">新宿町</a>
+      <a href="shibuyacho.html">渋谷町</a>
+      <a href="bunkyocho.html">文京町</a>
+      <a href="taitocho.html">台東町</a>
+      <a href="sumidacho.html">墨田町</a>
+      <a href="kotocho.html">江東町</a>
+      <a href="shinagawacho.html">品川町</a>
+      <a href="megurocho.html">目黒町</a>
+      <a href="otacho.html">大田町</a>
+      <a href="setagayacho.html">世田谷町</a>
+      <a href="nakanocho.html">中野町</a>
+      <a href="suginamicho.html">杉並町</a>
+      <a href="toshimacho.html">豊島町</a>
+      <a href="kitacho.html">北町</a>
+      <a href="arakawacho.html">荒川町</a>
+      <a href="itabashicho.html">板橋町</a>
+      <a href="nerimacho.html">練馬町</a>
+      <a href="adachicho.html">足立町</a>
+      <a href="katsushikacho.html">葛飾町</a>
+      <a href="edogawacho.html">江戸川町</a>
+      <a href="edojo.html" class="special-tab">旧江戸城跡</a>
+      <a href="shimokitazawa.html" class="anomaly-tab">下北澤</a>
+    </div>
+  </aside>
+</section>  
+  <main class="main-area">
+    <section class="map-section">
+      <div class="map-frame" id="mapFrame">
+        <div class="map-title">東京市 全体MAP</div>
+
+        <img
+          src="uratokyo-map.png"
+          alt="東京市 全体MAP"
+          class="map-image"
+        />
+
+        <div class="edo-marker" id="edoCastle" title="旧江戸城跡">
+          <span class="edo-label">旧江戸城跡</span>
+        </div>
+
+        <button class="town town-1"
+          data-town="千代田町"
+          data-status="中央管理ループ"
+          data-rate="91%"
+          data-alert="管理権限が確認できません。"
+          data-link="chiyodacho.html"
+          aria-label="千代田町">
+          <span class="town-label">千代田町</span>
+        </button>
+
+        <button class="town town-2"
+          data-town="港町"
+          data-status="接続ゲート異常"
+          data-rate="84%"
+          data-alert="外部アクセスを検出。"
+          data-link="minatocho.html"
+          aria-label="港町">
+          <span class="town-label">港町</span>
+        </button>
+
+        <button class="town town-3"
+          data-town="新宿町"
+          data-status="夜間固定化"
+          data-rate="79%"
+          data-alert="視覚ノイズが増加しています。"
+          data-link="shinjukucho.html"
+          aria-label="新宿町">
+          <span class="town-label">新宿町</span>
+        </button>
+
+        <button class="town town-4"
+          data-town="渋谷町"
+          data-status="感情データ暴走"
+          data-rate="73%"
+          data-alert="ストレス値が基準を超えています。"
+          data-link="shibuyacho.html"
+          aria-label="渋谷町">
+          <span class="town-label">渋谷町</span>
+        </button>
+
+        <button class="town town-5"
+          data-town="目黒町"
+          data-status="無人状態"
+          data-rate="68%"
+          data-alert="生体反応を検出できません。"
+          data-link="megurocho.html"
+          aria-label="目黒町">
+          <span class="town-label">目黒町</span>
+        </button>
+
+        <button class="town town-6"
+          data-town="██町"
+          data-status="データ欠損"
+          data-rate="12%"
+          data-alert="この領域は安定していません。"
+          data-link="mucho.html"
+          aria-label="██町">
+          <span class="town-label">██町</span>
+        </button>
+
+        <div class="map-overlay-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="ai-panel" id="aiPanel">
+    <div class="ai-label">ALERT / 寝音亜衣</div>
+
+    <div class="town-info" id="townInfo">
+      <div class="area-title">AREA STATUS</div>
+      <p>町名 : <span id="infoTown">未選択</span></p>
+      <p>復元率 : <span id="infoRate">--</span></p>
+      <p>状態 : <span id="infoStatus">待機中</span></p>
+    </div>
+
+    <div class="ai-visual">
+      <img src="ai-alert.png" alt="アラート状態の寝音亜衣" />
+    </div>
+
+    <div class="ai-message" id="aiMessage">
+      あなたの行動は記録されています。
+    </div>
+  </aside>
+
+  <footer class="status-bar">
+    <span>VISITOR STATUS : STRESS OVER LIMIT</span>
+    <span>ENVIRONMENT : RED SKY ACTIVE</span>
+    <span>CORE : LOCKED</span>
+  </footer>
+
+  <div class="transition-overlay" id="transitionOverlay">
+    <p id="transitionText">ACCESSING...</p>
+  </div>
+
+  <script src="uratokyo.js"></script>
+</body>
+</html>

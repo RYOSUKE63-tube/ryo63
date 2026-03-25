@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>港町 / TOKYO-CITY</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #020000;
+      color: #f3dede;
+      font-family: "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(80, 120, 90, 0.18), transparent 30%),
+        linear-gradient(to bottom, #0b0d0c 0%, #050707 50%, #000000 100%);
+    }
+
+    .noise,
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .noise {
+      opacity: 0.07;
+      background-image:
+        linear-gradient(0deg, rgba(255,255,255,0.04) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 50%, transparent 50%);
+      background-size: 3px 3px, 4px 4px;
+      animation: noiseFlicker 0.18s infinite;
+    }
+
+    .scanlines {
+      opacity: 0.08;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.05) 0px,
+        rgba(255,255,255,0.02) 1px,
+        transparent 2px,
+        transparent 4px
+      );
+    }
+
+    @keyframes noiseFlicker {
+      0% { opacity: 0.05; transform: translateX(0); }
+      25% { opacity: 0.08; transform: translateX(0.5px); }
+      50% { opacity: 0.06; transform: translateX(-0.5px); }
+      75% { opacity: 0.09; transform: translateY(0.5px); }
+      100% { opacity: 0.05; transform: translateY(0); }
+    }
+
+    @keyframes glitchText {
+      0% { transform: translateX(0); opacity: 0.92; }
+      20% { transform: translateX(-2px); opacity: 1; }
+      40% { transform: translateX(2px); opacity: 0.88; }
+      60% { transform: translateX(-1px); opacity: 1; }
+      80% { transform: translateX(1px); opacity: 0.9; }
+      100% { transform: translateX(0); opacity: 0.92; }
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      width: min(1000px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 20px 0 40px;
+    }
+
+    .topbar {
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      background: rgba(10, 14, 12, 0.6);
+      border: 1px solid rgba(120, 180, 140, 0.22);
+    }
+
+    .danger {
+      color: #a6ffb0;
+    }
+.hero {
+  position: relative;
+  padding: 28px;
+  margin-bottom: 18px;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.78)),
+    url("minatocho.jpg") center / cover no-repeat;
+  border: 1px solid rgba(120, 180, 140, 0.22);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(120, 180, 140, 0.08), transparent 30%),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 2px,
+      transparent 5px
+    );
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}    
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(40px, 8vw, 80px);
+      letter-spacing: 0.18em;
+      animation: glitchText 2.2s infinite;
+    }
+
+    .hero p {
+      line-height: 1.9;
+      color: #d8e6dc;
+    }
+
+    .panel {
+      padding: 16px;
+      margin-bottom: 18px;
+      background: rgba(10, 14, 12, 0.58);
+      border: 1px solid rgba(120, 180, 140, 0.22);
+    }
+
+    .panel-title {
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(120, 180, 140, 0.18);
+      padding-bottom: 6px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .status-item,
+    .log-item {
+      margin-bottom: 10px;
+      line-height: 1.75;
+      font-family: monospace;
+      color: #dcebe0;
+    }
+
+    .alert {
+      color: #bfffc7;
+      animation: glitchText 1.7s infinite;
+    }
+
+    .corrupt {
+      color: #b2e8bb;
+      letter-spacing: 0.08em;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(120, 180, 140, 0.28);
+      background: rgba(20, 30, 24, 0.58);
+    }
+
+    .back:hover {
+      background: rgba(70, 100, 80, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <div class="page">
+    <div class="topbar">
+      <span>TOKYO-CITY / MINATOCHO</span>
+      <span>STATUS : <strong class="danger">GATE UNSTABLE</strong></span>
+      <span>ACCESS : EXTERNAL TRACE</span>
+    </div>
+
+    <section class="hero">
+      <h1>港町</h1>
+      <p>
+        この町は東京市の外縁接続層に位置しています。<br>
+        外部信号の混入、接続ゲートの不安定化、識別不能な侵入痕跡が検出されていま◼︎。<br>
+        ……霧の向こう側にあるものは、東京市の内部とは限りません。
+      </p>
+
+      <a href="uratokyo.html" class="back">東京市MAPへ戻る</a>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">AREA STATUS</div>
+
+      <p class="status-item">町名 : 港町</p>
+      <p class="status-item">
+        異常内容 : <span class="corrupt">接続ゲート異常 / 外部干渉 / 霧層増大</span>
+      </p>
+      <p class="status-item">復元率 : 84%</p>
+      <p class="status-item">分類 : 外縁接続エリア</p>
+      <p class="status-item">状態 : 外部アクセス痕跡あり / 水辺層不安定</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">ACCESS LOG</div>
+
+      <p class="log-item">&gt; external signal detected</p>
+      <p class="log-item alert">&gt; connection gate unstable</p>
+      <p class="log-item alert">&gt; foreign access trace found</p>
+      <p class="log-item">&gt; harbor layer drift observed</p>
+      <p class="log-item">&gt; wave reflection mismatch : surface not synchronized</p>
+    </section>
+  </div>
+<script>
+setInterval(() => {
+  const p = document.querySelector(".hero p");
+  p.style.transform = "translateX(" + (Math.random()*2 -1) + "px)";
+}, 500);
+</script>
+
+</body>
+</html>

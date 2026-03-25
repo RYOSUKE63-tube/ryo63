@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>無町 / TOKYO-CITY</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #020000;
+      color: #f3dede;
+      font-family: "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(120, 0, 0, 0.28), transparent 30%),
+        linear-gradient(to bottom, #180000 0%, #050000 50%, #000000 100%);
+    }
+
+    .noise,
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .noise {
+      opacity: 0.07;
+      background-image:
+        linear-gradient(0deg, rgba(255,255,255,0.04) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 50%, transparent 50%);
+      background-size: 3px 3px, 4px 4px;
+      animation: noiseFlicker 0.18s infinite;
+    }
+
+    .scanlines {
+      opacity: 0.08;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.05) 0px,
+        rgba(255,255,255,0.02) 1px,
+        transparent 2px,
+        transparent 4px
+      );
+    }
+
+    @keyframes noiseFlicker {
+      0% { opacity: 0.05; transform: translateX(0); }
+      25% { opacity: 0.08; transform: translateX(0.5px); }
+      50% { opacity: 0.06; transform: translateX(-0.5px); }
+      75% { opacity: 0.09; transform: translateY(0.5px); }
+      100% { opacity: 0.05; transform: translateY(0); }
+    }
+
+    @keyframes glitchText {
+      0% { transform: translateX(0); opacity: 0.92; }
+      20% { transform: translateX(-2px); opacity: 1; }
+      40% { transform: translateX(2px); opacity: 0.88; }
+      60% { transform: translateX(-1px); opacity: 1; }
+      80% { transform: translateX(1px); opacity: 0.9; }
+      100% { transform: translateX(0); opacity: 0.92; }
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      width: min(1000px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 20px 0 40px;
+    }
+
+    .topbar {
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      background: rgba(12, 0, 0, 0.55);
+      border: 1px solid rgba(255, 70, 70, 0.32);
+    }
+
+    .danger {
+      color: #ff4d4d;
+    }
+
+    .hero {
+      padding: 28px;
+      margin-bottom: 18px;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)),
+        radial-gradient(circle at 50% 20%, rgba(255, 20, 20, 0.12), transparent 30%);
+      border: 1px solid rgba(255, 70, 70, 0.32);
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(40px, 8vw, 80px);
+      letter-spacing: 0.2em;
+      animation: glitchText 2s infinite;
+    }
+
+    .hero p {
+      line-height: 1.9;
+      color: #e8d6d6;
+    }
+
+    .panel {
+      padding: 16px;
+      margin-bottom: 18px;
+      background: rgba(12, 0, 0, 0.55);
+      border: 1px solid rgba(255, 70, 70, 0.32);
+    }
+
+    .panel-title {
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 70, 70, 0.25);
+      padding-bottom: 6px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .status-item,
+    .log-item {
+      margin-bottom: 10px;
+      line-height: 1.75;
+      font-family: monospace;
+      color: #f0dede;
+    }
+
+    .alert {
+      color: #ffb3b3;
+      animation: glitchText 1.5s infinite;
+    }
+
+    .corrupt {
+      color: #ff9a9a;
+      letter-spacing: 0.08em;
+    }
+
+    /* =========================
+       グリッチ戻るボタン
+    ========================= */
+
+    .back {
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255, 70, 70, 0.4);
+      background: rgba(20, 0, 0, 0.6);
+      overflow: hidden;
+    }
+
+    .back::before,
+    .back::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      color: #ff4a4a;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .back::before {
+      transform: translateX(-2px);
+      animation: glitch1 1.5s infinite;
+    }
+
+    .back::after {
+      transform: translateX(2px);
+      animation: glitch2 1.5s infinite;
+    }
+
+    @keyframes glitch1 {
+      0%, 100% { clip-path: inset(0 0 85% 0); }
+      50% { clip-path: inset(20% 0 40% 0); }
+    }
+
+    @keyframes glitch2 {
+      0%, 100% { clip-path: inset(60% 0 0 0); }
+      50% { clip-path: inset(30% 0 20% 0); }
+    }
+
+    .back:hover {
+      color: #ff0000;
+      transform: translateX(2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <div class="page">
+    <div class="topbar">
+      <span>TOKYO-CITY / UNREGISTERED AREA</span>
+      <span>STATUS : <strong class="danger">UNREGI_STERED</strong></span>
+      <span>ACCESS : PARTIAL / M_UCHO</span>
+    </div>
+
+    <section class="hero">
+      <h1>◼︎◼︎町</h1>
+      <p>
+        こ!町は東京市の正$な記録に存在しません。<br>
+        23町構造外の〓域が検出されていま*。<br>
+        ……しかし、あな¥は既にこの町にア⌘セスしています。
+      </p>
+
+      <a href="uratokyo.html" class="back" id="backBtn" data-text="東◼︎市MAPへ戻◼︎">  
+東京市◼︎APへ戻◼︎
+</a>
+
+<script>
+const backBtn = document.getElementById("backBtn");
+
+if (backBtn) {
+  backBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // ★ 痕跡フラグ
+    localStorage.setItem("fromMucho", "true");
+
+    // 軽く違和感（任意）
+    document.body.style.filter = "brightness(0.6) contrast(1.2)";
+
+    setTimeout(() => {
+      window.location.href = "uratokyo.html";
+    }, 300);
+  });
+}
+</script>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">AREA STATUS</div>
+
+      <p class="status-item">町名 : 無町</p>
+
+      <p class="status-item">
+        別表記 : <span class="corrupt">無◼︎町 / M_UCHO / █町</span>
+      </p>
+
+      <p class="status-item">
+        補足 : <span class="corrupt">無町[欠損]</span>
+      </p>
+
+      <p class="status-item">復元率 : 12%</p>
+      <p class="status-item">分類 : 未登録領域</p>
+      <p class="status-item">状態 : 存在不安定 / 記録矛盾</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">ACCESS LOG</div>
+
+      <p class="log-item">&gt; district count mismatch detected</p>
+      <p class="log-item alert">&gt; 24th district found : 無◼︎町</p>
+      <p class="log-item alert">&gt; district name mismatch : 無█町</p>
+      <p class="log-item alert">&gt; archived label found : MUC#O</p>
+      <p class="log-item alert">&gt; registry lookup failed : █町</p>
+      <p class="log-item">&gt; observer trace retained in M_UCHO layer</p>
+      <p class="log-item">&gt; name record corrupted : mu_cho // 無?町</p>
+    </section>
+  </div>
+</body>
+</html>
