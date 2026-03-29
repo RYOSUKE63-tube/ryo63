@@ -6,37 +6,41 @@
 <title>NEON CIRCUIT</title>
 
 <link rel="stylesheet" href="css/neoncircuit.css">
-
 </head>
 
 <body>
+
 <div class="cyber-grid"></div>
+
 <header class="hero">
 
 <h1 class="logo" data-text="NEON CIRCUIT">
 NEON CIRCUIT
 </h1>
+
 <p class="system-text">
 SYSTEM CONNECTING...
 </p>
+
 <p class="catch">
 NEOTOKYO CYBER TRANCE IDOL
 </p>
-<p class="hero-sub">
-  SIGNAL THE FUTURE.
-</p>
 
+<p class="hero-sub">
+SIGNAL THE FUTURE.
+</p>
 
 <p class="debut">
 2026.09.03 DUAL DEBUT
 </p>
 
-<a href="#member" class="main-btn">
-MEMBER
-</a>
+<a href="#member" class="main-btn">MEMBER</a>
+<a href="neondisco.html" class="main-btn">DISCOGRAPHY</a>
 
+</header>
+
+<!-- NEWS -->
 <section class="news">
-
 <h2 class="section-title">NEWS</h2>
 
 <div class="news-list">
@@ -57,17 +61,22 @@ MEMBER
 </div>
 
 </div>
-
 </section>
+
+<!-- MUSIC -->
 <section class="music">
 
-<h2 class="section-title">MUSUC</h2>
+<h2 class="section-title">MUSIC</h2>
 
 <div class="music-card">
 <img src="image/debut1.jpg" alt="1st SIGNAL ジャケット" class="music-jacket">
+
 <h3>1st SIGNAL</h3>
+
 <p class="music-title">
-  DIGITAL☆HEARTBREAKER
+DIGITAL☆HEARTBREAKER
+</p>
+
 <p class="music-desc">
 NEOTOKYO CYBER TRANCE IDOL PROJECT
 </p>
@@ -83,134 +92,133 @@ NEOTOKYO CYBER TRANCE IDOL PROJECT
 <audio id="neonMusic">
   <source src="music/debut1.mp3" type="audio/mpeg">
 </audio>
+</div>
 
+<!-- ディスコ導線 -->
+<div style="margin-top:30px;">
+  <a href="neondisco.html" class="main-btn">
+    VIEW DISCOGRAPHY
+  </a>
 </div>
 
 </section>
+
+<!-- WORLD -->
 <section class="world">
 
-  <h2 class="section-title">WORLD</h2>
+<h2 class="section-title">WORLD</h2>
 
-  <div class="world-card">
+<div class="world-card">
 
-    <h3>NEOTOKYO NETWORK</h3>
+<h3>NEOTOKYO NETWORK</h3>
 
-    <p class="world-text">
-      2046年、都市は完全なネットワーク社会へ移行した。  
-      仮想都市「NEOTOKYO」では  
-      人々の感情データを音楽へ変換する  
-      次世代アイドルプロジェクトが始動する。
-    </p>
+<p class="world-text">
+2046年、都市は完全なネットワーク社会へ移行した。  
+仮想都市「NEOTOKYO」では  
+人々の感情データを音楽へ変換する  
+次世代アイドルプロジェクトが始動する。
+</p>
 
-    <p class="world-text">
-      それが  
-      <strong>NEON CIRCUIT</strong>。
-    </p>
+<p class="world-text">
+それが  
+<strong>NEON CIRCUIT</strong>。
+</p>
 
-    <p class="world-text">
-      電脳世界と現実世界を接続する  
-      CYBER TRANCE IDOL SYSTEM。
-    </p>
+<p class="world-text">
+電脳世界と現実世界を接続する  
+CYBER TRANCE IDOL SYSTEM。
+</p>
 
-  </div>
-
+</div>
 </section>
-</button>
+
+<!-- MEMBER -->
+<section id="member" class="member-section">
+
+<h2 class="neon-title">MEMBER</h2>
+
+<div class="member-list">
+
+<div class="member-card" onclick="selectMember(1)">
+<img src="image/neon2.jpg" alt="HARU">
+<h3>HARU</h3>
+<p>BLUE</p>
+</div>
+
+<div class="member-card" onclick="selectMember(2)">
+<img src="image/neon3.jpg" alt="NOZOMI">
+<h3>NOZOMI</h3>
+<p>YELLOW</p>
+</div>
+
+<div class="member-card" onclick="selectMember(0)">
+<img src="image/neon1.jpg" alt="RIO">
+<h3>RIO</h3>
+<p>RED</p>
+</div>
+
+<div class="member-card" onclick="selectMember(3)">
+<img src="image/neon4.jpg" alt="RINO">
+<h3>RINO</h3>
+<p>GREEN</p>
+</div>
+
+<div class="member-card" onclick="selectMember(4)">
+<img src="image/neon5.jpg" alt="AYAKA">
+<h3>AYAKA</h3>
+<p>PURPLE</p>
+</div>
 
 </div>
 
+<div id="loadingScreen">
+<p id="loadingText">SYSTEM BOOTING...</p>
+</div>
+
+<div class="member-profile" id="memberProfile">
+<div class="member-image-area">
+<img id="memberImage" src="image/neon1.jpg" alt="RIO">
+</div>
+
+<div class="member-info">
+<h1 class="system-title">SYSTEM PROFILE</h1>
+<p id="memberId">NEON ID : 01</p>
+<h2 id="memberName">RIO</h2>
+<p id="memberColor">COLOR : RED</p>
+<p id="memberRole">ROLE : CENTER</p>
+<p id="memberAge">AGE : 22</p>
+<p id="memberHeight">HEIGHT : 165cm</p>
+
+<div class="member-buttons">
+<button onclick="prevMember()">◀ PREV</button>
+<button onclick="nextMember()">NEXT ▶</button>
+</div>
+
+</div>
+</div>
 </section>
-</header>
-<section id="member" class="member-section">
-  <h2 class="neon-title">MEMBER</h2>
 
-  <div class="member-list">
-  <div class="member-card" onclick="selectMember(1)">
-    <img src="image/neon2.jpg" alt="HARU">
-    <h3>HARU</h3>
-    <p>BLUE</p>
-  </div>
-
-  <div class="member-card" onclick="selectMember(2)">
-    <img src="image/neon3.jpg" alt="NOZOMI">
-    <h3>NOZOMI</h3>
-    <p>YELLOW</p>
-  </div>
-
-  <div class="member-card" onclick="selectMember(0)">
-    <img src="image/neon1.jpg" alt="RIO">
-    <h3>RIO</h3>
-    <p>RED</p>
-  </div>
-
-  <div class="member-card" onclick="selectMember(3)">
-    <img src="image/neon4.jpg" alt="RINO">
-    <h3>RINO</h3>
-    <p>GREEN</p>
-  </div>
-
-  <div class="member-card" onclick="selectMember(4)">
-    <img src="image/neon5.jpg" alt="AYAKA">
-    <h3>AYAKA</h3>
-    <p>PURPLE</p>
-  </div>
-</div>  <div id="loadingScreen">
-    <p id="loadingText">SYSTEM BOOTING...</p>
-  </div>
-
-  <div class="member-profile" id="memberProfile">
-    <div class="member-image-area">
-      <img id="memberImage" src="image/neon1.jpg" alt="RIO">
-    </div>
-
-    <div class="member-info">
-      <h1 class="system-title">SYSTEM PROFILE</h1>
-      <p id="memberId">NEON ID : 01</p>
-      <h2 id="memberName">RIO</h2>
-      <p id="memberColor">COLOR : RED</p>
-      <p id="memberRole">ROLE : CENTER</p>
-      <p id="memberAge">AGE : 22</p>
-      <p id="memberHeight">HEIGHT : 165cm</p>
-
-      <div class="member-buttons">
-        <button onclick="prevMember()">◀ PREV</button>
-        <button onclick="nextMember()">NEXT ▶</button>
-      </div>
-    </div>
-  </div>
-</section><section class="concept">
-
+<!-- CONCEPT -->
+<section class="concept">
 <h2>CONCEPT</h2>
 
 <p>
-
 NEOTOKYOの夜に響く  
 サイバートランスサウンド
+</p>
+</section>
 
+<!-- SISTER -->
+<section class="sister-group">
+<h2>SISTER GROUP</h2>
+
+<p class="section-text">
+Forest Entertainment 同時デビュープロジェクト
 </p>
 
-</section>
-
-<section class="news">
-
-<h2>NEWS</h2>
-
-<div class="news-card">
-
-<p>2026.09.03</p>
-<h3>NEON CIRCUIT DEBUT</h3>
-
-</div>
-<section class="sister-group">
-  <h2>SISTER GROUP</h2>
-  <p class="section-text">
-    Forest Entertainment 同時デビュープロジェクト
-  </p>
-
-  <a class="return-btn" id="return-link" data-link="oneforest.html">
-    BACK TO ONE FOREST MELODY
-  </a>
-</section>
+<a class="return-btn" id="return-link" data-link="oneforest.html">
+BACK TO ONE FOREST MELODY
+</a>
 </section>
 
 <button id="top-btn">

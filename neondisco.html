@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>NEON CIRCUIT Discography</title>
+  <link rel="stylesheet" href="css/neondisco.css">
+</head>
+<body>
+
+<div class="cyber-grid"></div>
+
+<header class="hero">
+  <h1 class="logo" data-text="NEON CIRCUIT">NEON CIRCUIT</h1>
+  <p class="system-text">DISCOGRAPHY SYSTEM ONLINE</p>
+</header>
+
+<main class="discography">
+
+<!-- INDIES -->
+<section class="single-block indies-block">
+  <div class="single-head">
+    <img src="image/neon-indies.jpg" class="single-jacket">
+    <div class="single-info">
+      <p class="single-number">INDIES</p>
+      <h2 class="system-title">ORIGIN LOG</h2>
+    </div>
+  </div>
+
+  <div class="track-list">
+
+    <div class="music-card">
+      <img src="image/denno.jpg" class="music-jacket">
+      <h3>01. 電脳シティ・アンセム</h3>
+      <button class="music-btn" onclick="playMusic('n01')">▶︎ PLAY</button>
+      <audio id="n01" src="music/neon1.mp3"></audio>
+    </div>
+
+    <div class="music-card">
+      <img src="image/denno.jpg" class="music-jacket">
+      <h3>02. 電脳シティ・アンセム -CYBER ARENA Re:Mix-</h3>
+      <button class="music-btn" onclick="playMusic('n02')">▶︎ PLAY</button>
+      <audio id="n02" src="music/city.mp3"></audio>
+    </div>
+
+  </div>
+</section>
+
+<!-- 1st -->
+<section class="single-block">
+  <div class="single-head">
+    <img src="image/digital.jpg" class="single-jacket">
+    <div class="single-info">
+      <p class="single-number">1st Single</p>
+      <h2 class="system-title">DIGITAL☆HEARTBREAKER</h2>
+    </div>
+  </div>
+
+  <div class="track-list">
+    <div class="music-card">
+      <img src="image/digital.jpg" class="music-jacket">
+      <h3>01. DIGITAL☆HEARTBREAKER</h3>
+      <button class="music-btn" onclick="playMusic('n03')">▶︎ PLAY</button>
+      <audio id="n03" src="music/digital.mp3"></audio>
+    </div>
+  </div>
+</section>
+
+<!-- 2nd -->
+<section class="single-block">
+  <div class="single-head">
+    <img src="image/sync.jpg" class="single-jacket">
+    <div class="single-info">
+      <p class="single-number">2nd Single</p>
+      <h2 class="system-title">SYNC LOVE</h2>
+    </div>
+  </div>
+
+  <div class="track-list">
+
+    <div class="music-card">
+      <img src="image/sync.jpg" class="music-jacket">
+      <h3>01. SYNC LOVE</h3>
+      <button class="music-btn" onclick="playMusic('n04')">▶︎ PLAY</button>
+      <audio id="n04" src="music/sync.mp3"></audio>
+    </div>
+
+    <div class="music-card">
+      <img src="image/sync.jpg" class="music-jacket">
+      <h3>02. 未送信ラブレター</h3>
+      <button class="music-btn" onclick="playMusic('n05')">▶︎ PLAY</button>
+      <audio id="n05" src="music/love.mp3"></audio>
+    </div>
+
+    <div class="music-card">
+      <img src="image/sync.jpg" class="music-jacket">
+      <h3>03. SYNC LOVE -CYBER ARENA Re:Mix-</h3>
+      <button class="music-btn" onclick="playMusic('n06')">▶︎ PLAY</button>
+      <audio id="n06" src="music/arena.mp3"></audio>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3rd -->
+<section class="single-block">
+  <div class="single-head">
+    <img src="image/unknown.jpg" class="single-jacket">
+    <div class="single-info">
+      <p class="single-number">3rd Single</p>
+      <h2 class="system-title">UNKNOWN DISTRICT</h2>
+    </div>
+  </div>
+
+  <div class="track-list">
+
+    <div class="music-card"><h3>
+  <a href="uratokyo.html" class="unknown-link">
+    01. UNKNOWN DISTRICT
+  </a>
+</h3><button class="music-btn" onclick="playMusic('n07')">▶︎</button><audio id="n07" src="music/neon7.mp3"></audio></div>
+    <div class="music-card"><h3>02. Re:TOKYO</h3><button class="music-btn" onclick="playMusic('n08')">▶︎</button><audio id="n08" src="music/neon8.mp3"></audio></div>
+    <div class="music-card"><h3>03. UNKNOWN DISTRICT -Re:Mix-</h3><button class="music-btn" onclick="playMusic('n09')">▶︎</button><audio id="n09" src="music/neon9.mp3"></audio></div>
+    <div class="music-card"><h3>04. UNKNOWN DISTRICT -URA TOKYO Re:Mix-</h3><button class="music-btn" onclick="playMusic('n10')">▶︎</button><audio id="n10" src="music/neon10.mp3"></audio></div>
+    <div class="music-card"><h3>05. Re:TOKYO -URA TOKYO Mix-</h3><button class="music-btn" onclick="playMusic('n11')">▶︎</button><audio id="n11" src="music/neon11.mp3"></audio></div>
+
+  </div>
+</section>
+
+<!-- 4th -->
+<section class="single-block">
+  <div class="single-head">
+    <img src="image/mirage.jpg" class="single-jacket">
+    <div class="single-info">
+      <p class="single-number">4th Single</p>
+      <h2 class="system-title">Mirage Night</h2>
+    </div>
+  </div>
+
+  <div class="track-list">
+
+    <div class="music-card"><h3>01. Mirage Night</h3><button class="music-btn" onclick="playMusic('n12')">▶︎</button><audio id="n12" src="music/mirage.mp3"></audio></div>
+    <div class="music-card"><h3>02. Mirage Night-Arabian Night Mix-</h3><button class="music-btn" onclick="playMusic('n13')">▶︎</button><audio id="n13" src="music/neon13.mp3"></audio></div>
+    <div class="music-card"><h3>03. Mirage Night -CYBER ARENA Mix-</h3><button class="music-btn" onclick="playMusic('n14')">▶︎</button><audio id="n14" src="music/neon14.mp3"></audio></div>
+
+  </div>
+</section>
+
+</main>
+
+<script src="neondisco.js"></script>
+</body>
+<div id="flash"></div>
+</html>
