@@ -291,6 +291,18 @@ audio{
   50%{opacity:1;}
   100%{opacity:0;}
 }
+.jacket-set {
+  display: inline-block;
+  margin-right: 12px;
+  text-align: center;
+}
+
+.jacket-label {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
 
 
 @media (max-width: 768px){
