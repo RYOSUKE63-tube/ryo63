@@ -370,6 +370,55 @@ body {
   cursor: pointer;
 }
 
+/* FAIRYTALES-BANNER */
+.fairytales-banner {
+  max-width: 720px;
+  margin: 70px auto;
+  padding: 0 20px;
+}
+
+.fairytales-banner a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 34px 20px;
+  border: 1px solid rgba(180, 140, 210, 0.5);
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.65), transparent 45%),
+    linear-gradient(135deg, rgba(120,80,180,0.22), rgba(255,170,210,0.22));
+  box-shadow: 0 0 28px rgba(180, 120, 255, 0.22);
+}
+
+.fairy-label {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: #b477d4;
+}
+
+.fairytales-banner h2 {
+  margin: 0;
+  font-family: "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  color: #5b3d78;
+}
+
+.fairytales-banner span {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: #7d687d;
+}
+
+.fairytales-banner a {
+  background:
+    radial-gradient(circle at center, rgba(210,160,255,0.18), transparent 45%),
+    linear-gradient(135deg, rgba(30,20,60,0.95), rgba(80,20,90,0.65));
+}
+
 /* NEWS */
 .news-card,
 .news-item {
