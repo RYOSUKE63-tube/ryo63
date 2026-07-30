@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tsukihime</title>
+
+<style>
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:"Hiragino Mincho ProN",serif;
+    background:
+    radial-gradient(circle at center,rgba(120,80,255,.22),transparent 40%),
+    linear-gradient(180deg,#0b1025,#05050d);
+    color:#e7e8ff;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:80px auto;
+    text-align:center;
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:8px;
+    color:#f5f6ff;
+    text-shadow:
+    0 0 10px rgba(120,180,255,.35),
+    0 0 25px rgba(150,120,255,.2);
+}
+
+.group{
+    color:#8fc9ff;
+    letter-spacing:.1em;
+}
+
+.copy{
+    margin:35px 0;
+    font-size:22px;
+    font-style:italic;
+    color:#7fc4ff;
+}
+
+.jacket{
+    width:280px;
+    display:block;
+    margin:40px auto;
+    border-radius:12px;
+    border:1px solid rgba(120,170,255,.3);
+    box-shadow:
+    0 0 30px rgba(80,120,255,.25);
+}
+
+audio{
+    width:300px;
+    margin:30px auto;
+    display:block;
+}
+
+.section{
+    margin-top:70px;
+    text-align:left;
+}
+
+.section h2{
+    border-bottom:1px solid rgba(120,170,255,.35);
+    padding-bottom:10px;
+    margin-bottom:20px;
+    color:#dfe7ff;
+}
+
+.story{
+    line-height:2;
+    color:#d2d8ff;
+}
+
+.lyrics{
+    white-space:pre-line;
+    line-height:2;
+    color:#ececff;
+}
+
+.page-nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:60px 0 40px;
+    flex-wrap:wrap;
+}
+
+.nav-btn{
+    min-width:180px;
+    padding:14px 22px;
+    text-align:center;
+    text-decoration:none;
+    color:#8fc9ff;
+    border:1px solid rgba(120,170,255,.4);
+    border-radius:30px;
+    background:rgba(25,35,70,.45);
+    transition:.3s;
+    font-size:15px;
+    letter-spacing:.05em;
+    box-shadow:0 0 15px rgba(90,130,255,.12);
+}
+
+.nav-btn:hover{
+    background:rgba(60,80,180,.45);
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(120,180,255,.3);
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>VS</h1>
+
+<p class="group">
+NEON CIRCUIT
+</p>
+
+<div class="copy">
+「笑顔あふれる世界へ  やわらかな風の中  また歩き出してく」
+</div>
+
+<img src="image/momotaro.png"
+alt="Tsukihime Jacket"
+class="jacket">
+
+<audio controls preload="metadata">
+    <source src="music/momotaro.mp3" type="audio/mpeg">
+    お使いのブラウザは音声再生に対応していません。
+</audio>
+
+<div class="section">
+
+<h2>Story</h2>
+
+<p class="story">
+
+桃太郎をモチーフにした、
+仲間と冒険の物語。
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>Lyrics</h2>
+
+<div class="lyrics">
+
+ころんと転がる  光のかけら  気づけば世界が  ひらけていた   はじめて見る景色に  胸が弾んでいく  どこへ続くのかも  まだ知らないまま  追いかけた風の中  名前を呼ばれた気がして  振り向いたその先に  広がる空の向こう  遠くそびえ立つ壁が  ゆっくり近づいてくる  軽やかな足音と  羽ばたく強さを連れて  振り返ればいつの間にか  隣に並んでいて  怖くなんてないよ  進んでいけるから  ねぇ　このまま  止まらないでいこう   VS（バーサス）今はじまっていく  どこまで行けるかな  心のままに  弾けるような未来  きらめき集めて  まだ見たことない  その先へ  高鳴る鼓動のまま  一歩踏み出していく  確かに感じてる  この瞬間を  揺らめく光の中  すべてが動き出してる  引き返す理由なんて  もうどこにもない  ねぇ　今なら  越えていける気がする  VS（バーサス）  加速していくよ  この手で掴みたい  まだ見ぬ世界  弾けるような未来  すべてを連れてく  止まらないままで  進んでいこう  VS（バーサス） 光に包まれて  振り返るその先に  続く道がある  あたたかな景色が  やさしく広がって  この手に残ってる  タシカナモノ 笑顔あふれる世界へ  やわらかな風の中  また歩き出してく
+</div>
+
+</div>
+
+<div class="page-nav">
+
+<a href="tukihime.html" class="nav-btn">
+← Tsukihime
+</a>
+
+<a href="fairytales.html" class="nav-btn">
+Story List
+</a>
+
+<a href="lost.html" class="nav-btn">
+LOST ALICE →
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
