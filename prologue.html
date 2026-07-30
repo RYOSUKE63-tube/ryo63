@@ -1,66 +1,174 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fairy Tale -prologue-</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prologue</title>
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: serif;
-      background:
-        radial-gradient(circle at center, rgba(255,240,255,0.4), transparent 50%),
-        linear-gradient(180deg, #ffffff, #f3e9f7);
-      color: #4a3a4a;
-    }
+<style>
 
-    .container {
-      text-align: center;
-      animation: fadeIn 2s ease;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    h1 {
-      font-size: 36px;
-      letter-spacing: 0.1em;
-    }
+body{
 
-    p {
-      margin-top: 12px;
-      color: #7a6a7a;
-    }
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 
-    a {
-      display: inline-block;
-      margin-top: 30px;
-      color: #888;
-    }
+font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+background:
+radial-gradient(circle at top,
+rgba(255,235,170,.15),
+transparent 30%),
+linear-gradient(
+180deg,
+#181826 0%,
+#24233d 45%,
+#090910 100%);
+
+color:white;
+
+}
+
+.container{
+
+width:90%;
+max-width:900px;
+text-align:center;
+padding:60px 20px;
+animation:fade 2.5s ease;
+
+}
+
+h1{
+
+font-size:54px;
+font-weight:normal;
+letter-spacing:.15em;
+margin-bottom:70px;
+color:#fff7d9;
+text-shadow:0 0 18px rgba(255,220,160,.4);
+
+}
+
+.narration{
+
+font-size:22px;
+line-height:2.6;
+white-space:pre-line;
+max-width:720px;
+margin:auto;
+
+}
+
+.page-nav{
+
+margin-top:90px;
+
+}
+
+.nav-btn{
+
+display:inline-block;
+padding:16px 40px;
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.25);
+
+color:white;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.nav-btn:hover{
+
+background:rgba(255,255,255,.18);
+
+transform:translateY(-3px);
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
-  <div class="container">
-    <h1>Fairy Tale</h1>
-    <p>- prologue -</p>
 
-    <p>物語は、ここから始まる。</p>
+<div class="container">
 
-    <a href="fairytales.html">←戻る</a>
-  </div>
+<h1>Prologue</h1>
+
+<div class="narration">
+
+むかし、むかし——
+
+とても遠くて、
+どこか近い場所に、
+
+いくつもの物語がありました。
+
+それは、
+誰かの願いであり、
+
+誰かの涙であり、
+
+そして、
+まだ語られていない想い。
+
+夜の中で静かに揺れる、
+小さな光のように、
+
+ひとつひとつが、
+誰かの心に残っていきます。
+
+これは、
+そんな物語のはじまり。
+
+さあ——
+ページをめくってみましょう。
+</div>
+
+<div class="page-nav">
+
+<a href="fairytales-song.html" class="nav-btn">
+
+Fairy Tales →
+
+</a>
+
+</div>
+
+</div>
+
 </body>
+
 </html>
