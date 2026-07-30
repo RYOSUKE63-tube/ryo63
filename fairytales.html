@@ -3,110 +3,452 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Fairy Tales</title>
+
   <link rel="stylesheet" href="css/fairytales.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- エントランス -->
-  <section class="entrance" id="entrance">
-    <div class="door-wrap" id="doorWrap">
-      <div class="door">
-        <div class="door-window"></div>
 
-        <div class="signboard">
-          <h1>Fairy Tales</h1>
-          <p>ONE FOREST MELODY × NEON CIRCUIT</p>
-        </div>
+<!-- =========================
+     ENTRANCE
+========================== -->
 
-        <div class="knob"></div>
-      </div>
+<div id="entrance" class="entrance">
 
-      <p class="enter-text">click the door</p>
-    </div>
-  </section>
+  <div id="doorWrap" class="door-wrap">
 
-  <!-- メインサイト -->
-  <main class="main-site" id="mainSite">
-    <header class="site-header">
-      <p>ONE FOREST MELODY × NEON CIRCUIT</p>
+    <div class="door left-door"></div>
+    <div class="door right-door"></div>
+
+    <div class="door-title">
+
       <h1>Fairy Tales</h1>
-      <span>おとぎ話は、何度でも始まる。</span>
-    </header>
 
-    <section class="window-area">
-      <article class="story-window neon-window">
-        <p class="group-name">NEON CIRCUIT</p>
-        <div class="window-image neon-bg"></div>
+      <p>
+        Once upon a time...
+      </p>
 
-        <div class="story-info">
-          <p>2nd story</p>
-          <h2>シンデレラ</h2>
-          <span>by シンデレラ</span>
-          <button>enter →</button>
-        </div>
-      </article>
+      <span class="enter-text">
+        TAP TO OPEN
+      </span>
 
-      <nav class="center-menu">
-        <div class="book-icon">✦</div>
-        <a href="#" id="storyBtn">STORY LIST</a>        
-        <a href="#">ABOUT</a>
-        <a href="#">ALBUM</a>
-        <a href="#">TRACK LIST</a>
-        <a href="#">GOODS</a>
-        <a href="#">SPECIAL</a>
-      </nav>
-
-      <article class="story-window onefor-window">
-        <p class="group-name">ONE FOREST MELODY</p>
-        <div class="window-image onefor-bg"></div>
-
-        <div class="story-info">
-          <p>1st story</p>
-          <h2>Tsukihime</h2>
-          <span>by かぐや姫</span>
-          <button>enter →</button>
-        </div>
-      </article>
-    </section>
-
-   <section class="story-list" id="storyList">
-  <div class="book">
-    <div class="book-page left-page">
-      <h3>Fairy Tales</h3>
-      <p>Story Index</p>
-      <span>NEON CIRCUIT<br>×<br>ONE FOREST MELODY</span>
     </div>
 
-    <div class="book-page right-page">
-      <ol>
-        <li>
-          <a href="prologue.html">
-          <span class="neon-one">Fairy Tale -prologue-</span>
-          </a>
-        </li>
-        <li><span class="neon">シンデレラ</span> / NEON CIRCUIT</li>
-        <li>
-          <a href="tsukihime.html">
-          <span class="onefor">Tsukihime</span>
-         </a>
-        </li>
-        <li><span class="neon">LOST ALICE</span> / NEON CIRCUIT</li>
-        <li><span class="onefor">Sweet Trap</span> / ONE FOREST MELODY</li>
-        <li><span class="neon">WHO IS THE WOLF</span> / NEON CIRCUIT</li>
-        <li><span class="onefor">眠りの森の私</span> / ONE FOREST MELODY</li>
-        <li><span class="neon">Lagoon Memory</span> / NEON CIRCUIT</li>
-        <li><span class="onefor">揺れる光の先</span> / ONE FOREST MELODY</li>
-        <li>...</li>
-        <li>めでたし -epilogue-</li>
-      </ol>
-    </div>
   </div>
-</section><footer>
-      <a href="index.html">TOPへ戻る</a>
-    </footer>
-  </main>
+
+</div>
+
+
+<!-- =========================
+        MAIN SITE
+========================== -->
+
+<div id="mainSite" class="main-site">
+
+
+<header class="hero">
+
+<p class="group-name">
+ONE FOREST MELODY
+&nbsp;×&nbsp;
+NEON CIRCUIT
+</p>
+
+<h1 class="site-title">
+Fairy Tales
+</h1>
+
+<p class="catch-copy">
+
+おとぎ話は、何度でも始まる。
+
+</p>
+
+
+<!-- 表ジャケット -->
+
+<div class="album-cover">
+
+<img
+src="image/fairytales.png"
+alt="Fairy Tales">
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+      WINDOW AREA
+========================== -->
+
+<section class="window-area">
+
+
+<!-- LEFT -->
+
+<article class="story-window">
+
+<h2>
+
+NEON CIRCUIT
+
+</h2>
+
+
+<div class="window-image">
+
+<img
+id="neonSlide"
+src="image/tsukihime.png"
+alt="NEON">
+
+</div>
+
+
+<p
+id="neonNumber"
+class="story-number">
+
+STORY 09
+
+</p>
+
+
+<h3
+id="neonTitle">
+
+Tsukihime
+
+</h3>
+
+
+<p
+id="neonMotif"
+class="story-theme">
+
+かぐや姫
+
+</p>
+
+
+<a
+id="neonLink"
+class="window-button"
+href="tsukihime.html">
+
+ENTER
+
+</a>
+
+</article>
+
+
+
+<!-- CENTER -->
+
+<div class="window-center">
+
+<img
+src="image/book1.png"
+alt="Book">
+
+</div>
+
+
+
+<!-- RIGHT -->
+
+<article class="story-window">
+
+<h2>
+
+ONE FOREST
+MELODY
+
+</h2>
+
+
+<div class="window-image">
+
+<img
+id="oneforSlide"
+src="image/sirayuki.png"
+alt="ONE FOREST">
+
+</div>
+
+
+<p
+id="oneforNumber"
+class="story-number">
+
+STORY 03
+
+</p>
+
+
+<h3
+id="oneforTitle">
+
+Sweet Trap
+
+</h3>
+
+
+<p
+id="oneforMotif"
+class="story-theme">
+
+白雪姫
+
+</p>
+
+
+<a
+id="oneforLink"
+class="window-button"
+href="sweettrap.html">
+
+ENTER
+
+</a>
+
+</article>
+
+
+</section>
+
+
+
+<!-- =========================
+        MENU
+========================== -->
+
+<nav class="main-menu">
+
+<a href="#storyList">
+STORY LIST
+</a>
+
+<a href="#about">
+ABOUT
+</a>
+
+<a href="#album">
+ALBUM
+</a>
+
+<a href="#track">
+TRACK LIST
+</a>
+
+<a href="#goods">
+GOODS
+</a>
+
+<a href="#special">
+SPECIAL
+</a>
+
+</nav>
+
+<!-- =========================
+        STORY LIST
+========================== -->
+
+<section id="storyList" class="story-list">
+
+<h2>STORY LIST</h2>
+
+<div class="story-grid">
+
+<a href="prologue.html">Prologue</a>
+
+<a href="fairytales-song.html">Fairy Tales</a>
+
+<a href="sweet-trap.html">Sweet Trap</a>
+
+<a href="himitu.html">ひみつの竜宮城</a>
+
+<a href="yureru.html">揺れる光の先</a>
+
+<a href="nami.html">波まかせの午後</a>
+
+<a href="nemuri.html">眠りの森の私</a>
+
+<a href="paretto.html">波音パレット</a>
+
+<a href="tukihime.html">Tsukihime</a>
+
+<a href="ozu.html">潮風の誓い</a>
+
+<a href="momotaro.html">VS</a>
+
+<a href="lost.html">LOST ALICE</a>
+
+<a href="wolf.html">WHO IS THE WOLF</a>
+
+<a href="sindelera.html">シンデレラ</a>
+
+<a href="epilogue.html">Epilogue</a>
+
+<a href="medetasi.html">めでたし</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+          ABOUT
+========================== -->
+
+<section id="about" class="content-section">
+
+<h2>ABOUT</h2>
+
+<p>
+
+ONE FOREST MELODY と
+NEON CIRCUIT が紡ぐ、
+16篇のおとぎ話。
+
+誰もが知る物語を、
+それぞれの世界観で描いた
+コンセプトアルバム。
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
+          ALBUM
+========================== -->
+
+<section id="album" class="content-section">
+
+<h2>ALBUM</h2>
+
+<img
+class="album-image"
+src="image/fairytales.png"
+alt="Fairy Tales">
+
+</section>
+
+
+
+<!-- =========================
+        TRACK LIST
+========================== -->
+
+<section id="track" class="content-section">
+
+<h2>TRACK LIST</h2>
+
+<ol class="track-list">
+
+<li>Prologue</li>
+<li>Fairy Tales</li>
+<li>Sweet Trap</li>
+<li>ひみつの竜宮城</li>
+<li>揺れる光の先</li>
+<li>波まかせの午後</li>
+<li>眠りの森の私</li>
+<li>波音パレット</li>
+<li>Tsukihime</li>
+<li>潮風の誓い</li>
+<li>VS</li>
+<li>LOST ALICE</li>
+<li>WHO IS THE WOLF</li>
+<li>シンデレラ</li>
+<li>Epilogue</li>
+<li>めでたし</li>
+
+</ol>
+
+</section>
+
+
+
+<!-- =========================
+          GOODS
+========================== -->
+
+<section id="goods" class="content-section">
+
+<h2>GOODS</h2>
+
+<p>
+
+CD・歌詞カード・アクリルグッズなど、
+Fairy Talesの世界を彩る
+オリジナルアイテム。
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
+        SPECIAL
+========================== -->
+
+<section id="special" class="content-section">
+
+<h2>SPECIAL</h2>
+
+<p>
+
+すべてのおとぎ話は、
+ここから始まり、
+そしてまた誰かの物語になる。
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
+          FOOTER
+========================== -->
+
+<footer class="footer">
+
+<p>
+
+© 2026
+PIPELINE
+
+</p>
+
+<p>
+
+ONE FOREST MELODY
+×
+NEON CIRCUIT
+
+</p>
+
+</footer>
+
+</div>
+
 <script src="fairytales.js"></script>
+
 </body>
-</html>  </body>
 </html>
