@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tsukihime</title>
+
+<style>
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:"Hiragino Mincho ProN",serif;
+    background:
+    radial-gradient(circle at center,rgba(120,80,255,.22),transparent 40%),
+    linear-gradient(180deg,#0b1025,#05050d);
+    color:#e7e8ff;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:80px auto;
+    text-align:center;
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:8px;
+    color:#f5f6ff;
+    text-shadow:
+    0 0 10px rgba(120,180,255,.35),
+    0 0 25px rgba(150,120,255,.2);
+}
+
+.group{
+    color:#8fc9ff;
+    letter-spacing:.1em;
+}
+
+.copy{
+    margin:35px 0;
+    font-size:22px;
+    font-style:italic;
+    color:#7fc4ff;
+}
+
+.jacket-wrap{
+    position:relative;
+    width:280px;
+    height:280px;
+    margin:40px auto;
+}
+
+.jacket{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:12px;
+    opacity:0;
+    transition:opacity 1s;
+}
+
+.jacket.active{
+    opacity:1;
+}
+audio{
+    width:300px;
+    margin:30px auto;
+    display:block;
+}
+
+.section{
+    margin-top:70px;
+    text-align:left;
+}
+
+.section h2{
+    border-bottom:1px solid rgba(120,170,255,.35);
+    padding-bottom:10px;
+    margin-bottom:20px;
+    color:#dfe7ff;
+}
+
+.story{
+    line-height:2;
+    color:#d2d8ff;
+}
+
+.lyrics{
+    white-space:pre-line;
+    line-height:2;
+    color:#ececff;
+}
+
+.page-nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:60px 0 40px;
+    flex-wrap:wrap;
+}
+
+.nav-btn{
+    min-width:180px;
+    padding:14px 22px;
+    text-align:center;
+    text-decoration:none;
+    color:#8fc9ff;
+    border:1px solid rgba(120,170,255,.4);
+    border-radius:30px;
+    background:rgba(25,35,70,.45);
+    transition:.3s;
+    font-size:15px;
+    letter-spacing:.05em;
+    box-shadow:0 0 15px rgba(90,130,255,.12);
+}
+
+.nav-btn:hover{
+    background:rgba(60,80,180,.45);
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(120,180,255,.3);
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h1>Tsukihime</h1>
+
+<p class="group">
+NEON CIRCUIT
+</p>
+
+<div class="copy">
+「ねぇ　まだ消えたくないよ  君の隣で　生きていたい」
+</div>
+
+<div class="jacket-wrap">
+    <img src="image/tukihime2.png" class="jacket active">
+    <img src="image/tsukihime.png" class="jacket">
+</div>
+<audio controls preload="metadata">
+    <source src="music/tsukihie.mp3" type="audio/mpeg">
+    お使いのブラウザは音声再生に対応していません。
+</audio>
+
+<div class="section">
+
+<h2>Story</h2>
+
+<p class="story">
+
+かぐや姫をモチーフにした、
+切なく苦しい幻想物語。
+
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>Lyrics</h2>
+
+<div class="lyrics">
+
+ねぇ　まだ消えたくないよ  君の隣で　息をしてたい  満ちていく月が　私を呼んでる  ほどけてく　この手の中   揺れる影の中で　見つけてくれたね  何も知らなかった　あの日の私を  触れた指の温度　消えないままで  優しさを知るたび　怖くなっていく  ここにいてもいいのかな  言えないまま　笑ってた  帰れないままでいいと  初めて願った夜なのに  光が近づくほど　遠くなる声  「行かないで」も届かない  ほどけていく　ほどけていく  この夜ごと  重ねた時間さえ　夢みたいで  確かめるたびに　揺らいでしまう   笑った横顔も　泣きそうな瞳も  全部　連れていけないこと  分かってるのに  離れていく運命が  こんなにも　優しいなんて  ねぇ　まだここにいたいよ  君の名前を　呼び続けたい  満ちてしまう月が　終わりを告げてる  繋いだ手　ほどかないで  忘れたくないのに  触れた記憶ほどけていく  残しておきたいのに  言葉が光に溶けていく  もしも最初から  出会わなければよかったなんて  言えないよ  この痛みさえ  君といた証だから  ねぇ　まだ消えたくないよ  君の隣で　生きていたい  ねぇ　まだ消えたくないよ  君の隣で　生きていたい  満ちきった月が　すべてを奪っても  離さない　この想いだけ  ねぇ　忘れないでいて  ここにいた私のことを  光にほどけていく　その瞬間まで  君の名前　呼んでいる  これが私の罪なら  どうか今だけは消さないで  淡い光に　溶けていく声  届かなくても　まだ呼んでる
+</div>
+
+</div>
+
+<div class="page-nav">
+
+<a href="paretto.html" class="nav-btn">
+← 波まかせの午後
+</a>
+
+<a href="fairytales.html" class="nav-btn">
+Story List
+</a>
+
+<a href="ozu.html" class="nav-btn">
+潮風の誓い →
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
+<script>
+const jackets = document.querySelectorAll(".jacket");
+let current = 0;
+
+setInterval(() => {
+    jackets[current].classList.remove("active");
+    current = (current + 1) % jackets.length;
+    jackets[current].classList.add("active");
+}, 5000);
+</script>
