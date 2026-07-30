@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>めでたし</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    color:#f8f3ea;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(255,220,180,.18),
+    transparent 35%),
+
+    radial-gradient(circle at bottom,
+    rgba(255,255,220,.08),
+    transparent 45%),
+
+    linear-gradient(
+    180deg,
+    #ffe6c5 0%,
+    #efc29d 20%,
+    #cc8e82 45%,
+    #72556d 70%,
+    #22283f 100%);
+
+    background-attachment:fixed;
+    min-height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding:70px 0;
+    text-align:center;
+    animation:fade 1.8s;
+}
+
+h1{
+    font-size:52px;
+    font-weight:normal;
+    letter-spacing:.15em;
+    color:#fff5dc;
+    text-shadow:
+    0 0 12px rgba(255,220,170,.5);
+}
+
+.group{
+    margin-top:20px;
+    color:#ffe8cf;
+    line-height:1.8;
+    letter-spacing:.12em;
+}
+
+.copy{
+    margin:40px auto;
+    font-size:22px;
+    font-style:italic;
+    color:#fff4d8;
+}
+
+.jacket{
+    width:300px;
+    max-width:90%;
+    border-radius:14px;
+    box-shadow:
+    0 0 30px rgba(255,220,160,.25);
+    margin:40px auto;
+    display:block;
+}
+
+audio{
+    width:100%;
+    max-width:420px;
+    margin:40px auto;
+}
+
+.section{
+    margin-top:70px;
+    text-align:left;
+}
+
+.section h2{
+    color:#fff1d6;
+    margin-bottom:20px;
+    padding-bottom:8px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.story,
+.lyrics{
+    line-height:2.2;
+    font-size:17px;
+    color:#fff8ef;
+    white-space:pre-wrap;
+}
+
+.page-nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:80px 0 20px;
+}
+
+.nav-btn{
+    min-width:180px;
+    padding:14px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    color:#fff;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    backdrop-filter:blur(8px);
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    background:rgba(255,255,255,.22);
+    transform:translateY(-4px);
+    box-shadow:
+    0 8px 24px rgba(255,230,180,.25);
+}
+
+.footer{
+
+    margin-top:100px;
+    text-align:center;
+    color:rgba(255,255,255,.45);
+    font-size:13px;
+    letter-spacing:.35em;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>めでたし</h1>
+
+<p class="group">
+
+ONE FOREST MELODY<br>
+×<br>
+NEON CIRCUIT
+
+</p>
+
+<div class="copy">
+
+「そして、物語はいつまでも語り継がれる。」
+
+</div>
+
+<img src="image/medetasi.png"
+class="jacket"
+alt="めでたし">
+
+<audio controls preload="metadata">
+
+<source src="music/medetasi.mp3" type="audio/mpeg">
+
+</audio>
+
+<div class="section">
+
+<h2>Story</h2>
+
+<div class="story">
+
+おとぎ話をモチーフにした、
+
+幸せの物語。
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Lyrics</h2>
+
+<div class="lyrics">
+
+[NEON CIRCUIT] 
+silent signal  静かにページが閉じていく   きらめいた軌跡も  やがてほどけていく  残された光だけが  遠くで揺れている  終わりの合図が  そっと響きはじめる  まだ消えない想いを  胸に抱いたまま  ねぇ　これで  よかったのかな  静かにページを閉じて  夢はやさしく残る  触れていたぬくもりが  まだここにある  重なりあった時間は  消えずに続いてく  この胸の奥で  そっと息をしてる  [ONE FOREST MELODY]  離れていく世界が  少しだけ寂しくて  それでも確かに  ここにあったから  名前のない気持ちも  そのままでいいよと  やさしい声が  そっと包み込む   ねぇ　このまま  忘れないでいよう   やさしい光の中で  すべてが包まれていく  あの日のきらめきが  また浮かび上がる  終わりじゃないままで  続いていくものを  この手のひらで  そっと抱きしめる  [NEON CIRCUIT×ONE FOREST MELODY]  また会う日まで  さあ、キミの世界がはじまる  
+
+めでたし、めでたし
+
+</div>
+
+</div>
+
+<div class="page-nav">
+
+<a href="epilogue.html" class="nav-btn">
+
+← Epilogue
+
+</a>
+
+<a href="fairytales.html" class="nav-btn">
+
+Story List
+
+</a>
+
+<a href="fairytales.html" class="nav-btn">
+
+TOP PAGE →
+
+</a>
+
+</div>
+
+<div class="footer">
+
+The End
+
+</div>
+
+</div>
+
+</body>
+</html>
