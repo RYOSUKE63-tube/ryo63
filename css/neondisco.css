@@ -328,3 +328,17 @@ audio{
     max-width:260px;
   }
 }
+
+.new-badge{
+  display:inline-block;
+  margin-left:10px;
+  padding:4px 10px;
+  font-size:0.7rem;
+  font-weight:bold;
+  color:#ff4040;
+  border:1px solid #ff4040;
+  border-radius:20px;
+  background:rgba(255,64,64,.12);
+  box-shadow:0 0 8px #ff4040;
+  text-shadow:0 0 6px #ff4040;
+}
