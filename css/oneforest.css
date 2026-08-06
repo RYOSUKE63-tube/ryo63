@@ -70,53 +70,151 @@ body{
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* ===== FAIRYTALES-BANNER ===== */
+/* ===== SPECIAL ALBUM PROJECT ===== */
 
-.fairytales-banner {
-  max-width: 720px;
-  margin: 70px auto;
-  padding: 0 20px;
-}
+.special-album-banner{
+  max-width:720px;
+  margin:70px auto;
+  padding:38px 25px 30px;
 
-.fairytales-banner a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  padding: 34px 20px;
+  background:#ead8bd;
+  border:3px solid #9d7552;
 
-  background: #ead8bd; /* 表札と同じ */
-  border: 3px solid #9d7552; /* 表札の枠 */
-
-  box-shadow: 
+  box-shadow:
     0 8px 20px rgba(60,35,20,0.2),
     inset 0 0 10px rgba(255,255,255,0.4);
 
-  transition: 0.3s ease;
+  text-align:center;
 }
 
-.fairy-label {
-  margin: 0 0 10px;
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  color: #7a5a45;
+
+/* 上のタイトル */
+
+.special-album-label{
+  margin:0 0 28px;
+
+  font-size:12px;
+  letter-spacing:.22em;
+
+  color:#7a5a45;
 }
 
-.fairytales-banner h2 {
-  margin: 0;
-  font-family: serif;
-  font-size: 40px;
-  font-weight: normal;
-  letter-spacing: 0.06em;
-  color: #5b3d2f;
+
+/* 4作品 */
+
+.special-album-grid{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:14px 25px;
+
+  max-width:600px;
+  margin:0 auto 30px;
 }
 
-.fairytales-banner span {
-  display: block;
-  margin-top: 10px;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  color: #6b5245;
+
+/* 各タイトル */
+
+.special-album-item{
+  display:block;
+
+  padding:12px 5px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:28px;
+  font-weight:normal;
+
+  letter-spacing:.03em;
+
+  color:#5b3d2f;
+
+  text-decoration:none;
+
+  transition:
+    transform .3s ease,
+    color .3s ease;
 }
+
+
+/* 完成済み作品 */
+
+a.special-album-item:hover{
+  color:#9d7552;
+
+  transform:translateY(-3px);
+}
+
+
+/* まだ未公開 */
+
+.special-album-item.coming{
+  color:#8c7667;
+  opacity:.55;
+}
+
+
+/* 下のグループ名 */
+
+.special-album-artists{
+  margin:10px 0 0;
+
+  font-size:11px;
+
+  letter-spacing:.14em;
+
+  color:#6b5245;
+}
+
+
+/* スマホ */
+
+@media(max-width:600px){
+
+  .special-album-banner{
+    width:calc(100% - 40px);
+
+    margin:55px auto;
+
+    padding:
+      32px
+      15px
+      26px;
+  }
+
+  .special-album-label{
+    margin-bottom:22px;
+
+    font-size:10px;
+  }
+
+  .special-album-grid{
+    gap:
+      12px
+      8px;
+
+    margin-bottom:24px;
+  }
+
+  .special-album-item{
+    font-size:20px;
+
+    padding:10px 2px;
+  }
+
+  .special-album-artists{
+    font-size:9px;
+
+    letter-spacing:.08em;
+  }
+
+}
+
+
 /* ===== MEMBER ===== */
 
 .member-section{
