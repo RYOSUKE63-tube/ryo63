@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SPRING | Four Seasons</title>
+
+  <link rel="stylesheet" href="css/season.css">
+</head>
+
+<body>
+
+<!-- ===================================
+              SPRING HERO
+=================================== -->
+
+<header class="season-hero spring-hero">
+
+  <div class="petals" id="petals"></div>
+
+  <p class="season-small">
+    FOUR SEASONS
+  </p>
+
+  <h1>SPRING</h1>
+
+  <p class="season-jp">
+    春
+  </p>
+
+  <p class="season-copy">
+    新しい季節が、そっと動き出す。
+  </p>
+
+  <span class="scroll-text">
+    SCROLL TO SPRING
+  </span>
+
+</header>
+
+
+<!-- ===================================
+              INTRODUCTION
+=================================== -->
+
+<section class="spring-intro">
+
+  <p class="intro-small">
+    A NEW SEASON BEGINS
+  </p>
+
+  <h2>
+    春の窓を、開けよう。
+  </h2>
+
+  <p class="intro-text">
+    やわらかな風。<br>
+    舞い落ちる桜。<br>
+    少しだけ新しく見える、いつもの街。
+  </p>
+
+  <p class="intro-text">
+    ONE FOREST MELODYとNEON CIRCUITが描く、<br>
+    ふたつの春。
+  </p>
+
+</section>
+
+
+<!-- ===================================
+                SONG 01
+=================================== -->
+
+<section class="song-section onefo-song">
+
+  <div class="song-number">
+    TRACK 02
+  </div>
+
+  <div class="song-content">
+
+    <div class="song-visual">
+
+      <!-- 後からジャケット画像を入れる -->
+      <div class="jacket-placeholder">
+        <span>SPRING</span>
+      </div>
+
+    </div>
+
+
+    <div class="song-info">
+
+      <p class="artist">
+        ONE FOREST MELODY
+      </p>
+
+      <h2>
+        春色
+      </h2>
+
+      <p class="song-copy">
+        やさしい風に包まれて、<br>
+        世界が少しずつ色づいていく。
+      </p>
+
+
+      <button
+        class="play-button"
+        onclick="toggleMusic('haruiroAudio', this)">
+        ▶ PLAY
+      </button>
+
+      <audio id="haruiroAudio">
+      <source src="music/haruiro.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================================
+                DIVIDER
+=================================== -->
+
+<div class="spring-divider">
+
+  <span>✿</span>
+
+</div>
+
+
+<!-- ===================================
+                SONG 02
+=================================== -->
+
+<section class="song-section neon-song">
+
+  <div class="song-number">
+    TRACK 03
+  </div>
+
+  <div class="song-content reverse">
+
+    <div class="song-visual">
+
+      <!-- 後からジャケット画像を入れる -->
+      <div class="jacket-placeholder neon-placeholder">
+        <span>NEON SPRING</span>
+      </div>
+
+    </div>
+
+
+    <div class="song-info">
+
+      <p class="artist">
+        NEON CIRCUIT
+      </p>
+
+      <h2>
+        NEON in Spring
+      </h2>
+
+      <p class="song-copy">
+        桜色に染まる街と、<br>
+        ネオンの光が交差する春。
+      </p>
+
+
+     <button
+  class="play-button"
+  onclick="toggleMusic('neonSpringAudio', this)">
+  ▶ PLAY
+</button>
+
+<audio id="neonSpringAudio">
+  <source src="music/neosp.mp3" type="audio/mpeg">
+</audio>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================================
+            SPRING MESSAGE
+=================================== -->
+
+<section class="season-message">
+
+  <p class="message-small">
+    SPRING IS JUST THE BEGINNING
+  </p>
+
+  <h2>
+    そして、季節は巡っていく。
+  </h2>
+
+  <p>
+    春の風の向こうには、<br>
+    眩しい夏が待っている。
+  </p>
+
+</section>
+
+
+<!-- ===================================
+          SEASON NAVIGATION
+=================================== -->
+
+<nav class="season-navigation">
+  <a href="season.html">← FOUR SEASONS</a>
+
+  <a href="season.html" class="season-home">
+    FOUR SEASONS
+  </a>
+
+  <a href="summer.html">SUMMER →</a>
+</nav>
+
+
+<!-- ===================================
+                FOOTER
+=================================== -->
+
+<footer>
+
+  <p>
+    ONE FOREST MELODY × NEON CIRCUIT
+  </p>
+
+  <h2>
+    Four Seasons
+  </h2>
+
+</footer>
+
+
+<script src="season.js"></script>
+
+</body>
+</html>

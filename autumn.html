@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AUTUMN | Four Seasons</title>
+
+  <link rel="stylesheet" href="css/season.css">
+</head>
+
+<body>
+
+
+<!-- ===================================
+              AUTUMN HERO
+=================================== -->
+
+<header class="autumn-hero">
+
+  <div class="autumn-leaves" aria-hidden="true"></div>
+
+  <div class="hero-content">
+
+    <p class="season-small">
+      FOUR SEASONS
+    </p>
+
+    <h1>AUTUMN</h1>
+
+    <p class="season-jp">
+      秋
+    </p>
+
+    <p class="season-copy">
+      色づく季節に、あの日を想う。
+    </p>
+
+    <span class="scroll-text">
+      SCROLL TO AUTUMN
+    </span>
+
+  </div>
+
+</header>
+
+
+<!-- ===================================
+             INTRODUCTION
+=================================== -->
+
+<section class="autumn-intro">
+
+  <p class="intro-small">
+    COLORS OF MEMORY
+  </p>
+
+  <h2>
+    秋の窓を、開けよう。
+  </h2>
+
+  <p class="intro-text">
+    少し冷たくなった風。<br>
+    茜色に染まっていく空。<br>
+    静かに揺れる、秋の花。
+  </p>
+
+  <p class="intro-text">
+    優しい記憶から、眠らない都市の夜へ。<br>
+    ふたつの秋が、ひとつの季節を描いていく。
+  </p>
+
+</section>
+
+
+<!-- ===================================
+               COSMOS
+=================================== -->
+
+<section class="autumn-song cosmos-section">
+
+  <div class="song-number">
+    TRACK 08
+  </div>
+
+  <div class="song-content">
+
+    <div class="song-visual">
+
+      <div class="jacket-placeholder cosmos-placeholder">
+        <span>COSMOS</span>
+      </div>
+
+    </div>
+
+
+    <div class="song-info">
+
+      <p class="artist onefo">
+        ONE FOREST MELODY
+      </p>
+
+      <h2>
+        コスモス
+      </h2>
+
+      <p class="song-copy">
+        色づく景色に風が吹いて、<br>
+        あの日の夏が遠く揺れる。
+      </p>
+
+      <p class="song-description">
+        季節が進んでも、心だけはあの日のまま。<br>
+        秋風の中で蘇る、大切な記憶。
+      </p>
+
+      <button
+  class="play-button"
+  onclick="toggleMusic('cosmosAudio', this)">
+  ▶ PLAY
+</button>
+
+<audio id="cosmosAudio">
+  <source src="music/cosmos.mp3" type="audio/mpeg">
+</audio>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================================
+        DAY → NIGHT TRANSITION
+=================================== -->
+
+<section class="autumn-transition">
+
+  <div class="sunset-line"></div>
+
+  <p>
+    THE SUN GOES DOWN
+  </p>
+
+  <span>
+    秋の空が、夜の色へ変わっていく。
+  </span>
+
+</section>
+
+
+<!-- ===================================
+        CYBER AUTUMN NIGHT
+=================================== -->
+
+<section class="autumn-song cyber-section">
+
+  <div class="cyber-grid" aria-hidden="true"></div>
+
+  <div class="song-number">
+    TRACK 10
+  </div>
+
+  <div class="song-content reverse">
+
+    <div class="song-visual">
+
+      <div class="jacket-placeholder cyber-placeholder">
+        <span>CYBER<br>AUTUMN<br>NIGHT</span>
+      </div>
+
+    </div>
+
+
+    <div class="song-info">
+
+      <p class="artist neon">
+        NEON CIRCUIT
+      </p>
+
+      <h2>
+        Cyber Autumn Night
+      </h2>
+
+      <p class="song-copy">
+        紅葉さえネオンに染まる、<br>
+        東京の秋の夜へ。
+      </p>
+
+      <p class="song-description">
+        昼の静けさとは違う、もうひとつの秋。<br>
+        光と街が交差する夜をNEON CIRCUITが駆け抜ける。
+      </p>
+
+     <button
+  class="play-button"
+  onclick="toggleMusic('cyberAutumnAudio', this)">
+  ▶ PLAY
+</button>
+
+<audio id="cyberAutumnAudio">
+  <source src="music/can.mp3" type="audio/mpeg">
+</audio>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================================
+           AUTUMN ENDING
+=================================== -->
+
+<section class="autumn-ending">
+
+  <p class="ending-small">
+    AUTUMN IS FADING
+  </p>
+
+  <h2>
+    そして、季節は冬へ。
+  </h2>
+
+  <p>
+    色づいた葉が落ちて、<br>
+    街に白い息が浮かび始める。
+  </p>
+
+  <div class="first-snow">
+    ❄
+  </div>
+
+</section>
+
+
+<!-- ===================================
+          SEASON NAVIGATION
+=================================== -->
+
+<nav class="season-navigation">
+  <a href="summer.html">← SUMMER</a>
+
+  <a href="season.html" class="season-home">
+    FOUR SEASONS
+  </a>
+
+  <a href="winter.html">WINTER →</a>
+</nav>
+<!-- ===================================
+               FOOTER
+=================================== -->
+
+<footer class="autumn-footer">
+
+  <p>
+    ONE FOREST MELODY × NEON CIRCUIT
+  </p>
+
+  <h2>
+    Four Seasons
+  </h2>
+
+</footer>
+
+
+<script src="season.js"></script>
+
+</body>
+</html>
