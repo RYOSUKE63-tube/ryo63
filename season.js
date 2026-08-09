@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ENTRANCE OPEN
   =================================== */
 
-  if(enterButton){
+  if (enterButton) {
 
     enterButton.addEventListener("click", () => {
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         先にメインサイトを表示
       */
 
-      if(mainSite){
+      if (mainSite) {
         mainSite.classList.add("show");
       }
 
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         入口をフェードアウト
       */
 
-      if(entrance){
+      if (entrance) {
         entrance.classList.add("hide");
       }
 
@@ -55,16 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
 
-        if(entrance){
+        if (entrance) {
           entrance.style.display = "none";
         }
 
         window.scrollTo({
-          top:0,
-          behavior:"instant"
+          top: 0,
+          behavior: "instant"
         });
 
-      },1200);
+      }, 1200);
 
     });
 
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         二重クリック防止
       */
 
-      if(windowBox.classList.contains("open")){
+      if (windowBox.classList.contains("open")) {
         return;
       }
 
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         item.style.pointerEvents = "none";
 
-        if(item !== windowBox){
+        if (item !== windowBox) {
 
           item.classList.add("season-fade");
 
@@ -152,11 +152,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
 
-        if(link){
+        if (link) {
           window.location.href = link;
         }
 
-      },1800);
+      }, 1800);
 
     });
 
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
           CREATE SEASON EFFECT
   =================================== */
 
-  function createSeasonEffect(season){
+  function createSeasonEffect(season) {
 
     const effect =
       document.createElement("div");
@@ -186,9 +186,9 @@ document.addEventListener("DOMContentLoaded", () => {
       花びら
     */
 
-    if(season === "spring"){
+    if (season === "spring") {
 
-      for(let i = 0; i < 30; i++){
+      for (let i = 0; i < 30; i++) {
 
         const petal =
           document.createElement("span");
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
       光
     */
 
-    if(season === "summer"){
+    if (season === "summer") {
 
       const light =
         document.createElement("div");
@@ -242,9 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
       落ち葉
     */
 
-    if(season === "autumn"){
+    if (season === "autumn") {
 
-      for(let i = 0; i < 25; i++){
+      for (let i = 0; i < 25; i++) {
 
         const leaf =
           document.createElement("span");
@@ -275,9 +275,9 @@ document.addEventListener("DOMContentLoaded", () => {
       雪
     */
 
-    if(season === "winter"){
+    if (season === "winter") {
 
-      for(let i = 0; i < 45; i++){
+      for (let i = 0; i < 45; i++) {
 
         const snow =
           document.createElement("span");
@@ -310,128 +310,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-/* ===================================
-          MUSIC PLAYER
-=================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const playButtons =
-    document.querySelectorAll(".play-button");
-
-  const audios =
-    document.querySelectorAll("audio");
-
-
-  playButtons.forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-      const audioId =
-        button.dataset.audio;
-
-      const audio =
-        document.getElementById(audioId);
-
-
-      /* audioが見つからない場合 */
-
-      if(!audio){
-
-        console.error(
-          "Audio not found:",
-          audioId
-        );
-
-        return;
-
-      }
-
-
-      /* 現在再生中か確認 */
-
-      const wasPlaying =
-        !audio.paused;
-
-
-      /* 全曲停止 */
-
-      audios.forEach((item) => {
-
-        item.pause();
-
-      });
-
-
-      /* 全ボタンをPLAYに戻す */
-
-      playButtons.forEach((item) => {
-
-        item.textContent =
-          "▶ PLAY";
-
-      });
-
-
-      /* 停止中だった曲なら再生 */
-
-      if(!wasPlaying){
-
-        audio.play()
-          .then(() => {
-
-            button.textContent =
-              "❚❚ PAUSE";
-
-          })
-          .catch((error) => {
-
-            console.error(
-              "Audio playback error:",
-              error
-            );
-
-          });
-
-      }
-
-    });
-
-  });
-
-
-  /* ===================================
-       曲が最後まで再生された時
-  =================================== */
-
-  audios.forEach((audio) => {
-
-    audio.addEventListener(
-      "ended",
-      () => {
-
-        playButtons.forEach(
-          (button) => {
-
-            if(
-              button.dataset.audio
-              === audio.id
-            ){
-
-              button.textContent =
-                "▶ PLAY";
-
-            }
-
-          }
-        );
-
-      }
-    );
-
-  });
-
-});
 
   /* ===================================
           PAGE RETURN FIX
@@ -481,42 +359,131 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
+  /* ===================================
+       AUDIO END RESET
+  =================================== */
+
+  /*
+    曲が最後まで再生されたら
+    ボタンをPLAYに戻す
+  */
+
+  const audios =
+    document.querySelectorAll("audio");
+
+  audios.forEach((audio) => {
+
+    audio.addEventListener("ended", () => {
+
+      document
+        .querySelectorAll(".play-button")
+        .forEach((button) => {
+
+          const onclick =
+            button.getAttribute("onclick");
+
+          if (
+            onclick &&
+            onclick.includes(audio.id)
+          ) {
+
+            button.textContent =
+              "▶ PLAY";
+
+          }
+
+        });
+
+    });
+
+  });
+
+
 });
+
 
 /* ===================================
           MUSIC PLAYER
 =================================== */
 
-function toggleMusic(audioId, button){
+function toggleMusic(audioId, button) {
 
-  const audio = document.getElementById(audioId);
+  const audio =
+    document.getElementById(audioId);
 
-  if(!audio){
-    console.error("音源が見つかりません:", audioId);
+
+  /*
+    音源が見つからない場合
+  */
+
+  if (!audio) {
+
+    console.error(
+      "音源が見つかりません:",
+      audioId
+    );
+
     return;
+
   }
 
-  const wasPaused = audio.paused;
 
-  /* 全曲停止 */
-  document.querySelectorAll("audio").forEach((item) => {
-    item.pause();
-  });
+  /*
+    押した時点で
+    停止中だったか確認
+  */
 
-  /* 全ボタンをPLAY表示に戻す */
-  document.querySelectorAll(".play-button").forEach((btn) => {
-    btn.textContent = "▶ PLAY";
-  });
+  const wasPaused =
+    audio.paused;
 
-  /* 停止中だった曲なら再生 */
-  if(wasPaused){
+
+  /*
+    全曲停止
+  */
+
+  document
+    .querySelectorAll("audio")
+    .forEach((item) => {
+
+      item.pause();
+
+    });
+
+
+  /*
+    全ボタンをPLAY表示に戻す
+  */
+
+  document
+    .querySelectorAll(".play-button")
+    .forEach((btn) => {
+
+      btn.textContent =
+        "▶ PLAY";
+
+    });
+
+
+  /*
+    停止中だった曲なら再生
+  */
+
+  if (wasPaused) {
 
     audio.play()
       .then(() => {
-        button.textContent = "❚❚ PAUSE";
+
+        button.textContent =
+          "❚❚ PAUSE";
+
       })
       .catch((error) => {
-        console.error("再生できません:", error);
+
+        console.error(
+          "再生できません:",
+          error
+        );
+
       });
 
   }
