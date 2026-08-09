@@ -3770,6 +3770,226 @@ body{
   background:transparent;
 }
 
+/* ===================================
+             SPECIAL DAY
+=================================== */
+
+.birthday-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 140px 8%;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 160, 210, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(120, 210, 255, 0.32),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(255, 225, 120, 0.30),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #fff8fc,
+      #f5f0ff 50%,
+      #eefaff
+    );
+
+  color: #40374d;
+}
+
+
+/* SPECIAL DAY */
+
+.birthday-small {
+  margin: 0 0 18px;
+
+  font-size: 12px;
+  letter-spacing: 0.35em;
+
+  color: #b06d9e;
+}
+
+
+/* 見出し */
+
+.birthday-heading {
+  margin: 0;
+
+  font-family: serif;
+
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: normal;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* INTRO */
+
+.birthday-intro {
+  margin: 25px 0 70px;
+
+  font-size: 15px;
+  line-height: 2;
+
+  color: #71687a;
+}
+
+
+/* ジャケット＋曲情報 */
+
+.birthday-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1050px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 70px;
+
+  text-align: left;
+}
+
+
+/* JACKET */
+
+.birthday-visual {
+  flex: 1;
+}
+
+.birthday-jacket {
+  display: block;
+
+  width: 100%;
+  max-width: 480px;
+
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  margin: 0 auto;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 25px 70px rgba(110, 80, 130, 0.22);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.birthday-jacket:hover {
+  transform: translateY(-6px) scale(1.015);
+
+  box-shadow:
+    0 32px 80px rgba(110, 80, 130, 0.30);
+}
+
+
+/* SONG INFO */
+
+.birthday-info {
+  flex: 1;
+}
+
+.birthday-track {
+  margin-bottom: 20px;
+
+  font-size: 11px;
+  letter-spacing: 0.28em;
+
+  color: #a17c9c;
+}
+
+.birthday-artist {
+  margin-bottom: 12px;
+
+  font-size: 12px;
+  letter-spacing: 0.15em;
+
+  color: #c36da8;
+}
+
+.birthday-info h3 {
+  margin: 0 0 25px;
+
+  font-family: serif;
+
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: normal;
+
+  line-height: 1.15;
+}
+
+.birthday-copy {
+  font-size: 18px;
+  line-height: 2;
+}
+
+.birthday-description {
+  margin: 22px 0 30px;
+
+  font-size: 14px;
+  line-height: 2;
+
+  color: #756d7b;
+}
+
+
+/* PLAY */
+
+.birthday-play {
+  border: 1px solid rgba(190, 95, 155, 0.55);
+
+  background: rgba(255,255,255,0.45);
+
+  color: #a94f8a;
+}
+
+.birthday-play:hover {
+  background: #a94f8a;
+  color: #fff;
+}
+
+
+/* ===================================
+             MOBILE
+=================================== */
+
+@media (max-width: 760px) {
+
+  .birthday-section {
+    padding: 100px 24px;
+  }
+
+  .birthday-content {
+    flex-direction: column;
+
+    gap: 45px;
+
+    text-align: center;
+  }
+
+  .birthday-jacket {
+    max-width: 420px;
+  }
+
+}
 
 /* ===================================
              MOBILE
@@ -3868,6 +4088,142 @@ body{
   }
 
 }
+
+/* ===================================
+          SONG JACKET
+=================================== */
+
+.song-jacket {
+  display: block;
+
+  width: 100%;
+  max-width: 520px;
+
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  margin: 0 auto;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.song-jacket:hover {
+  transform: scale(1.02);
+
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.25);
+}
+
+/* ===================================
+              HYDRANGEA
+=================================== */
+
+.hydrangea-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 140px 8%;
+
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(174, 190, 255, 0.28),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(193, 157, 255, 0.25),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #dce6f2 0%,
+      #c7cfe5 45%,
+      #b9add8 100%
+    );
+
+  color: #34384c;
+}
+
+
+/* 雨っぽい薄いオーバーレイ */
+
+.hydrangea-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent 0%,
+      rgba(255,255,255,0.16) 50%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* 中身を前面へ */
+
+.hydrangea-section .song-content,
+.hydrangea-section .song-number {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* 曲名 */
+
+.hydrangea-section .song-info h2 {
+  font-size: clamp(38px, 5vw, 70px);
+
+  letter-spacing: 0.08em;
+
+  color: #474263;
+}
+
+
+/* アーティスト */
+
+.hydrangea-section .artist {
+  color: #71678f;
+}
+
+
+/* PLAYボタン */
+
+.hydrangea-section .play-button {
+  border: 1px solid rgba(71, 66, 99, 0.5);
+
+  color: #474263;
+
+  background: rgba(255,255,255,0.2);
+}
+
+.hydrangea-section .play-button:hover {
+  background: #474263;
+  color: white;
+}
+
+
+/* ジャケット */
+
+.hydrangea-section .song-jacket {
+  box-shadow:
+    0 25px 70px rgba(65, 58, 100, 0.25);
+}
+
+
 /* ===================================
           SMARTPHONE
 =================================== */
