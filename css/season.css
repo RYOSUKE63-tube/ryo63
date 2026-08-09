@@ -3585,6 +3585,27 @@ body{
     rgba(20,45,35,.4);
 }
 
+.christmas-section .song-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.christmas-section .song-visual img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+
+  .christmas-section .song-visual img {
+    width: 82%;
+    max-width: 360px;
+  }
+
+}
 
 /* ===================================
           WINTER MESSAGE
@@ -3974,23 +3995,31 @@ body{
 @media (max-width: 760px) {
 
   .birthday-section {
-    padding: 100px 24px;
+    padding: 90px 20px;
   }
 
   .birthday-content {
     flex-direction: column;
-
-    gap: 45px;
-
+    gap: 35px;
     text-align: center;
   }
 
+  .birthday-visual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .birthday-jacket {
-    max-width: 420px;
+    width: 78%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin: 0 auto;
   }
 
 }
-
 /* ===================================
              MOBILE
 =================================== */
