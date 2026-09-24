@@ -44,6 +44,7 @@ const lineUpperGate = document.getElementById("lineUpperGate");
 const lineUpperD4 = document.getElementById("lineUpperD4");
 const lineUpperD5 = document.getElementById("lineUpperD5");
 const lineUpperD6 = document.getElementById("lineUpperD6");
+const lineUpperD7 = document.getElementById("lineUpperD7");
 const lineOutside = document.getElementById("lineOutside");
 
 const paymentUI = document.getElementById("paymentUI");
@@ -159,6 +160,13 @@ const aiLines = {
     "残高が足りないみたい。",
     "その支払いは成立しないよ。",
     "足りないもの、分かってるよ。"
+  ],
+
+  district7: [
+  "第7管区へ接続します。",
+  "カジノリゾートへのアクセスを確認。",
+  "ここでは運さえ、都市に記録されるよ。",
+  "その賭けも、記録しておくね。"
   ],
   slum: [
     "そこは…見えない場所だよ。",
@@ -443,6 +451,7 @@ function resetLines() {
     lineUpperD4,
     lineUpperD5,
     lineUpperD6,
+    lineUpperD7,
     lineOutside
   ].forEach(line => {
     line.classList.remove("active", "pulse");
@@ -476,6 +485,10 @@ function activateRoute(num) {
     lineCoreUpper.classList.add("active");
     lineUpperD6.classList.add("active", "pulse");
   }
+  if (num === 7) {
+  lineCoreUpper.classList.add("active");
+  lineUpperD7.classList.add("active", "pulse");
+}
 }
 
 function changeTheme(theme) {
@@ -486,7 +499,8 @@ function changeTheme(theme) {
     "theme-transit",
     "theme-commercial",
     "theme-entertainment",
-    "theme-life"
+    "theme-life",
+    "theme-casino"
   );
   document.body.classList.add(`theme-${theme}`);
 }
@@ -711,7 +725,8 @@ const accessControl = {
   3: ["GUEST", "C", "B", "A", "S"],
   4: ["C", "B", "A", "S"],
   5: ["GUEST", "C", "B", "A", "S"],
-  6: ["GUEST", "C", "B", "A", "S"]
+  6: ["GUEST", "C", "B", "A", "S"],
+  7: ["GUEST", "C", "B", "A", "S"]
 };
 
 const districtData = {
@@ -762,7 +777,16 @@ const districtData = {
     theme: "life",
     stress: 2,
     lineGroup: "district6"
-  }
+  },
+  7: {
+  title: "第7管区",
+  sub: "CASINO RESORT / THE SEVENTH",
+  desc: "NEO TOKYO最大級の統合型リゾート区域です。カジノ、ホテル、商業施設、エンターテインメント施設が24時間稼働しています。",
+  theme: "casino",
+  stress: 4,
+  lineGroup: "district7"
+}
+
 };
 
 function accessDistrict(num) {
