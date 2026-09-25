@@ -1316,7 +1316,106 @@ body{
 }
 
 
+/* ========================================
+   THE SEVENTH / CASINO ENTRY
+======================================== */
 
+.casino-enter-btn {
+  position: relative;
+
+  min-width: 220px;
+
+  margin-top: 22px;
+  padding: 13px 24px;
+
+  border: 1px solid rgba(255, 213, 120, 0.72);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(40, 24, 5, 0.88),
+      rgba(100, 63, 10, 0.72),
+      rgba(35, 20, 4, 0.88)
+    );
+
+  color: #ffe29a;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 18px rgba(255, 190, 65, 0.14),
+    inset 0 0 18px rgba(255, 220, 140, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.casino-enter-btn::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 240, 190, 0.20),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.5s ease;
+}
+
+.casino-enter-btn:hover {
+  transform: translateY(-2px);
+
+  border-color: #ffe19a;
+
+  box-shadow:
+    0 0 22px rgba(255, 195, 70, 0.30),
+    0 0 45px rgba(255, 155, 30, 0.10);
+}
+
+.casino-enter-btn:hover::before {
+  left: 150%;
+}
+
+.casino-enter-small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 8px;
+  letter-spacing: 0.32em;
+
+  color: #c8a75f;
+}
+
+.casino-enter-main {
+  display: block;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  color: #ffe5a3;
+}
+
+.casino-enter-btn.hidden {
+  display: none;
+}
 
 
 

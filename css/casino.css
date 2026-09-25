@@ -1,0 +1,787 @@
+
+/* ========================================
+   THE SEVENTH
+   NEO TOKYO CASINO RESORT
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #372407 0%,
+      #100b18 38%,
+      #05040a 75%
+    );
+
+  color: #f5ead0;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* ========================================
+   BACKGROUND
+======================================== */
+
+.casino-bg {
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(255, 184, 54, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(122, 54, 255, 0.08),
+      transparent 36%
+    );
+
+  pointer-events: none;
+  z-index: -3;
+}
+
+.casino-grid {
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 205, 110, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 205, 110, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 42px 42px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 30%,
+      transparent
+    );
+
+  pointer-events: none;
+
+  z-index: -2;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.casino-header {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+
+  padding: 38px 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid rgba(255, 210, 120, 0.18);
+}
+
+.brand-small {
+  margin: 0 0 4px;
+
+  color: #ba9b63;
+
+  font-size: 10px;
+  letter-spacing: 0.28em;
+}
+
+.brand h1 {
+  margin: 0;
+
+  color: #ffe4a0;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+
+  text-shadow:
+    0 0 15px rgba(255, 190, 60, 0.24);
+}
+
+.brand-sub {
+  margin: 4px 0 0;
+
+  color: #d4b76f;
+
+  font-size: 10px;
+  letter-spacing: 0.42em;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.player-status {
+  display: flex;
+  gap: 9px;
+}
+
+.status-item {
+  min-width: 90px;
+
+  padding: 9px 13px;
+
+  border:
+    1px solid rgba(255, 215, 130, 0.18);
+
+  background:
+    rgba(8, 6, 12, 0.55);
+
+  text-align: right;
+}
+
+.status-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #8c7c65;
+
+  font-size: 8px;
+
+  letter-spacing: 0.18em;
+}
+
+.balance-box {
+  min-width: 125px;
+
+  border-color:
+    rgba(255, 210, 90, 0.42);
+}
+
+#moneyDisplay {
+  color: #ffe09a;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+.casino-main {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+
+  padding: 60px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(350px, 1.2fr);
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.eyebrow {
+  color: #c7a25a;
+
+  font-size: 10px;
+
+  letter-spacing: 0.35em;
+}
+
+.casino-intro h2 {
+  margin: 18px 0 24px;
+
+  font-family: Georgia, serif;
+
+  font-size:
+    clamp(48px, 7vw, 90px);
+
+  font-weight: 400;
+
+  line-height: 0.92;
+
+  letter-spacing: 0.02em;
+
+  color: #f2e8d5;
+}
+
+.casino-intro h2 span {
+  color: #e8b94e;
+
+  text-shadow:
+    0 0 25px rgba(255, 183, 45, 0.18);
+}
+
+.intro-text {
+  max-width: 420px;
+
+  color: #968e82;
+
+  font-size: 13px;
+
+  line-height: 2;
+}
+
+
+/* ========================================
+   SLOT MACHINE
+======================================== */
+
+.machine {
+  position: relative;
+
+  padding: 30px;
+
+  border:
+    1px solid rgba(255, 211, 120, 0.40);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37, 25, 11, 0.92),
+      rgba(9, 7, 15, 0.96)
+    );
+
+  box-shadow:
+    0 0 50px rgba(255, 180, 40, 0.08),
+    inset 0 0 40px rgba(255, 190, 70, 0.035);
+}
+
+.machine::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border:
+    1px solid rgba(255, 220, 150, 0.08);
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   MACHINE TOP
+======================================== */
+
+.machine-top {
+  margin-bottom: 25px;
+
+  text-align: center;
+}
+
+.machine-top span {
+  display: block;
+
+  color: #ffe6a7;
+
+  font-family: Georgia, serif;
+
+  font-size: 24px;
+
+  letter-spacing: 0.18em;
+}
+
+.machine-top small {
+  color: #76694e;
+
+  font-size: 8px;
+
+  letter-spacing: 0.25em;
+}
+
+
+/* ========================================
+   REELS
+======================================== */
+
+.reels {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.reel {
+  height: 145px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 215, 120, 0.34);
+
+  background:
+    linear-gradient(
+      180deg,
+      #0a0810,
+      #1b1420,
+      #08070c
+    );
+
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.9),
+    0 0 14px rgba(255, 184, 45, 0.04);
+}
+
+.reel span {
+  color: #ffd86b;
+
+  font-family: Georgia, serif;
+
+  font-size:
+    clamp(30px, 5vw, 54px);
+
+  text-shadow:
+    0 0 18px rgba(255, 194, 60, 0.35);
+
+  transition:
+    transform 0.15s,
+    opacity 0.15s;
+}
+
+.reel.spinning span {
+  transform: translateY(15px) scale(0.85);
+  opacity: 0.35;
+}
+
+
+/* ========================================
+   RESULT
+======================================== */
+
+.result-panel {
+  min-height: 72px;
+
+  margin-top: 18px;
+
+  padding: 12px 15px;
+
+  border-left:
+    2px solid #c99a3c;
+
+  background:
+    rgba(255, 215, 130, 0.025);
+}
+
+.result-label {
+  margin: 0 0 5px;
+
+  color: #796b55;
+
+  font-size: 8px;
+
+  letter-spacing: 0.28em;
+}
+
+#resultMessage {
+  margin: 0;
+
+  color: #d8cdb8;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+#resultMessage.win {
+  color: #ffe089;
+
+  text-shadow:
+    0 0 10px rgba(255, 199, 70, 0.3);
+}
+
+
+/* ========================================
+   BET
+======================================== */
+
+.bet-section {
+  margin-top: 22px;
+}
+
+.bet-title {
+  margin-bottom: 8px;
+
+  color: #7d715f;
+
+  font-size: 8px;
+
+  letter-spacing: 0.25em;
+}
+
+.bet-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.bet-button {
+  flex: 1;
+
+  padding: 10px;
+
+  border:
+    1px solid rgba(255, 211, 120, 0.18);
+
+  background:
+    rgba(0, 0, 0, 0.28);
+
+  color: #93856c;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.bet-button:hover,
+.bet-button.active {
+  border-color: #e2b75a;
+
+  color: #ffe09a;
+
+  background:
+    rgba(255, 188, 60, 0.08);
+
+  box-shadow:
+    0 0 15px rgba(255, 184, 50, 0.07);
+}
+
+
+/* ========================================
+   SPIN
+======================================== */
+
+.spin-button {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 16px;
+
+  border:
+    1px solid #dfb453;
+
+  background:
+    linear-gradient(
+      90deg,
+      #8e5c16,
+      #d3a03b,
+      #8e5c16
+    );
+
+  color: #100b05;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  transition:
+    transform 0.15s,
+    filter 0.15s;
+}
+
+.spin-button span,
+.spin-button small {
+  display: block;
+}
+
+.spin-button small {
+  margin-top: 3px;
+
+  font-size: 9px;
+
+  opacity: 0.7;
+}
+
+.spin-button:hover {
+  filter: brightness(1.12);
+}
+
+.spin-button:active {
+  transform: scale(0.985);
+}
+
+.spin-button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.45;
+}
+
+
+/* ========================================
+   PAYOUT
+======================================== */
+
+.payout-info {
+  margin-top: 20px;
+
+  border-top:
+    1px solid rgba(255, 220, 150, 0.10);
+}
+
+.payout-info div {
+  padding: 7px 2px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid rgba(255, 220, 150, 0.055);
+
+  color: #817661;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+}
+
+.payout-info strong {
+  color: #c8a65d;
+}
+
+
+/* ========================================
+   AI CONSOLE
+======================================== */
+
+.ai-console {
+  width: min(1180px, 92%);
+  min-height: 74px;
+
+  margin: 10px auto 0;
+
+  padding: 17px 20px;
+
+  border-top:
+    1px solid rgba(255, 205, 110, 0.18);
+
+  border-bottom:
+    1px solid rgba(255, 205, 110, 0.08);
+
+  background:
+    rgba(6, 5, 10, 0.42);
+}
+
+.ai-indicator {
+  color: #806f50;
+
+  font-size: 8px;
+
+  letter-spacing: 0.24em;
+}
+
+.ai-indicator span {
+  display: inline-block;
+
+  width: 6px;
+  height: 6px;
+
+  margin-right: 7px;
+
+  border-radius: 50%;
+
+  background: #e4b958;
+
+  box-shadow:
+    0 0 9px rgba(255, 198, 65, 0.75);
+}
+
+#aiMessage {
+  margin: 8px 0 0;
+
+  color: #b9ac94;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  width: min(1180px, 92%);
+
+  margin: 0 auto;
+
+  padding: 25px 0 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-button {
+  padding: 9px 14px;
+
+  border:
+    1px solid rgba(255, 215, 130, 0.22);
+
+  background: transparent;
+
+  color: #9e8d70;
+
+  cursor: pointer;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+}
+
+.back-button:hover {
+  border-color: #d4ad59;
+  color: #e6c87e;
+}
+
+footer p {
+  color: #514a40;
+
+  font-size: 8px;
+
+  letter-spacing: 0.20em;
+}
+
+
+/* ========================================
+   JACKPOT FLASH
+======================================== */
+
+body.jackpot::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 216, 100, 0.16),
+      transparent 60%
+    );
+
+  animation:
+    jackpotFlash 0.7s ease-out;
+}
+
+@keyframes jackpotFlash {
+
+  0% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 760px) {
+
+  .casino-header {
+    align-items: flex-start;
+    gap: 22px;
+    flex-direction: column;
+  }
+
+  .player-status {
+    width: 100%;
+  }
+
+  .status-item {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .casino-main {
+    padding-top: 40px;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .casino-intro h2 {
+    font-size: 52px;
+  }
+
+  .machine {
+    padding: 20px 15px;
+  }
+
+  .reel {
+    height: 110px;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+}
