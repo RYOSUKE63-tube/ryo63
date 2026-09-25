@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>THE SEVENTH | NEO TOKYO</title>
+
+  <link rel="stylesheet" href="css/casino.css">
+</head>
+
+<body>
+
+  <div class="casino-bg"></div>
+  <div class="casino-grid"></div>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="casino-header">
+
+    <div class="brand">
+      <p class="brand-small">NEO TOKYO / DISTRICT 7</p>
+      <h1>THE SEVENTH</h1>
+      <p class="brand-sub">CASINO RESORT</p>
+    </div>
+
+    <div class="player-status">
+
+      <div class="status-item">
+        <span class="status-label">NEO ID</span>
+        <span id="neoId">CONNECTED</span>
+      </div>
+
+      <div class="status-item">
+        <span class="status-label">RANK</span>
+        <span id="rankDisplay">S</span>
+      </div>
+
+      <div class="status-item balance-box">
+        <span class="status-label">BALANCE</span>
+        <span id="moneyDisplay">¥5,000</span>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+  <main class="casino-main">
+
+    <section class="casino-intro">
+
+      <p class="eyebrow">WELCOME TO DISTRICT 7</p>
+
+      <h2>
+        TAKE YOUR<br>
+        <span>CHANCE.</span>
+      </h2>
+
+      <p class="intro-text">
+        NEO TOKYO最大級の統合型カジノリゾート。<br>
+        ここでは、運さえ都市に記録される。
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         SLOT MACHINE
+    ========================== -->
+    <section class="slot-area">
+
+      <div class="machine">
+
+        <div class="machine-top">
+          <span>THE SEVENTH</span>
+          <small>NEO SLOT SYSTEM / 777</small>
+        </div>
+
+
+        <div class="reels">
+
+          <div class="reel">
+            <span id="reel1">7</span>
+          </div>
+
+          <div class="reel">
+            <span id="reel2">◆</span>
+          </div>
+
+          <div class="reel">
+            <span id="reel3">BAR</span>
+          </div>
+
+        </div>
+
+
+        <div class="result-panel">
+
+          <p class="result-label">RESULT</p>
+
+          <p id="resultMessage">
+            BETを選択してください。
+          </p>
+
+        </div>
+
+
+        <!-- BET -->
+        <div class="bet-section">
+
+          <p class="bet-title">SELECT BET</p>
+
+          <div class="bet-buttons">
+
+            <button
+              class="bet-button active"
+              data-bet="100"
+            >
+              ¥100
+            </button>
+
+            <button
+              class="bet-button"
+              data-bet="500"
+            >
+              ¥500
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- SPIN -->
+        <button id="spinButton" class="spin-button">
+          <span>BET & SPIN</span>
+          <small id="currentBet">¥100</small>
+        </button>
+
+
+        <div class="payout-info">
+
+          <div>
+            <span>7 / 7 / 7</span>
+            <strong>× 20</strong>
+          </div>
+
+          <div>
+            <span>BAR / BAR / BAR</span>
+            <strong>× 10</strong>
+          </div>
+
+          <div>
+            <span>◆ / ◆ / ◆</span>
+            <strong>× 5</strong>
+          </div>
+
+          <div>
+            <span>ANY TRIPLE</span>
+            <strong>× 3</strong>
+          </div>
+
+          <div>
+            <span>ANY DOUBLE</span>
+            <strong>× 1.5</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       NEON AI
+  ========================== -->
+  <section class="ai-console">
+
+    <div class="ai-indicator">
+      <span></span>
+      NEON AI
+    </div>
+
+    <p id="aiMessage">
+      THE SEVENTHへようこそ。
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer>
+
+    <button id="backButton" class="back-button">
+      ← RETURN TO NEO TOKYO
+    </button>
+
+    <p>
+      NEO TOKYO CITY NETWORK / DISTRICT 7
+    </p>
+
+  </footer>
+
+
+  <script src="casino.js"></script>
+
+</body>
+</html>
