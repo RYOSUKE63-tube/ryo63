@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>何億光年 — Time of Love Letter —</title>
+
+  <style>
+    /* 基本設定 */
+    :root {
+      --background: #080c15;
+      --text: #f3eee4;
+      --muted: #adb3c1;
+      --gold: #d8bd7e;
+      --line: rgba(216, 189, 126, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        Meiryo,
+        sans-serif;
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 5px;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    .serif {
+      font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .label {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+    }
+
+    /* ヘッダー */
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+    }
+
+    nav {
+      display: flex;
+      gap: 26px;
+    }
+
+    nav a {
+      font-size: 11px;
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* メインビジュアル */
+    .hero {
+      min-height: 850px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          ellipse at 77% 43%,
+          rgba(82, 105, 154, 0.3),
+          transparent 43%
+        ),
+        linear-gradient(135deg, #060911, #101a2c);
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, white 98%, transparent),
+        radial-gradient(1px 1px at 20% 60%, white 98%, transparent),
+        radial-gradient(1px 1px at 35% 15%, white 98%, transparent),
+        radial-gradient(1px 1px at 48% 76%, white 98%, transparent),
+        radial-gradient(1px 1px at 62% 25%, white 98%, transparent),
+        radial-gradient(1px 1px at 75% 70%, white 98%, transparent),
+        radial-gradient(1px 1px at 85% 15%, white 98%, transparent),
+        radial-gradient(2px 2px at 92% 45%, #e8d4a2 98%, transparent);
+      background-size: 600px 500px;
+      opacity: 0.65;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 30px;
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
+
+    .hero h1 {
+      font-size: clamp(50px, 7vw, 90px);
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      line-height: 1.3;
+      margin: 28px 0 10px;
+    }
+
+    .subtitle {
+      color: var(--gold);
+      font-size: clamp(12px, 1.7vw, 18px);
+      letter-spacing: 0.18em;
+    }
+
+    .catchcopy {
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 2.2;
+      margin: 36px 0 25px;
+    }
+
+    .hero-credit {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 2.2;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 27px;
+      margin-top: 24px;
+      border: 1px solid var(--gold);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      transition: 0.25s;
+    }
+
+    .button:hover {
+      background: var(--gold);
+      color: var(--background);
+    }
+
+    .spacecraft {
+      margin: 0;
+      width: 100%;
+    }
+
+    .spacecraft svg {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 25px rgba(216, 189, 126, 0.15));
+    }
+
+    .spacecraft figcaption {
+      text-align: center;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+    }
+
+    /* 共通セクション */
+    section {
+      padding: 100px 0;
+    }
+
+    section h2 {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: normal;
+      line-height: 1.6;
+      margin: 14px 0 32px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 750px;
+    }
+
+    /* 作品紹介 */
+    .introduction {
+      background: #0d1421;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 70px;
+    }
+
+    .intro-lead {
+      font-size: 23px;
+      line-height: 2.2;
+      margin: 0;
+      color: #e8d9b7;
+    }
+
+    .intro-text p {
+      margin: 0 0 20px;
+      color: #c0c5d0;
+    }
+
+    .small-note {
+      font-size: 12px;
+      color: var(--muted);
+      border-left: 2px solid var(--gold);
+      padding-left: 16px;
+    }
+
+    /* 物語・航跡 */
+    .journey {
+      background: linear-gradient(#0d1421, #080c15);
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .journey-card {
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .year {
+      color: var(--gold);
+      font-size: 30px;
+      letter-spacing: 0.08em;
+    }
+
+    .journey-card h3 {
+      font-size: 21px;
+      font-weight: normal;
+      margin: 12px 0;
+    }
+
+    .journey-card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ゴールデンレコード */
+    .record-section {
+      background: #121b2a;
+    }
+
+    .record-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .record {
+      width: min(330px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      margin: auto;
+      position: relative;
+      background: repeating-radial-gradient(
+        circle,
+        #cfb572 0,
+        #cfb572 1px,
+        #8e733d 2px,
+        #c7a864 3px
+      );
+      box-shadow: 0 0 70px rgba(216, 189, 126, 0.14);
+    }
+
+    .record::before {
+      content: "";
+      position: absolute;
+      inset: 37%;
+      border-radius: 50%;
+      background: #b89950;
+      border: 1px solid #735d2e;
+    }
+
+    .record::after {
+      content: "EARTH / 1977";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      color: #302611;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .record-text p {
+      color: #c0c5d0;
+    }
+
+    .record-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .record-tags span {
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      font-size: 12px;
+      color: var(--gold);
+    }
+
+    /* キャスト */
+    .cast-section {
+      background: #0c121e;
+    }
+
+    .cast-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .cast-card {
+      border-top: 1px solid var(--gold);
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .cast-card h3 {
+      font-size: 35px;
+      font-weight: normal;
+      letter-spacing: 0.15em;
+      margin: 8px 0 15px;
+    }
+
+    .cast-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .cast-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 25px;
+    }
+
+    /* 主題歌 */
+    .theme-section {
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(88, 104, 140, 0.18),
+          transparent 65%
+        ),
+        #080c15;
+    }
+
+    .theme-section h2 {
+      margin-bottom: 8px;
+    }
+
+    .lyrics {
+      font-size: clamp(22px, 3.5vw, 35px);
+      line-height: 2.2;
+      margin: 45px 0 30px;
+    }
+
+    .theme-description {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* 出典・フッター */
+    .sources {
+      padding: 55px 0;
+      background: #060910;
+    }
+
+    .sources h2 {
+      font-size: 18px;
+      margin: 0 0 15px;
+    }
+
+    .sources ul {
+      padding-left: 20px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .sources a {
+      color: var(--gold);
+    }
+
+    .disclaimer {
+      font-size: 11px;
+      color: #858d9e;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      margin-top: 28px;
+      padding-top: 25px;
+    }
+
+    footer {
+      padding: 23px 5%;
+      font-size: 10px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      color: #858d9e;
+    }
+
+    /* スマートフォン */
+    @media (max-width: 760px) {
+      .header-inner {
+        min-height: 68px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 12px 0;
+        gap: 8px;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding-top: 165px;
+        padding-bottom: 50px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .catchcopy {
+        font-size: 19px;
+      }
+
+      .spacecraft {
+        width: min(380px, 100%);
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .intro-grid,
+      .record-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .intro-lead {
+        font-size: 20px;
+      }
+
+      .journey-grid,
+      .cast-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .record {
+        width: 240px;
+      }
+
+      .record-grid {
+        gap: 45px;
+      }
+
+      .cast-card h3 {
+        font-size: 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+
+/* 映画のメインビジュアル */
+.hero {
+  min-height: 900px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 9, 17, 0.55),
+      rgba(5, 9, 17, 0.05)
+    ),
+    url("image/main.png") center center / cover no-repeat;
+}
+
+.hero-inner {
+  grid-template-columns: 1fr;
+}
+
+.hero-inner > div {
+  max-width: 620px;
+}
+
+.hero h1,
+.catchcopy {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+.spacecraft,
+.stars {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 850px;
+    background-position: 62% center;
+  }
+
+  .hero-inner {
+    padding-top: 160px;
+    padding-bottom: 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 12vw, 58px);
+  }
+}
+.cast-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 22px;
+}
+
+.trailer-section {
+  background: #080c15;
+  text-align: center;
+}
+
+.trailer-player {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  margin: 30px auto 0;
+  background: #000;
+  border: 1px solid var(--line);
+}
+
+.trailer-caption {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="container header-inner">
+      <a href="#top" class="logo">VOYAGER 1 / FILM CONCEPT</a>
+
+      <nav aria-label="メインメニュー">
+        <a href="#story">STORY</a>
+        <a href="#journey">JOURNEY</a>
+        <a href="#cast">CAST</a>
+        <a href="#music">MUSIC</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- メインビジュアル -->
+    <section class="hero" id="top">
+      <div class="stars" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div>
+          <p class="label">A NONFICTION-INSPIRED FILM CONCEPT</p>
+
+          <h1 class="serif">Voyager</h1>
+          <div class="subtitle">~彼方からの信号〜</div>
+
+          <p class="catchcopy serif">
+           その声が、届くかぎり。
+          </p>
+
+          <p class="hero-credit">
+            主演イメージ：渡辺謙仁<br>
+            出演イメージ：大栗旬<br>
+            配給想定：PIPELINE ｜ 架空の映画企画
+          </p>
+
+          <a href="#story" class="button">物語を読む ↓</a>
+        </div>
+
+        <figure class="spacecraft">
+          <svg
+            viewBox="0 0 560 440"
+            role="img"
+            aria-label="ボイジャーをイメージしたイラスト"
+          >
+            <defs>
+              <linearGradient id="dish">
+                <stop offset="0" stop-color="#f5e5b8"/>
+                <stop offset="0.5" stop-color="#b79753"/>
+                <stop offset="1" stop-color="#f5e5b8"/>
+              </linearGradient>
+            </defs>
+
+            <g fill="none" stroke="#cbb67c" stroke-opacity="0.25">
+              <ellipse
+                cx="286" cy="225" rx="240" ry="97"
+                transform="rotate(-22 286 225)"
+              />
+              <ellipse
+                cx="286" cy="225" rx="190" ry="75"
+                transform="rotate(-22 286 225)"
+              />
+            </g>
+
+            <g
+              fill="none"
+              stroke="#dfc47e"
+              stroke-width="2"
+            >
+              <path d="M287 212 L376 145 L449 126"/>
+              <path d="M373 145 L394 88"/>
+              <path d="M375 146 L424 184"/>
+              <path d="M276 211 L229 176 L193 172"/>
+              <path d="M278 212 L258 260 L226 282"/>
+              <path d="M284 218 L286 301"/>
+            </g>
+
+            <g
+              fill="#d5bc78"
+              stroke="#f4e7c4"
+              stroke-width="1"
+            >
+              <path d="M326 165 L362 149 L376 162 L338 182 Z"/>
+              <path d="M355 136 L381 125 L391 135 L365 148 Z"/>
+              <path d="M370 111 L393 103 L397 109 L375 119 Z"/>
+              <path d="M397 174 L419 181 L414 189 L392 182 Z"/>
+              <path d="M247 169 L222 150 L216 155 L238 177 Z"/>
+              <path d="M249 250 L231 273 L237 279 L258 258 Z"/>
+              <path d="M278 286 L292 286 L293 317 L279 317 Z"/>
+            </g>
+
+            <path
+              d="M268 190 Q290 166 312 190 L304 225 Q288 239 271 224 Z"
+              fill="#a89058"
+              stroke="#f0d99e"
+              stroke-width="2"
+            />
+
+            <path
+              d="M263 198 Q286 130 310 198 Q286 221 263 198 Z"
+              fill="url(#dish)"
+              stroke="#f4e7c4"
+              stroke-width="2"
+            />
+
+            <ellipse
+              cx="286" cy="197" rx="10" ry="5"
+              fill="#fff0be"
+            />
+
+            <circle cx="445" cy="126" r="4" fill="#f7e2a5"/>
+            <circle cx="192" cy="172" r="3" fill="#f7e2a5"/>
+            <circle cx="226" cy="282" r="3" fill="#f7e2a5"/>
+
+            <path
+              d="M283 318 L283 349"
+              stroke="#dfc47e"
+              stroke-width="2"
+            />
+
+            <path
+              d="M273 350 L293 350 L288 364 L278 364 Z"
+              fill="#d5bc78"
+            />
+          </svg>
+
+          <figcaption>
+            ARTISTIC IMPRESSION / VOYAGER 1
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+   <!-- 特報 -->
+<section class="trailer-section" id="trailer">
+  <div class="container">
+    <p class="label">TEASER TRAILER</p>
+    <h2 class="serif">『Voyager』特報</h2>
+
+    <video
+      class="trailer-player"
+      controls
+      playsinline
+      preload="metadata"
+      poster="images/voyager-main.png"
+      aria-label="架空映画 Voyager 特報"
+    >
+      <source src="image/voyager-teaser.mp4" type="video/mp4">
+      <a href="image/voyager-teaser.mp4">特報動画を開く</a>
+    </video>
+
+    <p class="trailer-caption">
+      主題歌「何億光年〜Time of Love Letter〜」<br>
+      NEON CIRCUIT×ONE FOREST MELODY
+    </p>
+  </div>
+</section>
+
+
+
+
+
+    <!-- 物語 -->
+<section class="introduction" id="story">
+  <div class="container">
+    <p class="label">THE STORY</p>
+
+    <h2 class="serif">
+      宇宙へ託した、一通の手紙。
+    </h2>
+
+    <div class="intro-grid">
+      <p class="intro-lead serif">
+        遠ざかる、小さな信号。<br>
+        それを待つ、人々がいる。<br><br>
+        地球と探査機をつなぐ物語は、<br>
+        世代を越えて続いていく。
+      </p>
+
+      <div class="intro-text">
+        <p>
+          1977年。地球の音、音楽、そして人々の挨拶を乗せて、
+          無人探査機ボイジャー1号は宇宙へ旅立った。
+        </p>
+
+        <p>
+          木星、土星。そして、太陽圏の外側へ。
+          届くまでの時間が延びていく小さな信号を、
+          地上の技術者たちは世代を越えて受け取り続けてきた。
+        </p>
+
+        <p>
+          長年この計画に携わってきたベテラン技術者と、
+          その仕事を引き継ぐ若い技術者。
+          機体の老朽化と限られた電力を前に、
+          二人は遠い探査機とのつながりを守ろうとする。
+        </p>
+
+        <p>
+          いつか、通信が終わる日は来る。
+          それでも、地球から託されたメッセージを乗せて、
+          旅は続いていく。
+        </p>
+
+        <p class="serif" style="color: var(--gold); font-size: 19px;">
+          これは、人類が宇宙へ送り出した一通の手紙と、<br>
+          その返事を待ち続ける人々の物語。
+        </p>
+
+        <p class="small-note">
+          ボイジャー1号の実際の探査をもとにした架空の映画企画です。
+          登場人物とドラマ部分は創作です。
+          メインビジュアルは、宇宙の探査機と地上の管制室を
+          重ね合わせたイメージです。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- 実際の航跡 -->
+    <section class="journey" id="journey">
+      <div class="container">
+        <p class="label">THE REAL JOURNEY</p>
+
+        <h2 class="serif">
+          星へ向かう、実際の航跡。
+        </h2>
+
+        <div class="journey-grid">
+          <article class="journey-card">
+            <div class="year serif">1977</div>
+            <h3 class="serif">地球を出発</h3>
+            <p>
+              9月5日、ケープカナベラルから打ち上げ。
+              木星と土星を目指し、ボイジャー1号の長い旅が始まった。
+            </p>
+          </article>
+
+          <article class="journey-card">
+            <div class="year serif">1979–1980</div>
+            <h3 class="serif">惑星との出会い</h3>
+            <p>
+              木星と土星に接近。イオの火山活動や土星の環、
+              衛星タイタンなどを観測し、
+              遠い世界の新しい姿を地球へ届けた。
+            </p>
+          </article>
+
+          <article class="journey-card">
+            <div class="year serif">2012</div>
+            <h3 class="serif">星間空間へ</h3>
+            <p>
+              8月25日、太陽圏の外へ到達。
+              人類の探査機として初めて、
+              星間空間を直接調べる旅に入った。
+            </p>
+          </article>
+
+          <article class="journey-card">
+            <div class="year serif">2026</div>
+            <h3 class="serif">ひと光日の距離へ</h3>
+            <p>
+              NASAは11月18日に地球から1光日の距離へ達する見込みと発表。
+              電波が片道で約24時間かかる、
+              遥か遠い場所へ進んでいる。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ゴールデンレコード -->
+    <section class="record-section" id="record">
+      <div class="container record-grid">
+        <div
+          class="record"
+          role="img"
+          aria-label="ゴールデンレコードをイメージした円盤"
+        ></div>
+
+        <div class="record-text">
+          <p class="label">THE GOLDEN RECORD</p>
+
+          <h2 class="serif">
+            地球を伝える、音と絵。
+          </h2>
+
+          <p>
+            ボイジャー1号と2号には、
+            金メッキを施した銅製ディスク
+            「ゴールデンレコード」が搭載された。
+          </p>
+
+          <p>
+            地球外の知的生命体が見つけたとき、
+            地球と人類を知る手がかりになるよう選ばれたメッセージ。
+            55の言語による挨拶、自然や生命の音、
+            世界の音楽、そして地球を伝える画像。
+          </p>
+
+          <p>
+            誰かが受け取る保証はない。<br>
+            それでも、地球は自らの声を宇宙へ送り出した。
+          </p>
+
+          <div class="record-tags">
+            <span>55言語の挨拶</span>
+            <span>地球の音</span>
+            <span>世界の音楽</span>
+            <span>115枚の画像</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- キャスト構想 -->
+    <section class="cast-section" id="cast">
+      <div class="container">
+        <p class="label">CASTING CONCEPT</p>
+
+        <h2 class="serif">
+          地上で、声を待つ人々。
+        </h2>
+
+        <p class="section-description">
+          半世紀近く続くミッションを支えるのは、
+          世代を越えて信号を受け継ぐ人々。
+          重厚な人間ドラマを担うキャスティングイメージ。
+        </p>
+
+        <article class="cast-card">
+           <img class="cast-photo" src="image/takase.png" alt="高瀬修一" loading="lazy">
+        <span class="label">高瀬 修一 役</span>
+        <h3 class="serif">渡辺 謙仁</h3>
+        <p>
+           長年ボイジャーを支えてきたベテラン技術者。
+           引退を前に、自らの人生を重ねてきたミッションを
+           次の世代へ託そうとしている。
+        </p>
+        </article>
+
+        <article class="cast-card">
+           <img class="cast-photo" src="image/fujisawa.png" alt="藤沢航" loading="lazy">
+        <span class="label">藤沢 航 役</span>
+        <h3 class="serif">大栗 旬</h3>
+        <p>
+           高瀬の後任となる技術者。
+           合理的な判断を重んじる彼は、古い探査機を守る難しさと
+           向き合う中で、先輩たちがこの旅を続けてきた理由を知っていく。
+        </p>
+        </article>
+
+        <article class="cast-card">
+　　　　　　　<img class="cast-photo" src="image/miura.png" alt="三浦遥" loading="lazy">
+        <span class="label">三浦 遥 役</span>
+        <h3 class="serif">芳野 京香</h3>
+        <p>
+            通信解析を担う研究者。
+            静かにデータと向き合い、微かな信号から探査機の変化を読み取る。
+            誰よりも慎重な彼女の小さな気づきが、チームを動かしていく。
+        </p>
+        </article>
+        </div>
+
+        <p class="cast-note">
+          配給想定：PIPELINE。
+          キャスト・役柄はいずれも架空の企画上のイメージです。
+          その他の出演者は構想中。
+        </p>
+      </div>
+    </section>
+
+    <!-- 主題歌 -->
+    <section class="theme-section" id="music">
+      <div class="container">
+        <p class="label">THEME SONG</p>
+
+        <h2 class="serif">何億光年</h2>
+        <div class="subtitle">— Time of Love Letter —</div>
+        <p style="margin-top: 20px; color: var(--gold); font-size: 14px; letter-spacing: 0.08em;">
+  NEON CIRCUIT×ONE FOREST MELODY
+        </p>
+
+        <blockquote class="lyrics serif">
+          私がここにいた証を<br>
+          どうか忘れないで
+        </blockquote>
+
+        <p class="theme-description">
+          人類が宇宙へ託したメッセージを、<br>
+          ひとりの旅の歌として描く。
+        </p>
+
+        <audio
+  controls
+  preload="metadata"
+  aria-label="主題歌 何億光年"
+  style="display: block; width: 100%; max-width: 500px; margin: 30px auto;"
+>
+  <source src="music/eiga.mp3" type="audio/mpeg">
+  お使いのブラウザは音声再生に対応していません。
+  <a href="music/eiga.mp3">音源を開く</a>
+</audio>
+      </div>
+    </section>
+
+    <!-- 出典 -->
+    <section class="sources">
+      <div class="container">
+        <h2 class="serif">FACTS & SOURCES</h2>
+
+        <ul>
+          <li>
+            <a
+              href="https://science.nasa.gov/mission/voyager/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NASA Science — Voyager Mission
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.jpl.nasa.gov/missions/voyager-1/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NASA JPL — Voyager 1
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.jpl.nasa.gov/news/nasa-invites-media-public-to-join-voyager-1-one-light-day-activities/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NASA JPL — Voyager 1 One-Light-Day Activities
+            </a>
+          </li>
+        </ul>
+
+        <p class="disclaimer">
+          本ページは個人制作の架空映画企画です。
+          東宝株式会社、NASA、JPL、掲載した俳優各位とは関係ありません。
+          映画化・出演・配給の決定を示すものではありません。
+          実際のミッション情報はNASA/JPLの公開情報をもとに構成しています。
+          情報基準：2026年11月17日。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    何億光年 — Time of Love Letter —<br>
+    A FILM CONCEPT INSPIRED BY VOYAGER 1
+  </footer>
+
+</body>
+</html>
