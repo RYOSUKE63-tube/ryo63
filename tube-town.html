@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b32">
+  <meta name="description" content="TUBEの音楽と花火をきっかけに、地域の食や人、魅力に出会うイベント構想 TUBE TOWN。">
+  <title>TUBE TOWN｜音楽と花火が、人と地域をつなぐ一日</title>
+  <style>
+    :root {
+      --navy: #071b32;
+      --navy-soft: #102b45;
+      --cream: #fff9ec;
+      --paper: #f4efe2;
+      --coral: #ff705a;
+      --gold: #ffd166;
+      --aqua: #76d4d1;
+      --ink: #13283b;
+      --muted: #607080;
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      --sans: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: var(--sans); line-height: 1.8; }
+    a { color: inherit; }
+    .top-note { position: relative; z-index: 2; padding: 7px 16px; color: #dbe8ec; background: #061426; text-align: center; font-size: 11px; letter-spacing: .13em; }
+    .header { position: absolute; z-index: 3; top: 38px; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 22px 6vw; color: #fff; }
+    .brand { text-decoration: none; font-size: 15px; font-weight: 800; letter-spacing: .17em; }
+    .brand span { display: block; color: var(--gold); font-size: 9px; font-weight: 500; letter-spacing: .22em; }
+    .nav { display: flex; gap: clamp(16px, 3vw, 42px); font-size: 12px; letter-spacing: .08em; }
+    .nav a { color: #e7eff2; text-decoration: none; }
+    .nav a:hover { color: var(--gold); }
+    .hero { position: relative; min-height: 720px; overflow: hidden; display: grid; align-items: center; color: #fff; background: radial-gradient(ellipse at 78% 65%, #264c64 0, transparent 36%), linear-gradient(155deg, #102d4a 0%, #091d35 52%, #071529 100%); }
+    .hero:after { content: ""; position: absolute; left: -5%; right: -5%; bottom: -100px; height: 210px; border-radius: 50% 50% 0 0 / 32% 32% 0 0; background: #061426; }
+    .hero-inner { position: relative; z-index: 1; width: min(1180px, 88%); margin: 75px auto 80px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 2vw; }
+    .eyebrow { color: var(--aqua); font-size: 11px; letter-spacing: .24em; font-weight: 700; }
+    h1 { margin: 23px 0 20px; font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 5.5vw, 72px); line-height: 1.4; letter-spacing: .08em; }
+    h1 em { color: var(--gold); font-style: normal; }
+    .hero-copy { max-width: 520px; color: #d7e1e6; font-size: 15px; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 23px; border-radius: 99px; font-size: 12px; letter-spacing: .08em; text-decoration: none; transition: transform .2s, background .2s; }
+    .button:hover { transform: translateY(-3px); }
+    .button-primary { color: var(--navy); background: var(--gold); font-weight: 700; }
+    .button-ghost { border: 1px solid #91a4b2; color: #fff; }
+    .hero-art { width: 100%; max-width: 560px; justify-self: end; filter: drop-shadow(0 20px 45px #020c1b88); }
+    .hero-caption { position: absolute; z-index: 1; right: 6vw; bottom: 50px; color: #9eb2c0; font-size: 10px; letter-spacing: .15em; }
+    .section { padding: 110px 6vw; }
+    .section-inner { width: min(1080px, 100%); margin: auto; }
+    .section-kicker { color: #df684f; font-size: 11px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+    h2 { margin: 12px 0 22px; font-family: var(--serif); font-size: clamp(30px, 4vw, 48px); font-weight: 500; line-height: 1.55; letter-spacing: .07em; }
+    .lead { max-width: 760px; color: #455a69; font-size: 16px; }
+    .intro { background: var(--cream); }
+    .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; align-items: start; }
+    .intro-aside { padding-top: 28px; color: #9a6a4e; font-family: var(--serif); font-size: 23px; line-height: 1.9; }
+    .town { color: #fff; background: var(--navy); }
+    .town .section-kicker { color: var(--aqua); }
+    .town .lead { color: #c4d2da; }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 46px; }
+    .card { min-height: 240px; padding: 25px 21px; border: 1px solid #ffffff24; border-radius: 5px; background: linear-gradient(145deg, #163652, #0c2239); }
+    .card-number { color: var(--gold); font-family: var(--serif); font-size: 13px; letter-spacing: .12em; }
+    .card h3 { margin: 18px 0 9px; color: #fff; font-family: var(--serif); font-size: 20px; font-weight: 500; letter-spacing: .08em; }
+    .card p { margin: 0; color: #c1d0d9; font-size: 13px; }
+    .region { background: var(--paper); }
+    .region-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7vw; align-items: center; }
+    .region-art { min-height: 350px; position: relative; overflow: hidden; border-radius: 4px; background: linear-gradient(160deg, #9bdad4, #e4c28c 60%, #da805d); }
+    .region-art:before { content: ""; position: absolute; width: 310px; height: 310px; top: 22px; right: 30px; border-radius: 50%; background: #ffe9ad; opacity: .8; }
+    .region-art:after { content: "LOCAL MARKET"; position: absolute; bottom: 24px; left: 25px; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-shadow: 0 1px 5px #18334a; }
+    .market-line { position: absolute; z-index: 1; left: 8%; right: 8%; bottom: 65px; height: 130px; display: flex; align-items: end; gap: 10px; }
+    .stall { flex: 1; height: 85px; background: #fff6df; box-shadow: 0 15px 25px #17324622; }
+    .stall:nth-child(2) { height: 120px; background: #f2795f; }
+    .stall:nth-child(3) { height: 98px; background: #fff6df; }
+    .stall:before { content: ""; display: block; height: 22px; background: repeating-linear-gradient(120deg, #f16c58 0 18px, #fff1d5 18px 36px); }
+    .note { margin-top: 25px; padding: 16px 18px; border-left: 3px solid var(--coral); color: #6c6b5e; background: #fffaf0; font-size: 12px; }
+    .flow { background: #fffdf7; }
+    .flow-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 42px; border-top: 1px solid #d9d2c2; }
+    .flow-item { position: relative; padding: 25px 18px 10px 0; }
+    .flow-item:before { content: ""; position: absolute; top: -6px; left: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--coral); }
+    .flow-time { color: #d66852; font-size: 11px; letter-spacing: .14em; }
+    .flow-item h3 { margin: 7px 0; font-family: var(--serif); font-size: 19px; font-weight: 500; }
+    .flow-item p { margin: 0; color: var(--muted); font-size: 12px; }
+    .origin { color: #fff; background: linear-gradient(135deg, #193a57, #07182d); }
+    .origin .section-kicker { color: var(--gold); }
+    .origin blockquote { margin: 26px 0; padding: 0 0 0 25px; border-left: 2px solid var(--coral); color: #f6d997; font-family: var(--serif); font-size: clamp(21px, 3vw, 30px); line-height: 1.8; }
+    .origin p { max-width: 750px; color: #d0dce2; font-size: 14px; }
+    .profile { background: var(--cream); }
+    .profile-box { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 34px; border: 1px solid #ded8c9; background: #fffdf7; }
+    .profile-box h3 { margin: 0 0 5px; font-family: var(--serif); font-size: 22px; font-weight: 500; }
+    .profile-box p { margin: 0; color: var(--muted); font-size: 13px; }
+    .profile-box a { color: #b94e3c; font-size: 12px; }
+    footer { padding: 30px 6vw; color: #a9bac5; background: #061426; text-align: center; font-size: 10px; letter-spacing: .06em; }
+    footer p { max-width: 880px; margin: 7px auto; }
+    @media (max-width: 760px) {
+      .header { top: 34px; padding: 16px 6vw; }
+      .nav { gap: 12px; font-size: 10px; }
+      .nav a:nth-child(2) { display: none; }
+      .hero { min-height: 790px; }
+      .hero-inner { grid-template-columns: 1fr; margin-top: 110px; gap: 0; }
+      .hero-art { width: 85%; justify-self: center; margin-top: 8px; }
+      .hero-caption { bottom: 35px; font-size: 8px; }
+      .section { padding: 76px 7vw; }
+      .intro-grid, .region-grid { grid-template-columns: 1fr; gap: 22px; }
+      .intro-aside { padding-top: 0; font-size: 20px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .card { min-height: 215px; padding: 19px 16px; }
+      .region-art { min-height: 270px; order: 2; }
+      .flow-list { grid-template-columns: 1fr 1fr; row-gap: 20px; }
+      .profile-box { align-items: flex-start; flex-direction: column; padding: 25px; }
+    }
+    @media (max-width: 420px) {
+      .brand { font-size: 12px; }
+      .nav { gap: 9px; font-size: 9px; }
+      .hero { min-height: 750px; }
+      .hero-copy { font-size: 13px; }
+      .cards { gap: 9px; }
+      .card h3 { font-size: 17px; }
+      .card p { font-size: 11px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="top-note">企画提案用モックアップ｜非公式</div>
+  <header class="header">
+    <a class="brand" href="#top">TUBE TOWN<span>IDEA FOR MUSIC &amp; COMMUNITY</span></a>
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a href="#about">構想について</a>
+      <a href="#town">TOWNの楽しみ方</a>
+      <a href="#region">地域と支援</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">MUSIC, FIREWORKS &amp; COMMUNITY</div>
+          <h1>音楽と花火が、<br><em>人と地域</em>をつなぐ一日。</h1>
+          <p class="hero-copy">TUBEの音楽をきっかけに、地域の食や人、魅力に出会う。開催地ににぎわいと笑顔を届けるイベント構想「TUBE TOWN」。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#about">構想を見る　↓</a>
+            <a class="button button-ghost" href="#region">地域とのつながり</a>
+          </div>
+        </div>
+        <svg class="hero-art" viewBox="0 0 580 430" role="img" aria-label="夜空に上がる花火と海辺の町を描いたイラスト">
+          <defs>
+            <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#193c5b"/><stop offset="1" stop-color="#09182e"/></linearGradient>
+            <linearGradient id="water" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#27637a"/><stop offset="1" stop-color="#102a43"/></linearGradient>
+            <radialGradient id="glow"><stop stop-color="#ffe9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect x="2" y="2" width="576" height="426" rx="16" fill="url(#sky)"/>
+          <circle cx="408" cy="116" r="105" fill="url(#glow)"/>
+          <g fill="#dcebf0" opacity=".8"><circle cx="61" cy="58" r="2"/><circle cx="126" cy="94" r="1.5"/><circle cx="237" cy="47" r="2"/><circle cx="317" cy="82" r="1.5"/><circle cx="511" cy="53" r="2"/><circle cx="473" cy="174" r="1.5"/></g>
+          <g fill="none" stroke-linecap="round" opacity=".95">
+            <g stroke="#ffd166" stroke-width="3" transform="translate(175 128)"><path d="M0-55V-28M0 28V55M-55 0H-28M28 0H55M-39-39L-20-20M20 20L39 39M39-39L20-20M-20 20L-39 39"/><circle r="17" fill="#ffd166" fill-opacity=".12"/></g>
+            <g stroke="#ff8065" stroke-width="2.5" transform="translate(405 115)"><path d="M0-72V-40M0 40V72M-72 0H-40M40 0H72M-51-51L-28-28M28 28L51 51M51-51L28-28M-28 28L-51 51"/><circle r="27" fill="#ff8065" fill-opacity=".1"/></g>
+            <g stroke="#76d4d1" stroke-width="2" transform="translate(300 205)"><path d="M0-34V-18M0 18V34M-34 0H-18M18 0H34M-24-24L-12-12M12 12L24 24M24-24L12-12M-12 12L-24 24"/></g>
+          </g>
+          <path d="M2 285 Q90 263 178 284 T354 280 T578 278 V428 H2Z" fill="url(#water)"/>
+          <path d="M2 314 Q102 293 200 315 T400 309 T578 314" fill="none" stroke="#9ce5df" stroke-opacity=".38" stroke-width="2"/>
+          <g fill="#07182b"><path d="M20 284v-72h40v72zm47 0v-95h32v95zm38 0v-58h52v58zm65 0v-84h34v84zm42 0v-112h48v112zm57 0v-69h40v69zm49 0v-91h34v91zm43 0v-55h49v55zm58 0v-101h35v101zm44 0v-70h56v70z"/></g>
+          <g fill="#ffd166"><circle cx="38" cy="236" r="3"/><circle cx="82" cy="214" r="3"/><circle cx="190" cy="225" r="3"/><circle cx="291" cy="236" r="3"/><circle cx="367" cy="210" r="3"/><circle cx="482" cy="220" r="3"/><circle cx="548" cy="243" r="3"/></g>
+          <path d="M4 366 Q55 350 109 365 T219 365 T329 364 T440 364 T578 359" fill="none" stroke="#ffd166" stroke-opacity=".7" stroke-width="2"/>
+          <text x="26" y="402" fill="#d6e6e9" font-family="sans-serif" font-size="11" letter-spacing="3">A TOWN LIT BY MUSIC</text>
+        </svg>
+      </div>
+      <div class="hero-caption">CONCEPT SITE — NOT AN OFFICIAL EVENT PAGE</div>
+    </section>
+
+    <section class="section intro" id="about">
+      <div class="section-inner intro-grid">
+        <div class="intro-aside">その夜だけ、<br>音楽のそばに<br>小さな町が生まれる。</div>
+        <div>
+          <div class="section-kicker">ABOUT THE IDEA</div>
+          <h2>花火を観る夜を、<br>地域と出会う一日に。</h2>
+          <p class="lead">TUBEの楽曲と花火を楽しむ時間を中心に、開催地の食や特産品、地域で活動する人たちを紹介する——。音楽イベントをきっかけに、訪れた人と地域がつながる場をつくる構想です。</p>
+          <p class="lead">「TUBE TOWN」は、イベント当日に会場へ現れる一日限りの町。ライブの特効花火をステージから観ることが難しいメンバーも、観客と同じ景色を楽しめる花火大会をイメージしています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section town" id="town">
+      <div class="section-inner">
+        <div class="section-kicker">A DAY IN TUBE TOWN</div>
+        <h2>音楽の前も、花火のあとも。</h2>
+        <p class="lead">会場に着いた瞬間から帰るまで、地域の魅力と出会える時間をつくります。</p>
+        <div class="cards">
+          <article class="card"><div class="card-number">01 / MUSIC</div><h3>音楽と花火</h3><p>TUBEの楽曲と花火がひとつになる夜。メンバーもファンも、同じ空の下でその景色を楽しむ構想です。</p></article>
+          <article class="card"><div class="card-number">02 / LOCAL FOOD</div><h3>地元の味</h3><p>地域の食材や名物を使ったキッチンカー、地元のお店が並ぶマーケットをイメージしています。</p></article>
+          <article class="card"><div class="card-number">03 / STAY</div><h3>滞在のきっかけ</h3><p>移動型宿泊施設などを組み合わせ、遠方から訪れる人が地域に滞在できる方法を検討します。</p></article>
+          <article class="card"><div class="card-number">04 / SUPPORT</div><h3>地域への応援</h3><p>地域の方々と相談しながら、地元事業者への経済的な応援や、復興支援につながる仕組みを考えます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section region" id="region">
+      <div class="section-inner region-grid">
+        <div class="region-art" aria-label="地元マーケットをイメージしたイラスト"><div class="market-line"><div class="stall"></div><div class="stall"></div><div class="stall"></div></div></div>
+        <div>
+          <div class="section-kicker">WITH THE COMMUNITY</div>
+          <h2>地域と一緒に、<br>つくるイベントへ。</h2>
+          <p class="lead">開催地の人たちが主役になれるよう、地元事業者や地域団体と相談しながら企画を育てます。地域の品を知ってもらい、訪れた人がまた足を運ぶきっかけをつくることを目指します。</p>
+          <p class="lead">復興支援の方法や寄付先、支援金の使い道は、開催地域の希望や受け入れ体制を踏まえて関係者と検討。決まった内容を分かりやすく伝え、地域に届く支援を目指します。</p>
+          <div class="note">出店者・開催地・支援先などはすべて構想段階です。実施にあたっては、地域や関係機関との協議が必要です。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow">
+      <div class="section-inner">
+        <div class="section-kicker">IMAGINED DAY FLOW</div>
+        <h2>一日の過ごし方（構想案）</h2>
+        <div class="flow-list">
+          <article class="flow-item"><div class="flow-time">AFTERNOON</div><h3>町に到着</h3><p>地域の案内や会場マップを受け取り、TUBE TOWNを散策。</p></article>
+          <article class="flow-item"><div class="flow-time">SUNSET</div><h3>地元を味わう</h3><p>キッチンカーやマーケットで、開催地の食や特産品に出会う。</p></article>
+          <article class="flow-item"><div class="flow-time">NIGHT</div><h3>音楽と花火</h3><p>TUBEの楽曲と花火が夜空を彩る、イベントの中心となる時間。</p></article>
+          <article class="flow-item"><div class="flow-time">AFTER</div><h3>地域に滞在</h3><p>宿泊や周辺観光を通じて、イベントのあとも地域を楽しむ。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section origin">
+      <div class="section-inner">
+        <div class="section-kicker">THE FIRST SPARK</div>
+        <h2>この構想のはじまり。</h2>
+        <blockquote>「TUBEの楽曲を使った花火大会を観てみたい」</blockquote>
+        <p>ファンクラブイベントのトークで伺った前田さんのお話が、企画のきっかけです。野外ライブでは、メンバー自身が特効花火をゆっくり観る機会は限られている。その言葉から、メンバーもファンも、地域の人たちも同じ夜空を見上げる場を思い描きました。</p>
+        <p>このページは、アイデアを共有するための企画提案用モックアップです。開催や出演、協力が決定したものではありません。</p>
+      </div>
+    </section>
+
+    <section class="section profile">
+      <div class="section-inner">
+        <div class="section-kicker">PROPOSAL</div>
+        <h2>企画提案者</h2>
+        <div class="profile-box">
+          <div><h3>茂木 良介｜Web制作・PIPELINE</h3><p>企画の魅力をWebで伝えるページの企画・制作を行っています。</p></div>
+          <a href="https://ryosuke63-tube.github.io/ryo63/index.html" target="_blank" rel="noopener noreferrer">ポートフォリオを見る ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>本ページは企画提案用の非公式モックアップです。TUBE、所属事務所、関係各社による公式発表・承認・協力を示すものではありません。</p>
+    <p>「TUBE TOWN」は構想上の仮称です。開催地、開催時期、出演者、協力先、支援方法は未定です。</p>
+    <p>© 2026 PIPELINE / CONCEPT PROPOSAL</p>
+  </footer>
+</body>
+</html>
